@@ -3,6 +3,8 @@ package edu.gatech.cs2340.vanillaice.spacetraderapp.views;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import edu.gatech.cs2340.vanillaice.spacetraderapp.R;
+
 public class ConfigurationActivity extends AppCompatActivity {
 
     @Override
