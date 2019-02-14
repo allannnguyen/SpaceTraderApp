@@ -39,4 +39,10 @@ public class Player {
     }
     public Difficulty getDifficulty(){ return difficulty;}
     public Ships getShip(){ return ship;}
+
+    public String toString() {
+        return "|Commander Name: " + name + "|Difficulty: " + difficulty.toString()
+                + "|Ship: " + ship.toString() + "| SKILLS -- Pilot: "
+                + pilot + " Fighter: " + fighter + " Trader: " + trader + " Engineer: " + engineer;
+    }
 }
