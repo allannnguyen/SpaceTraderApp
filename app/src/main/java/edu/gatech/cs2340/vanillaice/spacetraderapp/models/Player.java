@@ -102,6 +102,22 @@ public class Player {
     }
 
     /**
+     * Sets the amount of credits the player has
+     * @param credits new credit value for the player
+     */
+    public void setCredits(int credits) {
+        this.credits = credits;
+    }
+
+    /**
+     * Sets the current ship for the player
+     * @param ship player's new ship
+     */
+    public void setShip(Ships ship) {
+        this.ship = ship;
+    }
+
+    /**
      * Prints the player's information to the logs
      * @return a string that lists the player's parameters
      */
