@@ -173,10 +173,10 @@ public class MainActivity extends AppCompatActivity {
         createButton.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               if (total == 0 && pCounter >= 0 && fCounter >= 0 && eCounter >= 0 && tCounter >= 0) {
+               if (total == 0 && pCounter >= 0 && fCounter >= 0 && tCounter >= 0 && eCounter >= 0) {
                    viewModel.createPlayer(nameEntry.getText().toString(),
                            (Difficulty) difficultySpinner.getSelectedItem(),
-                           pCounter, fCounter, eCounter, tCounter);
+                           pCounter, fCounter, tCounter, eCounter);
                }
            }
         });
