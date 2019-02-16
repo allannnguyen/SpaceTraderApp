@@ -4,11 +4,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import edu.gatech.cs2340.vanillaice.spacetraderapp.R;
+import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Difficulty;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.ConfigurationViewModel;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private int fCounter = 0;
     private int tCounter = 0;
     private int eCounter = 0;
+    private Spinner difficultySpinner;
     int total = 16;
 
     @Override
@@ -56,9 +60,12 @@ public class MainActivity extends AppCompatActivity {
         fighterPoints = findViewById(R.id.fighterPoints);
         traderPoints = findViewById(R.id.traderPoints);
         engineerPoints = findViewById(R.id.engineerPoints);
+        difficultySpinner = findViewById(R.id.difficultySpinner);
         Log.i("reached pos1", " YES");
         //int total = 16;
         remainingPoints.setText("Remaining Points: " + Integer.toString(total));
+
+        difficultySpinner.setAdapter(new ArrayAdapter<Difficulty>(this, android.R.layout.simple_spinner_item, Difficulty.values()));
 
         pUp.setOnClickListener(new View.OnClickListener() {
             @Override

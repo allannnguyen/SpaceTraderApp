@@ -264,7 +264,7 @@
         app:layout_constraintTop_toBottomOf="@+id/remainingPoints" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/difficultySpinner"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
@@ -282,7 +282,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/difficultySpinner" />
 
     <Button
         android:id="@+id/exitButton"
