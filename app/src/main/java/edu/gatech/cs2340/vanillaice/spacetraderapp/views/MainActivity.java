@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         pDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (total < 16) {
+                if (total < 16 && pCounter > 0) {
                     pCounter--;
                     pilotPoints.setText(Integer.toString(pCounter));
                     total++;
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         fDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (total < 16) {
+                if (total < 16 && fCounter > 0) {
                     fCounter--;
                     fighterPoints.setText(Integer.toString(fCounter));
                     total++;
@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         tDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (total < 16) {
+                if (total < 16 && tCounter > 0) {
                     tCounter--;
                     traderPoints.setText(Integer.toString(tCounter));
                     total++;
@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
         eDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (total < 16) {
+                if (total < 16 && eCounter > 0) {
                     eCounter--;
                     engineerPoints.setText(Integer.toString(eCounter));
                     total++;
