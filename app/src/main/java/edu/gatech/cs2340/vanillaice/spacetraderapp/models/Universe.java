@@ -9,6 +9,7 @@ import java.util.Random;
  * A universe has a list of randomly selected planets from all precreated options
  */
 public class Universe {
+    private List<Planet> tenplanets;
     Planet CharlesTheRed = new Planet("Charles The Red", 0, 0, Technology.PREAGRICULTURAL, Resource.WARLIKE); //ANARCHY
     Planet Wrangler = new Planet("Wrangler", 0, 0, Technology.AGRICULTURAL, Resource.RICHSOIL); //DICTATORSHIP
     Planet Yojimbo = new Planet("Yojimbo", 0, 0, Technology.MEDIEVAL, Resource.RICHFAUNA); //FEUDALSTATE
@@ -59,13 +60,20 @@ public class Universe {
         planets.add(Xamecarro);
         planets.add(Lichetune);
         planets.add(Brichi8X5);
-        List<Planet> tenplanets = new ArrayList<>();
+        tenplanets = new ArrayList<>();
         Random planetRandom = new Random();
         for (int i = 0; i < 10; i++) {
             int random = planetRandom.nextInt(planets.size());
             tenplanets.add(planets.get(random));
             planets.remove(random);
         }
-
+    }
+    @Override
+    public String toString() {
+        String universeString = "The Universe: \n";
+        for (Planet planet : tenplanets) {
+            universeString += planet.toString() + "\n";
+        }
+        return universeString;
     }
 }
