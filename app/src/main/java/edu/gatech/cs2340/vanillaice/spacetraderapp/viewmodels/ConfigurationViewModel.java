@@ -4,6 +4,7 @@ import android.util.Log;
 
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Difficulty;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Player;
+import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Universe;
 
 /**
  * Handles the player creation process and subsequent checks
@@ -26,6 +27,8 @@ public class ConfigurationViewModel {
     public void createPlayer(String name, Difficulty difficulty, int pilot, int fighter, int trader, int engineer) {
         Player newPlayer = new Player(name, difficulty, pilot, fighter, trader, engineer);
         Log.d("Player", newPlayer.toString());
+        Universe newUniverse = new Universe();
+        largeLog("Universe", newUniverse.toString());
     }
 
     /**
@@ -102,5 +105,14 @@ public class ConfigurationViewModel {
      */
     public void setEngineer(int engineer) {
         this.engineer = engineer;
+    }
+
+    public static void largeLog(String tag, String content) {
+        if (content.length() > 4000) {
+            Log.d(tag, content.substring(0, 4000));
+            largeLog(tag, content.substring(4000));
+        } else {
+            Log.d(tag, content);
+        }
     }
 }
