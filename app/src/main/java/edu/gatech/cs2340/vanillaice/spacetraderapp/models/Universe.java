@@ -29,7 +29,7 @@ public class Universe {
     Planet V = new Planet("V", 0, 0, Technology.POSTINDUSTRIAL, Resource.RICHSOIL); //FEUDALSTATE
 
     public Universe() {
-        ArrayList<Planet> planets = new ArrayList<Planet>();
+        List<Planet> planets = new ArrayList<>();
         planets.add(A);
         planets.add(B);
         planets.add(C);
@@ -52,7 +52,13 @@ public class Universe {
         planets.add(T);
         planets.add(U);
         planets.add(V);
-        Random nextInt = new Random();
-
+        List<Planet> tenplanets = new ArrayList<>();
+        Random planetRandom = new Random();
+        for (int i = 0; i < 10; i++) {
+            int random = planetRandom.nextInt(planets.size());
+            tenplanets.add(planets.get(random));
+            planets.remove(random);
+        }
     }
+
 }
