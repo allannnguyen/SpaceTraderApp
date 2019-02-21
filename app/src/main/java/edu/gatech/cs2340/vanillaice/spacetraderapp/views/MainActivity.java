@@ -1,5 +1,6 @@
 package edu.gatech.cs2340.vanillaice.spacetraderapp.views;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -177,8 +178,11 @@ public class MainActivity extends AppCompatActivity {
                    viewModel.createPlayer(nameEntry.getText().toString(),
                            (Difficulty) difficultySpinner.getSelectedItem(),
                            pCounter, fCounter, tCounter, eCounter);
+                   startActivity(new Intent(MainActivity.this, GameActivity.class));
                }
            }
         });
+
+
     }
 }

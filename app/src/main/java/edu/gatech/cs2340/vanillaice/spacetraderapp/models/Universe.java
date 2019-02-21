@@ -1,6 +1,7 @@
 package edu.gatech.cs2340.vanillaice.spacetraderapp.models;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -58,7 +59,13 @@ public class Universe {
         planets.add(Xamecarro);
         planets.add(Lichetune);
         planets.add(Brichi8X5);
-        Random nextInt = new Random();
+        List<Planet> tenplanets = new ArrayList<>();
+        Random planetRandom = new Random();
+        for (int i = 0; i < 10; i++) {
+            int random = planetRandom.nextInt(planets.size());
+            tenplanets.add(planets.get(random));
+            planets.remove(random);
+        }
 
     }
 }
