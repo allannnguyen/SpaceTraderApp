@@ -1,5 +1,8 @@
 package edu.gatech.cs2340.vanillaice.spacetraderapp.models;
 
+/**
+ * Represents each good available to trade in the game
+ */
 public enum Good {
     WATER(0, 0, 2, 30, 3, 4, 30, 50),
     FURS(0, 0, 0, 250, 10, 10, 2300, 280),
@@ -22,7 +25,7 @@ public enum Good {
     private int mth;
 
     /**
-     *
+     * Constructs an individual good's stats
      * @param basePrice the base price before calculation
      * @param mtlp Minimum Tech Level to Produce this resource
      * @param mtlu Minimum Tech Level to Use this resource
