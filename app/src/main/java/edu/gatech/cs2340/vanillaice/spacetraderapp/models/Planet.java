@@ -9,6 +9,7 @@ public class Planet {
     private int ycoord;
     private Technology techLevel;
     private Resource resourceLevel;
+    private Market market;
 
     /**
      * Creates an instance of a planet.
@@ -25,6 +26,7 @@ public class Planet {
         this.ycoord = ycoord;
         this.techLevel = techLevel;
         this.resourceLevel = resourceLevel;
+        this.market = new Market(techLevel, resourceLevel);
     }
 
     /**
