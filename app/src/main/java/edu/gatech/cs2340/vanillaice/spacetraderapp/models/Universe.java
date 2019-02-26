@@ -82,4 +82,8 @@ public class Universe {
         }
         return universeString;
     }
+
+    public List<Planet> getPlanets() {
+        return tenplanets;
+    }
 }

@@ -25,9 +25,9 @@ public class ConfigurationViewModel {
      * @param engineer player's selected engineer skillpoints
      */
     public void createPlayer(String name, Difficulty difficulty, int pilot, int fighter, int trader, int engineer) {
-        Player newPlayer = new Player(name, difficulty, pilot, fighter, trader, engineer);
-        Log.d("Player", newPlayer.toString());
         Universe newUniverse = new Universe();
+        Player newPlayer = new Player(name, difficulty, pilot, fighter, trader, engineer, newUniverse.getPlanets().get(0));
+        Log.d("Player", newPlayer.toString());
         largeLog("Universe", newUniverse.toString());
     }
 
