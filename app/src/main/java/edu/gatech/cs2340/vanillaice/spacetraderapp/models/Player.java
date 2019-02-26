@@ -26,6 +26,7 @@ public class Player {
      * @param fighter number of skill points allocated to the fighter skill
      * @param trader number of skill points allocated to the trader skill
      * @param engineer number of skill points allocated to the engineer skill
+     * @param currPlanet the player's current location
      */
     public Player(String name, Difficulty difficulty, int pilot, int fighter, int trader, int engineer, Planet currPlanet) {
         this.name = name;
