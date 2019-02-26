@@ -34,5 +34,7 @@ public class Market {
         return good.getBasePrice() * (good.getIpl() * (techLevel.ordinal() - good.getMtlp())) + good.getVar();
     }
 
-    
+    public void exchange() {
+        
+    }
 }
