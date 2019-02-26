@@ -16,6 +16,7 @@ public class Player {
     private int credits;
     private Difficulty difficulty;
     private Ships ship;
+    private Planet currPlanet;
 
     /**
      * Constructs the player based on various parameters.
@@ -26,7 +27,7 @@ public class Player {
      * @param trader number of skill points allocated to the trader skill
      * @param engineer number of skill points allocated to the engineer skill
      */
-    public Player(String name, Difficulty difficulty, int pilot, int fighter, int trader, int engineer) {
+    public Player(String name, Difficulty difficulty, int pilot, int fighter, int trader, int engineer, Planet currPlanet) {
         this.name = name;
         this.difficulty = difficulty;
         this.pilot = pilot;
@@ -35,6 +36,7 @@ public class Player {
         this.engineer = engineer;
         this.credits = 1000;
         this.ship = Ships.GNAT;
+        this.currPlanet = currPlanet;
     }
 
     /**
