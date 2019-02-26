@@ -82,4 +82,12 @@ public class Universe {
         }
         return universeString;
     }
+
+    /**
+     * Gets the list of planets in the universe
+     * @return a list of planets contained within the universe
+     */
+    public List<Planet> getPlanets() {
+        return tenplanets;
+    }
 }
