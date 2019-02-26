@@ -15,7 +15,7 @@ public class Player {
     private int engineer;
     private int credits;
     private Difficulty difficulty;
-    private Ships ship;
+    private Ship ship;
     private Planet currPlanet;
 
     /**
@@ -36,7 +36,7 @@ public class Player {
         this.trader = trader;
         this.engineer = engineer;
         this.credits = 1000;
-        this.ship = Ships.GNAT;
+        this.ship = new Ship();
         this.currPlanet = currPlanet;
     }
 
@@ -100,7 +100,7 @@ public class Player {
      * Gets the ship the player owns
      * @return player's current ship
      */
-    public Ships getShip(){
+    public Ship getShip(){
         return ship;
     }
 
@@ -116,7 +116,7 @@ public class Player {
      * Sets the current ship for the player
      * @param ship player's new ship
      */
-    public void setShip(Ships ship) {
+    public void setShip(Ship ship) {
         this.ship = ship;
     }
 
