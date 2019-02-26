@@ -45,4 +45,20 @@ public enum ShipType {
         this.basePrice = basePrice;
         this.hullHealth = hullHealth;
     }
+
+    /**
+     * Gets the base cargo holds for the ship
+     * @return max number of cargo
+     */
+    public int getCargoHolds() {
+        return cargoHolds;
+    }
+
+    /**
+     * Gets the base health of the ship
+     * @return max health of the ship
+     */
+    public int getHullHealth() {
+        return hullHealth;
+    }
 }
