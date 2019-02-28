@@ -31,7 +31,7 @@ public class Universe {
     Planet Ebbichi = new Planet("Ebbichi", 44, 37, Technology.INDUSTRIAL, Resource.LOTSOFWATER); //CAPITALISTSTATE
     Planet Xamecarro = new Planet("Xamecarro", 1, 25, Technology.MEDIEVAL, Resource.WEIRDMUSHROOMS); //STATEOFSTAORI
     Planet Lichetune = new Planet("Lichetune", 127, 69, Technology.HITECH, Resource.NOSPECIALRESOURCES); //TECHNOCRACY
-    Planet Brichi8X5 = new Planet("Brichi8X5", 70, 2, Technology.POSTINDUSTRIAL, Resource.RICHSOIL); //FEUDALSTATE
+    Planet Brichi8X5 = new Planet("Brichi 8X5", 70, 2, Technology.POSTINDUSTRIAL, Resource.RICHSOIL); //FEUDALSTATE
 
     /**
      * Selects the planets for this game randomly from all options
