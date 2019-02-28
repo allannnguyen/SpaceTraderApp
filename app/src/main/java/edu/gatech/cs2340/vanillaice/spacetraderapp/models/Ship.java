@@ -1,5 +1,7 @@
 package edu.gatech.cs2340.vanillaice.spacetraderapp.models;
 
+import java.util.HashMap;
+
 /**
  * Represents the player's current ship
  */
@@ -9,8 +11,7 @@ public class Ship {
     private boolean escapepod;
     private boolean insurance;
     private ShipType type;
-    private int water, fur, food, ore, game, firearm, medicine,
-    machine, narcotic, robot;
+    private HashMap<Good, Integer> goods;
 
     /**
      * Default constructor for player with a GNAT ship
@@ -30,6 +31,7 @@ public class Ship {
         this.health = type.getHullHealth();
         this.escapepod = escapepod;
         this.insurance = insurance;
+        goods = new HashMap<>();
     }
 
     /**
@@ -37,7 +39,11 @@ public class Ship {
      * @return the total amount of cargo on ship
      */
     public int getTotal() {
-        return water + fur + food + ore + game + firearm + medicine + machine + narcotic + robot;
+        int total = 0;
+        for (Good good : Good.values()) {
+            total += goods.get(good);
+        }
+        return total;
     }
 
     /**
@@ -77,7 +83,7 @@ public class Ship {
      * @return quantity of water
      */
     public int getWater() {
-        return water;
+        return goods.get(Good.WATER);
     }
 
     /**
@@ -85,7 +91,7 @@ public class Ship {
      * @param quantity new quantity of water in cargo
      */
     public void setWater(int quantity) {
-        water = quantity;
+        goods.put(Good.WATER, quantity);
     }
 
     /**
@@ -93,7 +99,7 @@ public class Ship {
      * @return quantity of fur
      */
     public int getFur() {
-        return fur;
+        return goods.get(Good.FURS);
     }
 
     /**
@@ -101,7 +107,7 @@ public class Ship {
      * @param quantity new quantity of fur in cargo
      */
     public void setFur(int quantity) {
-        fur = quantity;
+        goods.put(Good.FURS, quantity);
     }
 
     /**
@@ -109,7 +115,7 @@ public class Ship {
      * @return quantity of food in cargo
      */
     public int getFood() {
-        return food;
+        return goods.get(Good.FOOD);
     }
 
     /**
@@ -117,7 +123,7 @@ public class Ship {
      * @param quantity new quantity of food in cargo
      */
     public void setFood(int quantity) {
-        food = quantity;
+        goods.put(Good.FOOD, quantity);
     }
 
     /**
@@ -125,7 +131,7 @@ public class Ship {
      * @return quantity of ore in cargo;
      */
     public int getOre() {
-        return ore;
+        return goods.get(Good.ORE);
     }
 
     /**
@@ -133,7 +139,7 @@ public class Ship {
      * @param quantity new quantity of ore in cargo
      */
     public void setOre(int quantity) {
-        ore = quantity;
+        goods.put(Good.ORE, quantity);
     }
 
     /**
@@ -141,7 +147,7 @@ public class Ship {
      * @return quantity of games in cargo
      */
     public int getGame() {
-        return game;
+        return goods.get(Good.GAMES);
     }
 
     /**
@@ -149,7 +155,7 @@ public class Ship {
      * @param quantity new quantity of games in cargo
      */
     public void setGame(int quantity) {
-        game = quantity;
+        goods.put(Good.GAMES, quantity);
     }
 
     /**
@@ -157,7 +163,7 @@ public class Ship {
      * @return quantity of firearms in cargo
      */
     public int getFirearm() {
-        return firearm;
+        return goods.get(Good.FIREARMS);
     }
 
     /**
@@ -165,7 +171,7 @@ public class Ship {
      * @param quantity new quantity of firearms in cargo
      */
     public void setFirearm(int quantity) {
-        firearm = quantity;
+        goods.put(Good.FIREARMS, quantity);
     }
 
     /**
@@ -173,7 +179,7 @@ public class Ship {
      * @return quantity of medicine in cargo
      */
     public int getMedicine() {
-        return medicine;
+        return goods.get(Good.MEDICINE);
     }
 
     /**
@@ -181,7 +187,7 @@ public class Ship {
      * @param quantity new quantity of medicine in cargo
      */
     public void setMedicine(int quantity) {
-        medicine = quantity;
+        goods.put(Good.MEDICINE, quantity);
     }
 
     /**
@@ -189,7 +195,7 @@ public class Ship {
      * @return quantity of machines in cargo
      */
     public int getMachine() {
-        return machine;
+        return goods.get(Good.MACHINES);
     }
 
     /**
@@ -197,7 +203,7 @@ public class Ship {
      * @param quantity new quantity of machines in cargo
      */
     public void setMachine(int quantity) {
-        machine = quantity;
+         goods.put(Good.MACHINES, quantity);
     }
 
     /**
@@ -205,7 +211,7 @@ public class Ship {
      * @return quantity of narcotics in cargo
      */
     public int getNarcotic() {
-        return narcotic;
+        return goods.get(Good.NARCOTICS);
     }
 
     /**
@@ -213,7 +219,7 @@ public class Ship {
      * @param quantity new quantity of narcotics in cargo
      */
     public void setNarcotic(int quantity) {
-        narcotic = quantity;
+        goods.put(Good.NARCOTICS, quantity);
     }
 
     /**
@@ -221,7 +227,7 @@ public class Ship {
      * @return quantity of robots in cargo
      */
     public int getRobot() {
-        return robot;
+        return goods.get(Good.ROBOTS);
     }
 
     /**
@@ -229,7 +235,7 @@ public class Ship {
      * @param quantity new quantity of robots in cargo
      */
     public void setRobot(int quantity) {
-        robot = quantity;
+        goods.put(Good.ROBOTS, quantity);
     }
 
     public String toString() {
