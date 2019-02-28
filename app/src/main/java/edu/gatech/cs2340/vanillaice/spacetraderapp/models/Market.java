@@ -42,6 +42,22 @@ public class Market {
     }
 
     /**
+     * Gets the hash map of sellable goods
+     * @return hash map of sellable goods
+     */
+    public HashMap<Good, Boolean> getGoodsSell() {
+        return goodsSell;
+    }
+
+    /**
+     * Gets the hash map of buyable goods
+     * @return hash map of buyable goods
+     */
+    public HashMap<Good, Boolean> getGoodsBuy() {
+        return goodsBuy;
+    }
+
+    /**
      * Calculates the price of a good.
      *
      * @param good The good whose price is being calculated.
