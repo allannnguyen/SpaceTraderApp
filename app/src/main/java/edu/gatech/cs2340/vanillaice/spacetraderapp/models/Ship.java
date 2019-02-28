@@ -238,6 +238,28 @@ public class Ship {
         goods.put(Good.ROBOTS, quantity);
     }
 
+    /**
+     * Gets the quantity of a good in cargo
+     * @param good type of good to be checked
+     * @return quantity of that good in cargo
+     */
+    public int getGood(Good good) {
+        return goods.get(good);
+    }
+
+    /**
+     * Sets the quantity of a good in cargo
+     * @param good type of good to be changed in cargo
+     * @param quantity new quantity of that good in cargo
+     */
+    public void setGood(Good good, int quantity) {
+        goods.put(good, quantity);
+    }
+
+    /**
+     * Prints out the ship
+     * @return string representing the ship
+     */
     public String toString() {
         return type.toString();
     }
