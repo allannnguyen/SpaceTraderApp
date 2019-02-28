@@ -30,6 +30,14 @@ public class Planet {
     }
 
     /**
+     * Gets the planet's market
+     * @return the market of the planet
+     */
+    public Market getMarket() {
+        return market;
+    }
+
+    /**
      * Prints the planet information to the logs.
      *
      * @ A string listing the planet's parameters.

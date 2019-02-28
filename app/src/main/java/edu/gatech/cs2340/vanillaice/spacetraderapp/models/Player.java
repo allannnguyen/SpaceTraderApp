@@ -130,4 +130,12 @@ public class Player {
                 + "|Ship: " + ship.toString() + "| SKILLS -- Pilot: "
                 + pilot + " Fighter: " + fighter + " Trader: " + trader + " Engineer: " + engineer;
     }
+
+    /**
+     * Gets the planet the player is currently on
+     * @return the current planet
+     */
+    public Planet getPlanet() {
+        return currPlanet;
+    }
 }

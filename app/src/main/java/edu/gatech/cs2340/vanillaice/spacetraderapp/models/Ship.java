@@ -47,6 +47,14 @@ public class Ship {
     }
 
     /**
+     * Gets the amount of cargo space left on ship
+     * @return the amount of cargo space left
+     */
+    public int getCargoSpace() {
+        return type.getCargoHolds() - getTotal();
+    }
+
+    /**
      * Gets whether the ship has an escape pod
      * @return whether the ship has an escape pod
      */
