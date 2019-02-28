@@ -139,7 +139,7 @@ public class MarketViewModel {
         ship.setGood(Good.FURS, ship.getGood(Good.FURS) - furSold);
         ship.setGood(Good.FOOD, ship.getGood(Good.FOOD) - foodSold);
         ship.setGood(Good.ORE, ship.getGood(Good.ORE) - oreSold);
-        ship.setGood(Good.GAMES, ship.getGood(Good.GAMES) + gameSold);
+        ship.setGood(Good.GAMES, ship.getGood(Good.GAMES) - gameSold);
         ship.setGood(Good.FIREARMS, ship.getGood(Good.FIREARMS) - firearmSold);
         ship.setGood(Good.MEDICINE, ship.getGood(Good.MEDICINE) - medicineSold);
         ship.setGood(Good.MACHINES, ship.getGood(Good.MACHINES) - machineSold);
