@@ -27,7 +27,7 @@ public class Ship {
      */
     public Ship(ShipType type, boolean escapepod, boolean insurance) {
         this.type = type;
-        health = type.getHullHealth();
+        this.health = type.getHullHealth();
         this.escapepod = escapepod;
         this.insurance = insurance;
     }
@@ -230,6 +230,10 @@ public class Ship {
      */
     public void setRobot(int quantity) {
         robot = quantity;
+    }
+
+    public String toString() {
+        return type.toString();
     }
 
 }

@@ -12,6 +12,9 @@ public class Market {
     public Market(Technology techLevel, Resource resourceLevel) {
         this.techLevel = techLevel;
         this.resourceLevel = resourceLevel;
+        this.goodsBuy = new HashMap<>();
+        this.goodsSell = new HashMap<>();
+        this.goodsPrice = new HashMap<>();
 
         for (Good good : Good.values()) {
             // If they can produce, they can buy and sell
