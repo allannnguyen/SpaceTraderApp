@@ -15,7 +15,8 @@ public class Player {
     private int engineer;
     private int credits;
     private Difficulty difficulty;
-    private Ships ship;
+    private Ship ship;
+    private Planet currPlanet;
 
     /**
      * Constructs the player based on various parameters.
@@ -25,8 +26,9 @@ public class Player {
      * @param fighter number of skill points allocated to the fighter skill
      * @param trader number of skill points allocated to the trader skill
      * @param engineer number of skill points allocated to the engineer skill
+     * @param currPlanet the player's current location
      */
-    public Player(String name, Difficulty difficulty, int pilot, int fighter, int trader, int engineer) {
+    public Player(String name, Difficulty difficulty, int pilot, int fighter, int trader, int engineer, Planet currPlanet) {
         this.name = name;
         this.difficulty = difficulty;
         this.pilot = pilot;
@@ -34,7 +36,8 @@ public class Player {
         this.trader = trader;
         this.engineer = engineer;
         this.credits = 1000;
-        this.ship = Ships.GNAT;
+        this.ship = new Ship();
+        this.currPlanet = currPlanet;
     }
 
     /**
@@ -97,7 +100,7 @@ public class Player {
      * Gets the ship the player owns
      * @return player's current ship
      */
-    public Ships getShip(){
+    public Ship getShip(){
         return ship;
     }
 
@@ -113,7 +116,7 @@ public class Player {
      * Sets the current ship for the player
      * @param ship player's new ship
      */
-    public void setShip(Ships ship) {
+    public void setShip(Ship ship) {
         this.ship = ship;
     }
 
