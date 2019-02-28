@@ -2,6 +2,9 @@ package edu.gatech.cs2340.vanillaice.spacetraderapp.models;
 
 import java.util.HashMap;
 
+/**
+ * Represents the marketplace of a planet.
+ */
 public class Market {
     private Technology techLevel;
     private Resource resourceLevel;
@@ -9,6 +12,12 @@ public class Market {
     private HashMap<Good, Boolean> goodsSell;
     private HashMap<Good, Integer> goodsPrice;
 
+    /**
+     * Creates an instance of a planet's marketplace.
+     *
+     * @param techLevel The technology level of the market's planet.
+     * @param resourceLevel The resource level of the market's planet.
+     */
     public Market(Technology techLevel, Resource resourceLevel) {
         this.techLevel = techLevel;
         this.resourceLevel = resourceLevel;
@@ -32,12 +41,32 @@ public class Market {
         }
     }
 
+    /**
+     * Calculates the price of a good.
+     *
+     * @param good The good whose price is being calculated.
+     * @return The price of the good
+     */
     public int getPrice(Good good) {
         // base price * (IPL * (PTL - MTLP)) + variance
         return good.getBasePrice() * (good.getIpl() * (techLevel.ordinal() - good.getMtlp())) + good.getVar();
     }
 
-    public void exchange() {
+    /**
+     * Performs the buy action
+     */
+    public void buy(int waterBuy, int furBuy, int foodBuy, int oreBuy, int gameBuy,
+                    int firearmBuy, int medicineBuy, int machineBuy, int narcoticBuy
+                    , int robotBuy) {
+
+    }
+
+    /**
+     * Performs the sell action
+     */
+    public void sell(int waterSold, int furSold, int foodSold, int oreSold, int gameSold,
+                     int firearmSold, int medicineSold, int machineSold, int narcoticSold
+                    , int robotSold) {
 
     }
 }
