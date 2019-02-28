@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".views.GameActivity"></activity>
+        <activity android:name=".SellActivity"></activity>
+        <activity android:name=".BuyActivity" />
+        <activity android:name=".MarketActivity" />
+        <activity android:name=".views.EncounterActivity" />
+        <activity android:name=".views.GameActivity" />
         <activity android:name=".views.ConfigurationActivity" />
         <activity android:name=".views.MainActivity">
             <intent-filter>
