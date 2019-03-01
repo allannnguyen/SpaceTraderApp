@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import edu.gatech.cs2340.vanillaice.spacetraderapp.MarketActivity;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.R;
 
 public class GameActivity extends AppCompatActivity {
