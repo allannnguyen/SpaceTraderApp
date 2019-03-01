@@ -17,7 +17,7 @@ public class MarketViewModel {
     public MarketViewModel(Player player) {
         this.player = player;
         this.ship = player.getShip();
-        this.market = player.getPlanet().getMarket();
+        this.market = player.getMarket();
     }
 
     /**
