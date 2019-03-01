@@ -64,8 +64,8 @@ public class MarketViewModel {
     }
 
     /**
-     * Checks if a good is buyable
-     * @param good
+     * Checks if a good is able to be bought at the current market
+     * @param good the good to check
      * @return if the good is buyable
      */
     public boolean isBuyable(Good good) {
@@ -73,8 +73,8 @@ public class MarketViewModel {
     }
 
     /**
-     * Checks if a good is sellable
-     * @param good
+     * Checks if a good is able to be sold at the current market
+     * @param good the good to check
      * @return if the good is sellable
      */
     public boolean isSellable(Good good) {
@@ -82,15 +82,16 @@ public class MarketViewModel {
     }
 
     /**
-     * Gets the player's credits
+     * Gets the player's current credits
      * @return amount of player's credits
      */
-    public int playerCredits() {
+    public int getPlayerCredits() {
         return player.getCredits();
     }
+
     /**
-     * The amount of space left in the ship
-     * @return cargo space
+     * Returns the amount of cargo space left in the ship
+     * @return empty cargo space remaining
      */
     public int getCargoSpace() {
         return ship.getCargoSpace();
@@ -98,10 +99,10 @@ public class MarketViewModel {
 
     /**
      * Gets the quantity of a good in the ship's cargo
-     * @param good
-     * @return quantity of good
+     * @param good the good to check
+     * @return quantity of good currently in cargo
      */
-    public int goodQuantity(Good good) {
+    public int getGoodQuantity(Good good) {
         return ship.getGood(good);
     }
 
@@ -118,6 +119,7 @@ public class MarketViewModel {
      * @param narcoticSold the quantity of narcotic sold
      * @param robotSold the quantity of robot sold
      */
+
     public void sell(int waterSold, int furSold, int foodSold, int oreSold, int gameSold,
                      int firearmSold, int medicineSold, int machineSold, int narcoticSold
             , int robotSold) {
