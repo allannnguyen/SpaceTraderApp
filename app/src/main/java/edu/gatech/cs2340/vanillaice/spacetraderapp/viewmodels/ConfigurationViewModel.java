@@ -75,7 +75,7 @@ public class ConfigurationViewModel {
      * @param narcoticBuy quantity of narcotic bought
      * @param robotBuy quantity of robot bought
      */
-    public void buyVM(int waterBuy, int furBuy, int foodBuy, int oreBuy, int gameBuy, int firearmBuy, int medicineBuy, int machineBuy, int narcoticBuy, int robotBuy) {
+    public void buyConfig(int waterBuy, int furBuy, int foodBuy, int oreBuy, int gameBuy, int firearmBuy, int medicineBuy, int machineBuy, int narcoticBuy, int robotBuy) {
         marketVM.buy(waterBuy, furBuy, foodBuy, oreBuy, gameBuy, firearmBuy, medicineBuy, machineBuy, narcoticBuy, robotBuy);
     }
 
@@ -92,7 +92,7 @@ public class ConfigurationViewModel {
      * @param narcoticSold the quantity of narcotic sold
      * @param robotSold the quantity of robot sold
      */
-    public void sellVM(int waterSold, int furSold, int foodSold, int oreSold, int gameSold, int firearmSold, int medicineSold, int machineSold, int narcoticSold, int robotSold) {
+    public void sellConfig(int waterSold, int furSold, int foodSold, int oreSold, int gameSold, int firearmSold, int medicineSold, int machineSold, int narcoticSold, int robotSold) {
         marketVM.sell(waterSold, furSold, foodSold, oreSold, gameSold, firearmSold, medicineSold, machineSold, narcoticSold, robotSold);
     }
 
