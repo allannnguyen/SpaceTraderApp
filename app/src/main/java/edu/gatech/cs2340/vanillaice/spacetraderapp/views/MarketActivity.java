@@ -17,6 +17,8 @@ public class MarketActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
+        buyButton = findViewById(R.id.buyButton);
+        sellButton = findViewById(R.id.sellButton);
 
         buyButton.setOnClickListener(new View.OnClickListener() {
             @Override
