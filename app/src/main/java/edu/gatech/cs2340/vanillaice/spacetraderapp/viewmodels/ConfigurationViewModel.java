@@ -3,6 +3,7 @@ package edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels;
 import android.util.Log;
 
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Difficulty;
+import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Good;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Player;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Universe;
 
@@ -74,7 +75,7 @@ public class ConfigurationViewModel {
      * @param narcoticBuy quantity of narcotic bought
      * @param robotBuy quantity of robot bought
      */
-    public void buy(int waterBuy, int furBuy, int foodBuy, int oreBuy, int gameBuy, int firearmBuy, int medicineBuy, int machineBuy, int narcoticBuy, int robotBuy) {
+    public void buyVM(int waterBuy, int furBuy, int foodBuy, int oreBuy, int gameBuy, int firearmBuy, int medicineBuy, int machineBuy, int narcoticBuy, int robotBuy) {
         marketVM.buy(waterBuy, furBuy, foodBuy, oreBuy, gameBuy, firearmBuy, medicineBuy, machineBuy, narcoticBuy, robotBuy);
     }
 
@@ -91,7 +92,43 @@ public class ConfigurationViewModel {
      * @param narcoticSold the quantity of narcotic sold
      * @param robotSold the quantity of robot sold
      */
-    public void sell(int waterSold, int furSold, int foodSold, int oreSold, int gameSold, int firearmSold, int medicineSold, int machineSold, int narcoticSold, int robotSold) {
+    public void sellVM(int waterSold, int furSold, int foodSold, int oreSold, int gameSold, int firearmSold, int medicineSold, int machineSold, int narcoticSold, int robotSold) {
         marketVM.sell(waterSold, furSold, foodSold, oreSold, gameSold, firearmSold, medicineSold, machineSold, narcoticSold, robotSold);
+    }
+
+    /**
+     * Returns the player's current credits
+     * @param player current player
+     * @return player's credits
+     */
+    public int getPlayerCredits(Player player) {
+        return player.getCredits();
+    }
+
+    /**
+     * Returns the amount of a good in cargo
+     * @param good good to be checked
+     * @return amount of that good currently in cargo
+     */
+    public int getGoodInCargo(Good good) {
+        return player.getShip().getGood(good);
+    }
+
+    /**
+     * Calls the isBuyable function for the marketVM
+     * @param good
+     * @return if the good is buyable
+     */
+    public boolean isBuyableConfig(Good good) {
+        return marketVM.isBuyable(good);
+    }
+
+    /**
+     * Calls the isSellable function for the marketVM
+     * @param good
+     * @return if the good is sellable
+     */
+    public boolean isSellableConfig(Good good) {
+        return marketVM.isSellable(good);
     }
 }
