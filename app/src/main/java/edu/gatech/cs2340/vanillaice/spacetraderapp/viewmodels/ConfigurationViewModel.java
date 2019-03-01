@@ -47,6 +47,11 @@ public class ConfigurationViewModel {
         return universe;
     }
 
+    /**
+     * Prints out large log numbers
+     * @param tag
+     * @param content
+     */
     public static void largeLog(String tag, String content) {
         if (content.length() > 4000) {
             Log.d(tag, content.substring(0, 4000));
@@ -54,5 +59,39 @@ public class ConfigurationViewModel {
         } else {
             Log.d(tag, content);
         }
+    }
+
+    /**
+     * Calls the buy function for the marketVM
+     * @param waterBuy quantity of water bought
+     * @param furBuy quantity of fur bought
+     * @param foodBuy quantity of food bought
+     * @param oreBuy quantity of ore bought
+     * @param gameBuy quantity of game bought
+     * @param firearmBuy quantity of firearm bought
+     * @param medicineBuy quantity of medicine bought
+     * @param machineBuy quantity of machine bought
+     * @param narcoticBuy quantity of narcotic bought
+     * @param robotBuy quantity of robot bought
+     */
+    public void buy(int waterBuy, int furBuy, int foodBuy, int oreBuy, int gameBuy, int firearmBuy, int medicineBuy, int machineBuy, int narcoticBuy, int robotBuy) {
+        marketVM.buy(waterBuy, furBuy, foodBuy, oreBuy, gameBuy, firearmBuy, medicineBuy, machineBuy, narcoticBuy, robotBuy);
+    }
+
+    /**
+     * Calls the sell function for the marketVM
+     * @param waterSold the quantity of water sold
+     * @param furSold the quantity of fur sold
+     * @param foodSold the quantity of food sold
+     * @param oreSold the quantity of ore sold
+     * @param gameSold the quantity of game sold
+     * @param firearmSold the quantity of firearm sold
+     * @param medicineSold the quantity of medicine sold
+     * @param machineSold the quantity of machine sold
+     * @param narcoticSold the quantity of narcotic sold
+     * @param robotSold the quantity of robot sold
+     */
+    public void sell(int waterSold, int furSold, int foodSold, int oreSold, int gameSold, int firearmSold, int medicineSold, int machineSold, int narcoticSold, int robotSold) {
+        marketVM.sell(waterSold, furSold, foodSold, oreSold, gameSold, firearmSold, medicineSold, machineSold, narcoticSold, robotSold);
     }
 }
