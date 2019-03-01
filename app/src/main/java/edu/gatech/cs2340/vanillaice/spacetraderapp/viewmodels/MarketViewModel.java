@@ -69,7 +69,7 @@ public class MarketViewModel {
      * @return if the good is buyable
      */
     public boolean isBuyable(Good good) {
-        return market.getGoodsBuy().get(good);
+        return market.getGoodsBuy(good);
     }
 
     /**
@@ -78,7 +78,7 @@ public class MarketViewModel {
      * @return if the good is sellable
      */
     public boolean isSellable(Good good) {
-        return market.getGoodsSell().get(good);
+        return market.getGoodsSell(good);
     }
 
     /**

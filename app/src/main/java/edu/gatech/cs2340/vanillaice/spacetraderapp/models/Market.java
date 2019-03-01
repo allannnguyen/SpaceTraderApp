@@ -45,16 +45,16 @@ public class Market {
      * Gets the hash map of sellable goods
      * @return hash map of sellable goods
      */
-    public HashMap<Good, Boolean> getGoodsSell() {
-        return goodsSell;
+    public boolean getGoodsSell(Good good) {
+        return goodsSell.get(good);
     }
 
     /**
      * Gets the hash map of buyable goods
      * @return hash map of buyable goods
      */
-    public HashMap<Good, Boolean> getGoodsBuy() {
-        return goodsBuy;
+    public boolean getGoodsBuy(Good good) {
+        return goodsBuy.get(good);
     }
 
     /**
