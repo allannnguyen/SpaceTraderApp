@@ -12,6 +12,7 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Universe;
 public class ConfigurationViewModel {
     private static Player player;
     private static Universe universe;
+    private MarketViewModel marketVM;
 
     /**
      * Creates the player based on input parameters
@@ -27,6 +28,7 @@ public class ConfigurationViewModel {
         player = new Player(name, difficulty, pilot, fighter, trader, engineer, universe.getPlanets().get(0));
         Log.d("Player", player.toString());
         largeLog("Universe", universe.toString());
+        marketVM = new MarketViewModel(player);
     }
 
     /**
