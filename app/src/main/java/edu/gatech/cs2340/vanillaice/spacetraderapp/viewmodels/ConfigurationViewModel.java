@@ -25,6 +25,7 @@ public class ConfigurationViewModel {
     public void createPlayer(String name, Difficulty difficulty, int pilot, int fighter, int trader, int engineer) {
         universe = new Universe();
         player = new Player(name, difficulty, pilot, fighter, trader, engineer, universe.getPlanets().get(0));
+        Log.d("Player", player.toString());
         largeLog("Universe", universe.toString());
     }
 
