@@ -1,6 +1,7 @@
 package edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels;
 
 import android.util.Log;
+import java.io.Serializable;
 
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Difficulty;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Player;
@@ -9,7 +10,7 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Universe;
 /**
  * Handles the player creation process and subsequent checks
  */
-public class ConfigurationViewModel {
+public class ConfigurationViewModel implements Serializable{
     private static Player player;
     private static Universe universe;
 

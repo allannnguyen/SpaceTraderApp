@@ -1,13 +1,14 @@
 package edu.gatech.cs2340.vanillaice.spacetraderapp.models;
 
 import android.support.annotation.NonNull;
+import java.io.Serializable;
 
 /**
  * Represents a player for the game.
  * A player has a name, four skills with sixteen skill points allocated across them,
  * a difficulty setting for the game, their number of credits, and a ship they own.
  */
-public class Player {
+public class Player implements Serializable{
     private String name;
     private int pilot;
     private int fighter;
