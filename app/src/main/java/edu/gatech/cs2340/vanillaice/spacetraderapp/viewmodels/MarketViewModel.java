@@ -146,5 +146,4 @@ public class MarketViewModel {
 
         player.setCredits(player.getCredits() + total);
     }
-
 }

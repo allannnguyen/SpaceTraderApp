@@ -11,9 +11,8 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Universe;
  * Handles the player creation process and subsequent checks
  */
 public class ConfigurationViewModel {
-    private static Player player;
-    private static Universe universe;
-    private MarketViewModel marketVM;
+    private Player player;
+    private Universe universe;
 
     /**
      * Creates the player based on input parameters
@@ -29,7 +28,6 @@ public class ConfigurationViewModel {
         player = new Player(name, difficulty, pilot, fighter, trader, engineer, universe.getPlanets().get(0));
         Log.d("Player", player.toString());
         largeLog("Universe", universe.toString());
-        marketVM = new MarketViewModel(player);
     }
 
     /**
@@ -60,75 +58,5 @@ public class ConfigurationViewModel {
         } else {
             Log.d(tag, content);
         }
-    }
-
-    /**
-     * Calls the buy function for the marketVM
-     * @param waterBuy quantity of water bought
-     * @param furBuy quantity of fur bought
-     * @param foodBuy quantity of food bought
-     * @param oreBuy quantity of ore bought
-     * @param gameBuy quantity of game bought
-     * @param firearmBuy quantity of firearm bought
-     * @param medicineBuy quantity of medicine bought
-     * @param machineBuy quantity of machine bought
-     * @param narcoticBuy quantity of narcotic bought
-     * @param robotBuy quantity of robot bought
-     */
-    public void buyConfig(int waterBuy, int furBuy, int foodBuy, int oreBuy, int gameBuy, int firearmBuy, int medicineBuy, int machineBuy, int narcoticBuy, int robotBuy) {
-        marketVM.buy(waterBuy, furBuy, foodBuy, oreBuy, gameBuy, firearmBuy, medicineBuy, machineBuy, narcoticBuy, robotBuy);
-    }
-
-    /**
-     * Calls the sell function for the marketVM
-     * @param waterSold the quantity of water sold
-     * @param furSold the quantity of fur sold
-     * @param foodSold the quantity of food sold
-     * @param oreSold the quantity of ore sold
-     * @param gameSold the quantity of game sold
-     * @param firearmSold the quantity of firearm sold
-     * @param medicineSold the quantity of medicine sold
-     * @param machineSold the quantity of machine sold
-     * @param narcoticSold the quantity of narcotic sold
-     * @param robotSold the quantity of robot sold
-     */
-    public void sellConfig(int waterSold, int furSold, int foodSold, int oreSold, int gameSold, int firearmSold, int medicineSold, int machineSold, int narcoticSold, int robotSold) {
-        marketVM.sell(waterSold, furSold, foodSold, oreSold, gameSold, firearmSold, medicineSold, machineSold, narcoticSold, robotSold);
-    }
-
-    /**
-     * Returns the player's current credits
-     * @param player current player
-     * @return player's credits
-     */
-    public int getPlayerCredits(Player player) {
-        return player.getCredits();
-    }
-
-    /**
-     * Returns the amount of a good in cargo
-     * @param good good to be checked
-     * @return amount of that good currently in cargo
-     */
-    public int getGoodInCargo(Good good) {
-        return player.getShip().getGood(good);
-    }
-
-    /**
-     * Calls the isBuyable function for the marketVM
-     * @param good
-     * @return if the good is buyable
-     */
-    public boolean isBuyableConfig(Good good) {
-        return marketVM.isBuyable(good);
-    }
-
-    /**
-     * Calls the isSellable function for the marketVM
-     * @param good
-     * @return if the good is sellable
-     */
-    public boolean isSellableConfig(Good good) {
-        return marketVM.isSellable(good);
     }
 }
