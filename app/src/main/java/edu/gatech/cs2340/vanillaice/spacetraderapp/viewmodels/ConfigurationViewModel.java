@@ -3,6 +3,7 @@ package edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels;
 import android.util.Log;
 
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Difficulty;
+import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Good;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Player;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Universe;
 
@@ -10,8 +11,8 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Universe;
  * Handles the player creation process and subsequent checks
  */
 public class ConfigurationViewModel {
-    private static Player player;
-    private static Universe universe;
+    private Player player;
+    private Universe universe;
 
     /**
      * Creates the player based on input parameters
@@ -45,6 +46,11 @@ public class ConfigurationViewModel {
         return universe;
     }
 
+    /**
+     * Prints out large log numbers
+     * @param tag
+     * @param content
+     */
     public static void largeLog(String tag, String content) {
         if (content.length() > 4000) {
             Log.d(tag, content.substring(0, 4000));

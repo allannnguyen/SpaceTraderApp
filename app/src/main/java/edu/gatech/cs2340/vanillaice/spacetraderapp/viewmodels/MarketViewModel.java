@@ -7,7 +7,6 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Player;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Ship;
 
 public class MarketViewModel {
-    private ConfigurationViewModel game;
     private Player player;
     private Ship ship;
     private Market market;
@@ -15,11 +14,10 @@ public class MarketViewModel {
     /**
      * Constructor for the MarketViewModel
      */
-    public MarketViewModel() {
-        game = new ConfigurationViewModel();
-        player = game.getPlayer();
-        ship = player.getShip();
-        market = player.getPlanet().getMarket();
+    public MarketViewModel(Player player) {
+        this.player = player;
+        this.ship = player.getShip();
+        this.market = player.getMarket();
     }
 
     /**
@@ -71,7 +69,7 @@ public class MarketViewModel {
      * @return if the good is buyable
      */
     public boolean isBuyable(Good good) {
-        return market.getGoodsBuy().get(good);
+        return market.getGoodsBuy(good);
     }
 
     /**
@@ -80,7 +78,7 @@ public class MarketViewModel {
      * @return if the good is sellable
      */
     public boolean isSellable(Good good) {
-        return market.getGoodsSell().get(good);
+        return market.getGoodsSell(good);
     }
 
     /**
@@ -148,5 +146,4 @@ public class MarketViewModel {
 
         player.setCredits(player.getCredits() + total);
     }
-
 }
