@@ -139,4 +139,10 @@ public class Player implements Serializable{
     public Planet getPlanet() {
         return currPlanet;
     }
+
+    /**
+     * Gets the market of the planet the player is currently on
+     * @return the current planet's market
+     */
+    public Market getMarket() { return currPlanet.getMarket(); }
 }
