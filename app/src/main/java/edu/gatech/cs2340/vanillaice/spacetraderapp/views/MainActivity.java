@@ -11,12 +11,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import java.io.Serializable;
 
 import edu.gatech.cs2340.vanillaice.spacetraderapp.R;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Difficulty;
+import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Player;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.ConfigurationViewModel;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Serializable {
     private ConfigurationViewModel viewModel;
     private EditText nameEntry;
     private TextView remainingPoints;
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     int total = 16;
 
     @Override
+    @SuppressWarnings("serial")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -181,7 +184,11 @@ public class MainActivity extends AppCompatActivity {
                    viewModel.createPlayer(nameEntry.getText().toString(),
                            (Difficulty) difficultySpinner.getSelectedItem(),
                            pCounter, fCounter, tCounter, eCounter);
-                   startActivity(new Intent(MainActivity.this, GameActivity.class));
+                   Player player = viewModel.getPlayer();
+
+                   Intent i = new Intent(MainActivity.this, GameActivity.class);
+                   i.putExtra("player", player);
+                   startActivity(i);
                }
            }
         });

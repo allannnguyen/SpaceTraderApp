@@ -5,8 +5,9 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Good;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Market;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Player;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Ship;
+import java.io.Serializable;
 
-public class MarketViewModel {
+public class MarketViewModel implements Serializable {
     private Player player;
     private Ship ship;
     private Market market;
