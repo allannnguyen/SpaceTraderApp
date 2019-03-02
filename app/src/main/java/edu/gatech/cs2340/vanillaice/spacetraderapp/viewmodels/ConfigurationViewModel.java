@@ -31,6 +31,15 @@ public class ConfigurationViewModel {
     }
 
     /**
+     * Gets the configuration viewmodel
+     *
+     * @return the configuration viewmodel
+     */
+    public ConfigurationViewModel getConfigVM() {
+        return this;
+    }
+
+    /**
      * Gets the player
      * @return the player
      */
