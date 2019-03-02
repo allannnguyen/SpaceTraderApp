@@ -60,7 +60,7 @@ public class BuyActivity extends AppCompatActivity {
     private TextView price8;
     private TextView price9;
     private TextView price10;
-    int total = 0;
+    private int total = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,7 +147,7 @@ public class BuyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (total > 0) {
                     twoCounter++;
-                    quant2.setText(Integer.toString(oneCounter));
+                    quant2.setText(Integer.toString(twoCounter));
                     total--;
                 }
             }
@@ -158,7 +158,7 @@ public class BuyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (twoCounter > 0) {
                     twoCounter++;
-                    quant2.setText(Integer.toString(oneCounter));
+                    quant2.setText(Integer.toString(twoCounter));
                     total++;
                 }
             }
@@ -169,7 +169,7 @@ public class BuyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (total > 0) {
                     threeCounter++;
-                    quant3.setText(Integer.toString(oneCounter));
+                    quant3.setText(Integer.toString(threeCounter));
                     total--;
                 }
             }
@@ -180,7 +180,7 @@ public class BuyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (threeCounter > 0) {
                     threeCounter++;
-                    quant3.setText(Integer.toString(oneCounter));
+                    quant3.setText(Integer.toString(threeCounter));
                     total++;
                 }
             }
@@ -191,7 +191,7 @@ public class BuyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (total > 0) {
                     fourCounter++;
-                    quant4.setText(Integer.toString(oneCounter));
+                    quant4.setText(Integer.toString(fourCounter));
                     total--;
                 }
             }
@@ -202,7 +202,7 @@ public class BuyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (fourCounter > 0) {
                     fourCounter++;
-                    quant4.setText(Integer.toString(oneCounter));
+                    quant4.setText(Integer.toString(fourCounter));
                     total++;
                 }
             }
@@ -213,7 +213,7 @@ public class BuyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (total > 0) {
                     fiveCounter++;
-                    quant5.setText(Integer.toString(oneCounter));
+                    quant5.setText(Integer.toString(fiveCounter));
                     total--;
                 }
             }
@@ -224,7 +224,7 @@ public class BuyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (fiveCounter > 0) {
                     fiveCounter++;
-                    quant5.setText(Integer.toString(oneCounter));
+                    quant5.setText(Integer.toString(fiveCounter));
                     total++;
                 }
             }
@@ -235,7 +235,7 @@ public class BuyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (total > 0) {
                     sixCounter++;
-                    quant6.setText(Integer.toString(oneCounter));
+                    quant6.setText(Integer.toString(sixCounter));
                     total--;
                 }
             }
@@ -246,7 +246,7 @@ public class BuyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (sixCounter > 0) {
                     sixCounter++;
-                    quant6.setText(Integer.toString(oneCounter));
+                    quant6.setText(Integer.toString(sixCounter));
                     total++;
                 }
             }
@@ -257,7 +257,7 @@ public class BuyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (total > 0) {
                     sevenCounter++;
-                    quant7.setText(Integer.toString(oneCounter));
+                    quant7.setText(Integer.toString(sevenCounter));
                     total--;
                 }
             }
@@ -268,7 +268,7 @@ public class BuyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (sevenCounter > 0) {
                     sevenCounter++;
-                    quant7.setText(Integer.toString(oneCounter));
+                    quant7.setText(Integer.toString(sevenCounter));
                     total++;
                 }
             }
@@ -279,7 +279,7 @@ public class BuyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (total > 0) {
                     eightCounter++;
-                    quant8.setText(Integer.toString(oneCounter));
+                    quant8.setText(Integer.toString(eightCounter));
                     total--;
                 }
             }
@@ -290,7 +290,7 @@ public class BuyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (eightCounter > 0) {
                     eightCounter++;
-                    quant8.setText(Integer.toString(oneCounter));
+                    quant8.setText(Integer.toString(eightCounter));
                     total++;
                 }
             }
@@ -301,7 +301,7 @@ public class BuyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (total > 0) {
                     nineCounter++;
-                    quant9.setText(Integer.toString(oneCounter));
+                    quant9.setText(Integer.toString(nineCounter));
                     total--;
                 }
             }
@@ -312,7 +312,7 @@ public class BuyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (nineCounter > 0) {
                     nineCounter++;
-                    quant9.setText(Integer.toString(oneCounter));
+                    quant9.setText(Integer.toString(nineCounter));
                     total++;
                 }
             }
@@ -323,7 +323,7 @@ public class BuyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (total > 0) {
                     tenCounter++;
-                    quant10.setText(Integer.toString(oneCounter));
+                    quant10.setText(Integer.toString(tenCounter));
                     total--;
                 }
             }
@@ -334,7 +334,7 @@ public class BuyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (tenCounter > 0) {
                     tenCounter++;
-                    quant10.setText(Integer.toString(oneCounter));
+                    quant10.setText(Integer.toString(tenCounter));
                     total++;
                 }
             }
