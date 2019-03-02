@@ -149,4 +149,13 @@ public class MarketViewModel implements Serializable {
 
         player.setCredits(player.getCredits() + total);
     }
+
+    /**
+     * Returns the price of a good from the current market
+     * @param good the good to check
+     * @return the good's price at this market
+     */
+    public int getGoodPrice(Good good) {
+        return market.getPrice(good);
+    }
 }
