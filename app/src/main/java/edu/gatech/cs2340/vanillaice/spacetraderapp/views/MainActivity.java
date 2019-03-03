@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         setContentView(R.layout.activity_main);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        viewModel = new ConfigurationViewModel();
+        viewModel = ConfigurationViewModel.getInstance();
         nameEntry = findViewById(R.id.nameEntry);
         remainingPoints = findViewById(R.id.remainingPoints);
         pUp = findViewById(R.id.pUp);
