@@ -1,5 +1,6 @@
 package edu.gatech.cs2340.vanillaice.spacetraderapp.views;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -71,6 +72,8 @@ public class SellActivity extends AppCompatActivity {
     private int amountNine = 0;
     private int amountTen = 0;
 
+    private Button sellButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +89,9 @@ public class SellActivity extends AppCompatActivity {
         amountEight = 0; //THIS NEEDS TO BE THE AMOUNT THEY HAVE IN CARGO OF THAT GOOD I.E. marketVM.getShip().getGood(Good.MACHINES);
         amountNine = 0; //THIS NEEDS TO BE THE AMOUNT THEY HAVE IN CARGO OF THAT GOOD I.E. marketVM.getShip().getGood(Good.NARCOTICS);
         amountTen = 0; //THIS NEEDS TO BE THE AMOUNT THEY HAVE IN CARGO OF THAT GOOD I.E. marketVM.getShip().getGood(Good.ROBOTS);
+
+        sellButton = findViewById(R.id.sellButton2);
+
         upButton1 = findViewById(R.id.upButton1);
         downButton1 = findViewById(R.id.downButton1);
         upButton2 = findViewById(R.id.upButton2);
@@ -334,6 +340,16 @@ public class SellActivity extends AppCompatActivity {
                     tenCounter--;
                     quant10.setText(Integer.toString(tenCounter));
                 }
+            }
+        });
+
+        sellButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //pass viewmodel to sellactivity
+                Intent i = new Intent(SellActivity.this, MarketActivity.class);
+                //i.putExtra("viewmodel", viewModel);
+                startActivity(i);
             }
         });
     }

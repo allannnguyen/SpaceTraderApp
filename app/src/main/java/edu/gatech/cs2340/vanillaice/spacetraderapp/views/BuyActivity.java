@@ -1,5 +1,6 @@
 package edu.gatech.cs2340.vanillaice.spacetraderapp.views;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -62,11 +63,16 @@ public class BuyActivity extends AppCompatActivity {
     private TextView price10;
     private int total = 0;
 
+    private Button buyButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy);
         total = 0; //THIS NEEDS TO BE THE TOTAL NUMBER OF CARGO SPACE AVAILABLE I.E. getIntent().getCargoSpace() or something
+
+        buyButton = findViewById(R.id.buyButton2);
+
         upButton1 = findViewById(R.id.upButton1);
         downButton1 = findViewById(R.id.downButton1);
         upButton2 = findViewById(R.id.upButton2);
@@ -337,6 +343,16 @@ public class BuyActivity extends AppCompatActivity {
                     quant10.setText(Integer.toString(tenCounter));
                     total++;
                 }
+            }
+        });
+
+        buyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //pass viewmodel to sellactivity
+                Intent i = new Intent(BuyActivity.this, MarketActivity.class);
+                //i.putExtra("viewmodel", viewModel);
+                startActivity(i);
             }
         });
     }

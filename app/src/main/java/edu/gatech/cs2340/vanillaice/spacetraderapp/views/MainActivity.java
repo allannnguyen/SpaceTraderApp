@@ -187,7 +187,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
                    Player player = viewModel.getPlayer();
 
                    Intent i = new Intent(MainActivity.this, GameActivity.class);
-                   i.putExtra("player", player);
+                   //i.putExtra("player", player);
                    startActivity(i);
                }
            }

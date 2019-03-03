@@ -22,17 +22,17 @@ public class MarketActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
         buyButton = findViewById(R.id.buyButton);
-        sellButton = findViewById(R.id.sellButton);
-        Intent i = getIntent();
-        player = (Player) i.getSerializableExtra("player");
-        viewModel = new MarketViewModel(player);
+        sellButton = findViewById(R.id.sellButton2);
+        //Intent i = getIntent();
+        //player = (Player) i.getSerializableExtra("player");
+        //viewModel = new MarketViewModel(player);
 
         buyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //pass viwemodel to buyactivity
                 Intent i = new Intent(MarketActivity.this, BuyActivity.class);
-                i.putExtra("viewmodel", viewModel);
+                //i.putExtra("viewmodel", viewModel);
                 startActivity(i);
             }
         });
@@ -42,7 +42,7 @@ public class MarketActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //pass viewmodel to sellactivity
                 Intent i = new Intent(MarketActivity.this, SellActivity.class);
-                i.putExtra("viewmodel", viewModel);
+                //i.putExtra("viewmodel", viewModel);
                 startActivity(i);
             }
         });
