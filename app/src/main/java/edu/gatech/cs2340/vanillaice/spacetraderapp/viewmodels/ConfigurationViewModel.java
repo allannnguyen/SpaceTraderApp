@@ -13,7 +13,13 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Universe;
 public class ConfigurationViewModel {
     private Player player;
     private Universe universe;
+    private static ConfigurationViewModel configSingle = new ConfigurationViewModel();
 
+    private ConfigurationViewModel() {}
+
+    public static ConfigurationViewModel getInstance() {
+        return configSingle;
+    }
     /**
      * Creates the player based on input parameters
      * @param name player's name
@@ -28,15 +34,6 @@ public class ConfigurationViewModel {
         player = new Player(name, difficulty, pilot, fighter, trader, engineer, universe.getPlanets().get(0));
         Log.d("Player", player.toString());
         largeLog("Universe", universe.toString());
-    }
-
-    /**
-     * Gets the configuration viewmodel
-     *
-     * @return the configuration viewmodel
-     */
-    public ConfigurationViewModel getConfigVM() {
-        return this;
     }
 
     /**

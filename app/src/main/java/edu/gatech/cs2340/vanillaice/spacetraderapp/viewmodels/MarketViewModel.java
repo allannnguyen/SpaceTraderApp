@@ -22,15 +22,6 @@ public class MarketViewModel implements Serializable {
     }
 
     /**
-     * Gets the market viewmodel
-     * @return the market viewmodel
-     */
-    public MarketViewModel getMarketVM() {
-        return this;
-    }
-
-
-    /**
      * Purchases items if player has enough credits
      * @param waterBuy quantity of water bought
      * @param furBuy quantity of fur bought
