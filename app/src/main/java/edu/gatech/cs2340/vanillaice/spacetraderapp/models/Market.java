@@ -26,6 +26,9 @@ public class Market {
         this.goodsPrice = new HashMap<>();
 
         for (Good good : Good.values()) {
+            goodsBuy.put(good, false);
+            goodsSell.put(good, false);
+
             // If they can produce, they can buy and sell
             if (techLevel.ordinal() >= good.getMtlp()) {
                 goodsBuy.put(good, true);
@@ -34,7 +37,7 @@ public class Market {
             // if they can use, they can buy but not sell
             } else if (techLevel.ordinal() >= good.getMtlu()) {
                 goodsBuy.put(good, true);
-                goodsSell.put(good, false);
+                //goodsSell.put(good, false);
             }
 
             goodsPrice.put(good, getPrice(good));

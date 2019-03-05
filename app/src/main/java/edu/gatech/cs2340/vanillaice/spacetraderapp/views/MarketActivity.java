@@ -23,7 +23,7 @@ public class MarketActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
         buyButton = findViewById(R.id.buyButton);
-        sellButton = findViewById(R.id.sellButton);
+        sellButton = findViewById(R.id.sellButton2);
         //Intent i = getIntent();
         //player = (Player) i.getSerializableExtra("player");
         //viewModel = new MarketViewModel(player);
