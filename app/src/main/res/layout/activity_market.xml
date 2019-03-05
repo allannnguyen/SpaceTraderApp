@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/greenishresized" />
 
     <TextView
@@ -33,10 +33,10 @@
         app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/marketCredits"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="76dp"
         android:fontFamily="@font/trade_winds"
         android:text="Cargo Credits"
         android:textSize="24sp"
@@ -46,15 +46,14 @@
         app:layout_constraintTop_toBottomOf="@+id/marketTextView" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/marketPlanet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="56dp"
         android:fontFamily="@font/trade_winds"
         android:text="Planet"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sellButton2" />
 
@@ -87,12 +86,12 @@
         android:id="@+id/sellButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
         android:text="sell"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/marketCredits" />
 
     <Button
         android:id="@+id/buyButton"
@@ -101,7 +100,18 @@
         android:layout_marginTop="8dp"
         android:text="buy"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/marketPlanet" />
+
+    <TextView
+        android:id="@+id/marketCargo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Cargo Space: "
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/marketCredits"
+        app:layout_constraintEnd_toEndOf="@+id/marketCredits"
+        app:layout_constraintStart_toStartOf="@+id/marketCredits" />
 </android.support.constraint.ConstraintLayout>

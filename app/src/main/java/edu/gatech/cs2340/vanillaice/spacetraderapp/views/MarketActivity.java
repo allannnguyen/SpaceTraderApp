@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import edu.gatech.cs2340.vanillaice.spacetraderapp.R;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Player;
@@ -14,6 +15,9 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.MarketViewModel;
 public class MarketActivity extends AppCompatActivity {
     private Button buyButton;
     private Button sellButton;
+    private TextView credits;
+    private TextView planet;
+    private TextView cargo;
     private Player player;
     private MarketViewModel viewModel = new MarketViewModel(ConfigurationViewModel.getInstance().getPlayer());
 
@@ -22,8 +26,18 @@ public class MarketActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
+        player = ConfigurationViewModel.getInstance().getPlayer();
+        credits = findViewById(R.id.marketCredits);
+        cargo = findViewById(R.id.marketCargo);
         buyButton = findViewById(R.id.buyButton);
         sellButton = findViewById(R.id.sellButton2);
+        planet = findViewById(R.id.marketPlanet);
+        String creditsText = "Cargo Credits: " + viewModel.getPlayerCredits();
+        String planetText = "Planet: " + player.getPlanet();
+        String cargoText = "Cargo Space: " + viewModel.getCargoSpace();
+        credits.setText(creditsText);
+        planet.setText(planetText);
+        cargo.setText(cargoText);
         //Intent i = getIntent();
         //player = (Player) i.getSerializableExtra("player");
         //viewModel = new MarketViewModel(player);
