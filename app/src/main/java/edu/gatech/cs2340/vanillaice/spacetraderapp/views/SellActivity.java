@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import edu.gatech.cs2340.vanillaice.spacetraderapp.R;
+import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.ConfigurationViewModel;
+import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.MarketViewModel;
 
 public class SellActivity extends AppCompatActivity {
 
@@ -71,7 +73,7 @@ public class SellActivity extends AppCompatActivity {
     private int amountEight = 0;
     private int amountNine = 0;
     private int amountTen = 0;
-
+    private MarketViewModel viewModel = new MarketViewModel(ConfigurationViewModel.getInstance().getPlayer());
     private Button sellButton;
 
 

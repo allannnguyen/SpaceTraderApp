@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import edu.gatech.cs2340.vanillaice.spacetraderapp.R;
+import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Good;
+import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.ConfigurationViewModel;
+import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.MarketViewModel;
 
 public class BuyActivity extends AppCompatActivity {
 
@@ -62,14 +65,14 @@ public class BuyActivity extends AppCompatActivity {
     private TextView price9;
     private TextView price10;
     private int total = 0;
-
+    private MarketViewModel viewModel = new MarketViewModel(ConfigurationViewModel.getInstance().getPlayer());
     private Button buyButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy);
-        total = 0; //THIS NEEDS TO BE THE TOTAL NUMBER OF CARGO SPACE AVAILABLE I.E. getIntent().getCargoSpace() or something
+        total = viewModel.getCargoSpace();
 
         buyButton = findViewById(R.id.buyButton2);
 
@@ -113,16 +116,86 @@ public class BuyActivity extends AppCompatActivity {
         price8 = findViewById(R.id.price8);
         price9 = findViewById(R.id.price9);
         price10 = findViewById(R.id.price10);
-        price1.setText(Integer.toString(30)); //CHANGE TO marketvm.getGoodPrice(Good.WATER); or something similar
-        price2.setText(Integer.toString(250)); //CHANGE TO marketvm.getGoodPrice(Good.FURS); or something similar
-        price3.setText(Integer.toString(100)); //CHANGE TO marketvm.getGoodPrice(Good.FOOD); or something similar
-        price4.setText(Integer.toString(350)); //CHANGE TO marketvm.getGoodPrice(Good.ORE); or something similar
-        price5.setText(Integer.toString(250)); //CHANGE TO marketvm.getGoodPrice(Good.GAMES); or something similar
-        price6.setText(Integer.toString(1250)); //CHANGE TO marketvm.getGoodPrice(Good.FIREARMS); or something similar
-        price7.setText(Integer.toString(650)); //CHANGE TO marketvm.getGoodPrice(Good.MEDICINE); or something similar
-        price8.setText(Integer.toString(900)); //CHANGE TO marketvm.getGoodPrice(Good.MACHINES); or something similar
-        price9.setText(Integer.toString(3500)); //CHANGE TO marketvm.getGoodPrice(Good.NARCOTICS); or something similar
-        price10.setText(Integer.toString(5000)); //CHANGE TO marketvm.getGoodPrice(Good.ROBOTS); or something similar
+        price1.setText(Integer.toString(viewModel.getGoodPrice(Good.WATER))); //CHANGE TO marketvm.getGoodPrice(Good.WATER); or something similar
+        price2.setText(Integer.toString(viewModel.getGoodPrice(Good.FURS))); //CHANGE TO marketvm.getGoodPrice(Good.FURS); or something similar
+        price3.setText(Integer.toString(viewModel.getGoodPrice(Good.FOOD))); //CHANGE TO marketvm.getGoodPrice(Good.FOOD); or something similar
+        price4.setText(Integer.toString(viewModel.getGoodPrice(Good.ORE))); //CHANGE TO marketvm.getGoodPrice(Good.ORE); or something similar
+        price5.setText(Integer.toString(viewModel.getGoodPrice(Good.GAMES))); //CHANGE TO marketvm.getGoodPrice(Good.GAMES); or something similar
+        price6.setText(Integer.toString(viewModel.getGoodPrice(Good.FIREARMS))); //CHANGE TO marketvm.getGoodPrice(Good.FIREARMS); or something similar
+        price7.setText(Integer.toString(viewModel.getGoodPrice(Good.MEDICINE))); //CHANGE TO marketvm.getGoodPrice(Good.MEDICINE); or something similar
+        price8.setText(Integer.toString(viewModel.getGoodPrice(Good.MACHINES))); //CHANGE TO marketvm.getGoodPrice(Good.MACHINES); or something similar
+        price9.setText(Integer.toString(viewModel.getGoodPrice(Good.NARCOTICS))); //CHANGE TO marketvm.getGoodPrice(Good.NARCOTICS); or something similar
+        price10.setText(Integer.toString(viewModel.getGoodPrice(Good.ROBOTS))); //CHANGE TO marketvm.getGoodPrice(Good.ROBOTS); or something similar
+
+        if (!viewModel.isBuyable(Good.WATER)) {
+            price1.setVisibility(View.INVISIBLE);
+            quant1.setVisibility(View.INVISIBLE);
+            upButton1.setVisibility(View.INVISIBLE);
+            downButton1.setVisibility(View.INVISIBLE);
+        }
+
+        if (!viewModel.isBuyable(Good.FURS)) {
+            price2.setVisibility(View.INVISIBLE);
+            quant2.setVisibility(View.INVISIBLE);
+            upButton2.setVisibility(View.INVISIBLE);
+            downButton2.setVisibility(View.INVISIBLE);
+        }
+
+        if (!viewModel.isBuyable(Good.FOOD)) {
+            price3.setVisibility(View.INVISIBLE);
+            quant3.setVisibility(View.INVISIBLE);
+            upButton3.setVisibility(View.INVISIBLE);
+            downButton3.setVisibility(View.INVISIBLE);
+        }
+
+        if (!viewModel.isBuyable(Good.ORE)) {
+            price4.setVisibility(View.INVISIBLE);
+            quant4.setVisibility(View.INVISIBLE);
+            upButton4.setVisibility(View.INVISIBLE);
+            downButton4.setVisibility(View.INVISIBLE);
+        }
+
+        if (!viewModel.isBuyable(Good.GAMES)) {
+            price5.setVisibility(View.INVISIBLE);
+            quant5.setVisibility(View.INVISIBLE);
+            upButton5.setVisibility(View.INVISIBLE);
+            downButton5.setVisibility(View.INVISIBLE);
+        }
+
+        if (!viewModel.isBuyable(Good.FIREARMS)) {
+            price6.setVisibility(View.INVISIBLE);
+            quant6.setVisibility(View.INVISIBLE);
+            upButton6.setVisibility(View.INVISIBLE);
+            downButton6.setVisibility(View.INVISIBLE);
+        }
+
+        if (!viewModel.isBuyable(Good.MEDICINE)) {
+            price7.setVisibility(View.INVISIBLE);
+            quant7.setVisibility(View.INVISIBLE);
+            upButton7.setVisibility(View.INVISIBLE);
+            downButton7.setVisibility(View.INVISIBLE);
+        }
+
+        if (!viewModel.isBuyable(Good.MACHINES)) {
+            price8.setVisibility(View.INVISIBLE);
+            quant8.setVisibility(View.INVISIBLE);
+            upButton8.setVisibility(View.INVISIBLE);
+            downButton8.setVisibility(View.INVISIBLE);
+        }
+
+        if (!viewModel.isBuyable(Good.NARCOTICS)) {
+            price9.setVisibility(View.INVISIBLE);
+            quant9.setVisibility(View.INVISIBLE);
+            upButton9.setVisibility(View.INVISIBLE);
+            downButton9.setVisibility(View.INVISIBLE);
+        }
+
+        if (!viewModel.isBuyable(Good.ROBOTS)) {
+            price10.setVisibility(View.INVISIBLE);
+            quant10.setVisibility(View.INVISIBLE);
+            upButton10.setVisibility(View.INVISIBLE);
+            downButton10.setVisibility(View.INVISIBLE);
+        }
 
         upButton1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,7 +213,7 @@ public class BuyActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (oneCounter > 0) {
-                    oneCounter++;
+                    oneCounter--;
                     quant1.setText(Integer.toString(oneCounter));
                     total++;
                     //remainingCargo.setText("Remaining Cargo: " + Integer.toString(total));
@@ -163,7 +236,7 @@ public class BuyActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (twoCounter > 0) {
-                    twoCounter++;
+                    twoCounter--;
                     quant2.setText(Integer.toString(twoCounter));
                     total++;
                 }
@@ -185,7 +258,7 @@ public class BuyActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (threeCounter > 0) {
-                    threeCounter++;
+                    threeCounter--;
                     quant3.setText(Integer.toString(threeCounter));
                     total++;
                 }
@@ -207,7 +280,7 @@ public class BuyActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (fourCounter > 0) {
-                    fourCounter++;
+                    fourCounter--;
                     quant4.setText(Integer.toString(fourCounter));
                     total++;
                 }
@@ -229,7 +302,7 @@ public class BuyActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (fiveCounter > 0) {
-                    fiveCounter++;
+                    fiveCounter--;
                     quant5.setText(Integer.toString(fiveCounter));
                     total++;
                 }
@@ -251,7 +324,7 @@ public class BuyActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (sixCounter > 0) {
-                    sixCounter++;
+                    sixCounter--;
                     quant6.setText(Integer.toString(sixCounter));
                     total++;
                 }
@@ -273,7 +346,7 @@ public class BuyActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (sevenCounter > 0) {
-                    sevenCounter++;
+                    sevenCounter--;
                     quant7.setText(Integer.toString(sevenCounter));
                     total++;
                 }
@@ -295,7 +368,7 @@ public class BuyActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (eightCounter > 0) {
-                    eightCounter++;
+                    eightCounter--;
                     quant8.setText(Integer.toString(eightCounter));
                     total++;
                 }
@@ -317,7 +390,7 @@ public class BuyActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (nineCounter > 0) {
-                    nineCounter++;
+                    nineCounter--;
                     quant9.setText(Integer.toString(nineCounter));
                     total++;
                 }
@@ -339,7 +412,7 @@ public class BuyActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (tenCounter > 0) {
-                    tenCounter++;
+                    tenCounter--;
                     quant10.setText(Integer.toString(tenCounter));
                     total++;
                 }
@@ -349,6 +422,8 @@ public class BuyActivity extends AppCompatActivity {
         buyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                viewModel.buy(oneCounter, twoCounter, threeCounter, fourCounter, fiveCounter,
+                        sixCounter, sevenCounter, eightCounter, nineCounter, tenCounter);
                 //pass viewmodel to sellactivity
                 Intent i = new Intent(BuyActivity.this, MarketActivity.class);
                 //i.putExtra("viewmodel", viewModel);

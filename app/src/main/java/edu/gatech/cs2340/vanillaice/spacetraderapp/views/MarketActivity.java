@@ -8,13 +8,14 @@ import android.widget.Button;
 
 import edu.gatech.cs2340.vanillaice.spacetraderapp.R;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Player;
+import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.ConfigurationViewModel;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.MarketViewModel;
 
 public class MarketActivity extends AppCompatActivity {
     private Button buyButton;
     private Button sellButton;
     private Player player;
-    private MarketViewModel viewModel;
+    private MarketViewModel viewModel = new MarketViewModel(ConfigurationViewModel.getInstance().getPlayer());
 
 
     @Override
@@ -22,7 +23,7 @@ public class MarketActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
         buyButton = findViewById(R.id.buyButton);
-        sellButton = findViewById(R.id.sellButton2);
+        sellButton = findViewById(R.id.sellButton);
         //Intent i = getIntent();
         //player = (Player) i.getSerializableExtra("player");
         //viewModel = new MarketViewModel(player);
