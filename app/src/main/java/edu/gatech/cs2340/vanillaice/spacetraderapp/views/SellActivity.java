@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import edu.gatech.cs2340.vanillaice.spacetraderapp.R;
+import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Good;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.ConfigurationViewModel;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.MarketViewModel;
 
@@ -81,16 +82,16 @@ public class SellActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sell);
-        amountOne = 0; //THIS NEEDS TO BE THE AMOUNT THEY HAVE IN CARGO OF THAT GOOD I.E. marketVM.getShip().getGood(Good.WATER);
-        amountTwo = 0; //THIS NEEDS TO BE THE AMOUNT THEY HAVE IN CARGO OF THAT GOOD I.E. marketVM.getShip().getGood(Good.FURS);
-        amountThree = 0; //THIS NEEDS TO BE THE AMOUNT THEY HAVE IN CARGO OF THAT GOOD I.E. marketVM.getShip().getGood(Good.FOOD);
-        amountFour = 0; //THIS NEEDS TO BE THE AMOUNT THEY HAVE IN CARGO OF THAT GOOD I.E. marketVM.getShip().getGood(Good.ORE);
-        amountFive = 0; //THIS NEEDS TO BE THE AMOUNT THEY HAVE IN CARGO OF THAT GOOD I.E. marketVM.getShip().getGood(Good.GAMES);
-        amountSix = 0; //THIS NEEDS TO BE THE AMOUNT THEY HAVE IN CARGO OF THAT GOOD I.E. marketVM.getShip().getGood(Good.FIREARMS);
-        amountSeven = 0; //THIS NEEDS TO BE THE AMOUNT THEY HAVE IN CARGO OF THAT GOOD I.E. marketVM.getShip().getGood(Good.MEDICINE);
-        amountEight = 0; //THIS NEEDS TO BE THE AMOUNT THEY HAVE IN CARGO OF THAT GOOD I.E. marketVM.getShip().getGood(Good.MACHINES);
-        amountNine = 0; //THIS NEEDS TO BE THE AMOUNT THEY HAVE IN CARGO OF THAT GOOD I.E. marketVM.getShip().getGood(Good.NARCOTICS);
-        amountTen = 0; //THIS NEEDS TO BE THE AMOUNT THEY HAVE IN CARGO OF THAT GOOD I.E. marketVM.getShip().getGood(Good.ROBOTS);
+        amountOne = viewModel.getGoodQuantity(Good.WATER);
+        amountTwo = viewModel.getGoodQuantity(Good.FURS);
+        amountThree = viewModel.getGoodQuantity(Good.FOOD);
+        amountFour = viewModel.getGoodQuantity(Good.ORE);
+        amountFive = viewModel.getGoodQuantity(Good.GAMES);
+        amountSix = viewModel.getGoodQuantity(Good.FIREARMS);
+        amountSeven = viewModel.getGoodQuantity(Good.MEDICINE);
+        amountEight = viewModel.getGoodQuantity(Good.MACHINES);
+        amountNine = viewModel.getGoodQuantity(Good.NARCOTICS);
+        amountTen = viewModel.getGoodQuantity(Good.ROBOTS);
 
         sellButton = findViewById(R.id.sellButton2);
 
