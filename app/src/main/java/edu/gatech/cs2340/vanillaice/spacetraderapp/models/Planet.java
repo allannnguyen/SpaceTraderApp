@@ -42,6 +42,10 @@ public class Planet {
      *
      * @ A string listing the planet's parameters.
      */
+
+    public String getName() {
+        return name;
+    }
     public String toString() {
         return "|Planet Name: " + name + "| Coordinates: (" + xcoord + ", "+ ycoord
                 + ")| Technology Level: " + techLevel.toString() + "| Resource Level: "
