@@ -36,8 +36,8 @@ public class Market {
 
             // if they can use, they can buy but not sell
             } else if (techLevel.ordinal() >= good.getMtlu()) {
-                goodsBuy.put(good, true);
-                //goodsSell.put(good, false);
+                //goodsBuy.put(good, false);
+                goodsSell.put(good, true);
             }
 
             goodsPrice.put(good, getPrice(good));
