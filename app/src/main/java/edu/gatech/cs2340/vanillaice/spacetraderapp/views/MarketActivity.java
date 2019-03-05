@@ -30,7 +30,7 @@ public class MarketActivity extends AppCompatActivity {
         credits = findViewById(R.id.marketCredits);
         cargo = findViewById(R.id.marketCargo);
         buyButton = findViewById(R.id.buyButton);
-        sellButton = findViewById(R.id.sellButton2);
+        sellButton = findViewById(R.id.buyButton2);
         planet = findViewById(R.id.marketPlanet);
         String creditsText = "Cargo Credits: " + viewModel.getPlayerCredits();
         String planetText = "Planet: " + player.getPlanet().getName();
