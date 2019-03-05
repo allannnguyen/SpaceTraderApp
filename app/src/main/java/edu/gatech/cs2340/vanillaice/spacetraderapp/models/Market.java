@@ -69,46 +69,46 @@ public class Market {
     public int getPrice(Good good) {
         if (good == Good.WATER) {
             if (resourceLevel == Resource.LOTSOFWATER) {
-                return (good.getBasePrice() * (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 1 / 2;
+                return (good.getBasePrice() + (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 1 / 2;
             } else if (resourceLevel == Resource.DESERT) {
-                return (good.getBasePrice() * (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 3 / 2;
+                return (good.getBasePrice() + (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 3 / 2;
             }
         } else if (good == Good.FURS) {
             if (resourceLevel == Resource.RICHFAUNA) {
-                return (good.getBasePrice() * (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 1 / 2;
+                return (good.getBasePrice() + (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 1 / 2;
             } else if (resourceLevel == Resource.LIFELESS) {
-                return (good.getBasePrice() * (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 3 / 2;
+                return (good.getBasePrice() + (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 3 / 2;
             }
         } else if (good == Good.FOOD) {
             if (resourceLevel == Resource.RICHSOIL) {
-                return (good.getBasePrice() * (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 1 / 2;
+                return (good.getBasePrice() + (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 1 / 2;
             } else if (resourceLevel == Resource.POORSOIL) {
-                return (good.getBasePrice() * (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 3 / 2;
+                return (good.getBasePrice() + (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 3 / 2;
             }
         } else if (good == Good.ORE) {
             if (resourceLevel == Resource.MINERALRICH) {
-                return (good.getBasePrice() * (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 1 / 2;
+                return (good.getBasePrice() + (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 1 / 2;
             } else if (resourceLevel == Resource.MINERALPOOR) {
-                return (good.getBasePrice() * (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 3 / 2;
+                return (good.getBasePrice() + (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 3 / 2;
             }
         } else if (good == Good.GAMES) {
             if (resourceLevel == Resource.ARTISTIC) {
-                return (good.getBasePrice() * (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 1 / 2;
+                return (good.getBasePrice() + (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 1 / 2;
             }
         } else if (good == Good.FIREARMS) {
             if (resourceLevel == Resource.WARLIKE) {
-                return (good.getBasePrice() * (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 1 / 2;
+                return (good.getBasePrice() + (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 1 / 2;
             }
         } else if (good == Good.MEDICINE) {
             if (resourceLevel == Resource.LOTSOFHERBS) {
-                return (good.getBasePrice() * (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 1 / 2;
+                return (good.getBasePrice() + (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 1 / 2;
             }
         } else if (good == Good.NARCOTICS) {
             if (resourceLevel == Resource.WEIRDMUSHROOMS) {
-                return (good.getBasePrice() * (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 1 / 2;
+                return (good.getBasePrice() + (good.getIpl() * (techLevel.ordinal() - good.getMtlp()))) * 1 / 2;
             }
         }
 
-        return good.getBasePrice() * (good.getIpl() * (techLevel.ordinal() - good.getMtlp()));
+        return good.getBasePrice() + (good.getIpl() * (techLevel.ordinal() - good.getMtlp()));
     }
 }
