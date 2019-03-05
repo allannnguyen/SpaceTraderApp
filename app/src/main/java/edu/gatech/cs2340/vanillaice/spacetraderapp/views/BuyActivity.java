@@ -44,6 +44,7 @@ public class BuyActivity extends AppCompatActivity {
     private int eightCounter = 0;
     private int nineCounter = 0;
     private int tenCounter = 0;
+    private TextView cargo1, cargo2, cargo3, cargo4, cargo5, cargo6, cargo7, cargo8, cargo9, cargo10;
     private TextView quant1;
     private TextView quant2;
     private TextView quant3;
@@ -73,6 +74,38 @@ public class BuyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy);
         total = viewModel.getCargoSpace();
+
+        cargo1 = findViewById(R.id.cargo1);
+        cargo2 = findViewById(R.id.cargo2);
+        cargo3 = findViewById(R.id.cargo3);
+        cargo4 = findViewById(R.id.cargo4);
+        cargo5 = findViewById(R.id.cargo5);
+        cargo6 = findViewById(R.id.cargo6);
+        cargo7 = findViewById(R.id.cargo7);
+        cargo8 = findViewById(R.id.cargo8);
+        cargo9 = findViewById(R.id.cargo9);
+        cargo10 = findViewById(R.id.cargo10);
+
+        String cargo1text = "Cargo: " + viewModel.getGoodQuantity(Good.WATER);
+        String cargo2text = "Cargo: " + viewModel.getGoodQuantity(Good.FURS);
+        String cargo3text = "Cargo: " + viewModel.getGoodQuantity(Good.FOOD);
+        String cargo4text = "Cargo: " + viewModel.getGoodQuantity(Good.ORE);
+        String cargo5text = "Cargo: " + viewModel.getGoodQuantity(Good.GAMES);
+        String cargo6text = "Cargo: " + viewModel.getGoodQuantity(Good.FIREARMS);
+        String cargo7text = "Cargo: " + viewModel.getGoodQuantity(Good.MEDICINE);
+        String cargo8text = "Cargo: " + viewModel.getGoodQuantity(Good.MACHINES);
+        String cargo9text = "Cargo: " + viewModel.getGoodQuantity(Good.NARCOTICS);
+        String cargo10text = "Cargo: " + viewModel.getGoodQuantity(Good.ROBOTS);
+        cargo1.setText(cargo1text);
+        cargo2.setText(cargo2text);
+        cargo3.setText(cargo3text);
+        cargo4.setText(cargo4text);
+        cargo5.setText(cargo5text);
+        cargo6.setText(cargo6text);
+        cargo7.setText(cargo7text);
+        cargo8.setText(cargo8text);
+        cargo9.setText(cargo9text);
+        cargo10.setText(cargo10text);
 
         buyButton = findViewById(R.id.buyButton2);
 
