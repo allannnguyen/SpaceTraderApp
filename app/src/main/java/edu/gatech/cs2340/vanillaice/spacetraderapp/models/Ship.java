@@ -32,6 +32,9 @@ public class Ship {
         this.escapepod = escapepod;
         this.insurance = insurance;
         goods = new HashMap<>();
+        for (Good good : Good.values()) {
+            goods.put(good, 0);
+        }
     }
 
     /**
