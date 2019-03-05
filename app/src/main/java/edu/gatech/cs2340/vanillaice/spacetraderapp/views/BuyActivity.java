@@ -116,16 +116,16 @@ public class BuyActivity extends AppCompatActivity {
         price8 = findViewById(R.id.price8);
         price9 = findViewById(R.id.price9);
         price10 = findViewById(R.id.price10);
-        price1.setText(Integer.toString(viewModel.getGoodPrice(Good.WATER))); //CHANGE TO marketvm.getGoodPrice(Good.WATER); or something similar
-        price2.setText(Integer.toString(viewModel.getGoodPrice(Good.FURS))); //CHANGE TO marketvm.getGoodPrice(Good.FURS); or something similar
-        price3.setText(Integer.toString(viewModel.getGoodPrice(Good.FOOD))); //CHANGE TO marketvm.getGoodPrice(Good.FOOD); or something similar
-        price4.setText(Integer.toString(viewModel.getGoodPrice(Good.ORE))); //CHANGE TO marketvm.getGoodPrice(Good.ORE); or something similar
-        price5.setText(Integer.toString(viewModel.getGoodPrice(Good.GAMES))); //CHANGE TO marketvm.getGoodPrice(Good.GAMES); or something similar
-        price6.setText(Integer.toString(viewModel.getGoodPrice(Good.FIREARMS))); //CHANGE TO marketvm.getGoodPrice(Good.FIREARMS); or something similar
-        price7.setText(Integer.toString(viewModel.getGoodPrice(Good.MEDICINE))); //CHANGE TO marketvm.getGoodPrice(Good.MEDICINE); or something similar
-        price8.setText(Integer.toString(viewModel.getGoodPrice(Good.MACHINES))); //CHANGE TO marketvm.getGoodPrice(Good.MACHINES); or something similar
-        price9.setText(Integer.toString(viewModel.getGoodPrice(Good.NARCOTICS))); //CHANGE TO marketvm.getGoodPrice(Good.NARCOTICS); or something similar
-        price10.setText(Integer.toString(viewModel.getGoodPrice(Good.ROBOTS))); //CHANGE TO marketvm.getGoodPrice(Good.ROBOTS); or something similar
+        price1.setText(Integer.toString(viewModel.getGoodPrice(Good.WATER)));
+        price2.setText(Integer.toString(viewModel.getGoodPrice(Good.FURS)));
+        price3.setText(Integer.toString(viewModel.getGoodPrice(Good.FOOD)));
+        price4.setText(Integer.toString(viewModel.getGoodPrice(Good.ORE)));
+        price5.setText(Integer.toString(viewModel.getGoodPrice(Good.GAMES)));
+        price6.setText(Integer.toString(viewModel.getGoodPrice(Good.FIREARMS)));
+        price7.setText(Integer.toString(viewModel.getGoodPrice(Good.MEDICINE)));
+        price8.setText(Integer.toString(viewModel.getGoodPrice(Good.MACHINES)));
+        price9.setText(Integer.toString(viewModel.getGoodPrice(Good.NARCOTICS)));
+        price10.setText(Integer.toString(viewModel.getGoodPrice(Good.ROBOTS)));
 
         if (!viewModel.isBuyable(Good.WATER)) {
             price1.setVisibility(View.INVISIBLE);

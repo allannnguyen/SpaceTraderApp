@@ -135,16 +135,86 @@ public class SellActivity extends AppCompatActivity {
         price8 = findViewById(R.id.price8);
         price9 = findViewById(R.id.price9);
         price10 = findViewById(R.id.price10);
-        price1.setText(Integer.toString(30)); //CHANGE TO marketvm.getGoodPrice(Good.WATER); or something similar
-        price2.setText(Integer.toString(250)); //CHANGE TO marketvm.getGoodPrice(Good.FURS); or something similar
-        price3.setText(Integer.toString(100)); //CHANGE TO marketvm.getGoodPrice(Good.FOOD); or something similar
-        price4.setText(Integer.toString(350)); //CHANGE TO marketvm.getGoodPrice(Good.ORE); or something similar
-        price5.setText(Integer.toString(250)); //CHANGE TO marketvm.getGoodPrice(Good.GAMES); or something similar
-        price6.setText(Integer.toString(1250)); //CHANGE TO marketvm.getGoodPrice(Good.FIREARMS); or something similar
-        price7.setText(Integer.toString(650)); //CHANGE TO marketvm.getGoodPrice(Good.MEDICINE); or something similar
-        price8.setText(Integer.toString(900)); //CHANGE TO marketvm.getGoodPrice(Good.MACHINES); or something similar
-        price9.setText(Integer.toString(3500)); //CHANGE TO marketvm.getGoodPrice(Good.NARCOTICS); or something similar
-        price10.setText(Integer.toString(5000)); //CHANGE TO marketvm.getGoodPrice(Good.ROBOTS); or something similar
+        price1.setText(Integer.toString(viewModel.getGoodPrice(Good.WATER)));
+        price2.setText(Integer.toString(viewModel.getGoodPrice(Good.FURS)));
+        price3.setText(Integer.toString(viewModel.getGoodPrice(Good.FOOD)));
+        price4.setText(Integer.toString(viewModel.getGoodPrice(Good.ORE)));
+        price5.setText(Integer.toString(viewModel.getGoodPrice(Good.GAMES)));
+        price6.setText(Integer.toString(viewModel.getGoodPrice(Good.FIREARMS)));
+        price7.setText(Integer.toString(viewModel.getGoodPrice(Good.MEDICINE)));
+        price8.setText(Integer.toString(viewModel.getGoodPrice(Good.MACHINES)));
+        price9.setText(Integer.toString(viewModel.getGoodPrice(Good.NARCOTICS)));
+        price10.setText(Integer.toString(viewModel.getGoodPrice(Good.ROBOTS)));
+
+        if (!viewModel.isSellable(Good.WATER)) {
+            price1.setVisibility(View.INVISIBLE);
+            quant1.setVisibility(View.INVISIBLE);
+            upButton1.setVisibility(View.INVISIBLE);
+            downButton1.setVisibility(View.INVISIBLE);
+        }
+
+        if (!viewModel.isSellable(Good.FURS)) {
+            price2.setVisibility(View.INVISIBLE);
+            quant2.setVisibility(View.INVISIBLE);
+            upButton2.setVisibility(View.INVISIBLE);
+            downButton2.setVisibility(View.INVISIBLE);
+        }
+
+        if (!viewModel.isSellable(Good.FOOD)) {
+            price3.setVisibility(View.INVISIBLE);
+            quant3.setVisibility(View.INVISIBLE);
+            upButton3.setVisibility(View.INVISIBLE);
+            downButton3.setVisibility(View.INVISIBLE);
+        }
+
+        if (!viewModel.isSellable(Good.ORE)) {
+            price4.setVisibility(View.INVISIBLE);
+            quant4.setVisibility(View.INVISIBLE);
+            upButton4.setVisibility(View.INVISIBLE);
+            downButton4.setVisibility(View.INVISIBLE);
+        }
+
+        if (!viewModel.isSellable(Good.GAMES)) {
+            price5.setVisibility(View.INVISIBLE);
+            quant5.setVisibility(View.INVISIBLE);
+            upButton5.setVisibility(View.INVISIBLE);
+            downButton5.setVisibility(View.INVISIBLE);
+        }
+
+        if (!viewModel.isSellable(Good.FIREARMS)) {
+            price6.setVisibility(View.INVISIBLE);
+            quant6.setVisibility(View.INVISIBLE);
+            upButton6.setVisibility(View.INVISIBLE);
+            downButton6.setVisibility(View.INVISIBLE);
+        }
+
+        if (!viewModel.isSellable(Good.MEDICINE)) {
+            price7.setVisibility(View.INVISIBLE);
+            quant7.setVisibility(View.INVISIBLE);
+            upButton7.setVisibility(View.INVISIBLE);
+            downButton7.setVisibility(View.INVISIBLE);
+        }
+
+        if (!viewModel.isSellable(Good.MACHINES)) {
+            price8.setVisibility(View.INVISIBLE);
+            quant8.setVisibility(View.INVISIBLE);
+            upButton8.setVisibility(View.INVISIBLE);
+            downButton8.setVisibility(View.INVISIBLE);
+        }
+
+        if (!viewModel.isSellable(Good.NARCOTICS)) {
+            price9.setVisibility(View.INVISIBLE);
+            quant9.setVisibility(View.INVISIBLE);
+            upButton9.setVisibility(View.INVISIBLE);
+            downButton9.setVisibility(View.INVISIBLE);
+        }
+
+        if (!viewModel.isSellable(Good.ROBOTS)) {
+            price10.setVisibility(View.INVISIBLE);
+            quant10.setVisibility(View.INVISIBLE);
+            upButton10.setVisibility(View.INVISIBLE);
+            downButton10.setVisibility(View.INVISIBLE);
+        }
 
         upButton1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -349,6 +419,8 @@ public class SellActivity extends AppCompatActivity {
         sellButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                viewModel.sell(oneCounter, twoCounter, threeCounter, fourCounter, fiveCounter,
+                        sixCounter, sevenCounter, eightCounter, nineCounter, tenCounter);
                 //pass viewmodel to sellactivity
                 Intent i = new Intent(SellActivity.this, MarketActivity.class);
                 //i.putExtra("viewmodel", viewModel);
