@@ -15,14 +15,14 @@ public enum Good {
     NARCOTICS(5, 0, 5, 3500, -125, 150, 2000, 3000),
     ROBOTS(6, 4, 7, 5000, -150, 100, 3500, 5000);
 
-    private int basePrice;
-    private int mtlp;
-    private int mtlu;
-    private int ttp;
-    private int ipl;
-    private int var;
-    private int mtl;
-    private int mth;
+    private final int basePrice;
+    private final int mtlp;
+    private final int mtlu;
+    private final int ttp;
+    private final int ipl;
+    private final int var;
+    private final int mtl;
+    private final int mth;
 
     /**
      * Constructs an individual good's stats
