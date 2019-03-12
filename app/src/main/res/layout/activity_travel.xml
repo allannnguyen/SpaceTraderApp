@@ -27,11 +27,11 @@
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/trade_winds"
         android:text="Travel"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:textSize="30sp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/fuel"
@@ -43,11 +43,11 @@
         android:fontFamily="@font/trade_winds"
         android:text="Fuel: "
         android:textAlignment="center"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/travelTextView"
-        tools:textSize="25sp" />
+        app:layout_constraintTop_toBottomOf="@+id/travelTextView" />
 
     <Button
         android:id="@+id/travelButton"
@@ -81,11 +81,11 @@
         android:fontFamily="@font/trade_winds"
         android:text="Current Planet:"
         android:textColor="@android:color/black"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fuel"
-        tools:textSize="25sp" />
+        app:layout_constraintTop_toBottomOf="@+id/fuel" />
 
     <TextView
         android:id="@+id/textView6"
@@ -97,11 +97,11 @@
         android:fontFamily="@font/trade_winds"
         android:text="Travel to:"
         android:textColor="@android:color/black"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/currentPlanetTextView"
-        tools:textSize="25sp" />
+        app:layout_constraintTop_toBottomOf="@+id/currentPlanetTextView" />
 
     <Spinner
         android:id="@+id/travelPlanets"

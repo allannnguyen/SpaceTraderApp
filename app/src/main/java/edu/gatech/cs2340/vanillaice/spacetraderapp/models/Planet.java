@@ -76,9 +76,10 @@ public class Planet {
      * @return The distance between two planets.
      */
     public int calcDistance(Planet planet) {
-        distance = (int) Math.sqrt((this.xcoord - planet.getXcoord())^2 + (this.ycoord - planet.getYcoord())^2);
+        distance = (int) Math.sqrt(Math.pow(this.xcoord - planet.getXcoord(), 2) + Math.pow((this.ycoord - planet.getYcoord()), 2));
         return distance;
     }
+
 
     /**
      * Gets the distance of this planet from the current planet.

@@ -38,8 +38,8 @@ public class TravelActivity extends AppCompatActivity {
                 new TravelViewModel(ConfigurationViewModel.getInstance().getPlayer(),
                         ConfigurationViewModel.getInstance().getUniverse());
         String fueltext = "Fuel: " + travelViewModel.getFuel();
-        String planettext = "Current Planet: " + travelViewModel.getCurrentPlanet();
         planets = travelViewModel.planetsInRange();
+        String planettext = "Current Planet: " + travelViewModel.getCurrentPlanet();
         fuel.setText(fueltext);
         planet.setText(planettext);
 

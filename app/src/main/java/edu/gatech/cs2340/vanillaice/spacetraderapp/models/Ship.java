@@ -85,10 +85,10 @@ public class Ship {
     /**
      * Sets the fuel of the ship
      *
-     * @param distance The distance that the ship travelled.
+     * @param newFuel The distance that the ship travelled.
      */
-    public void setFuel(int distance) {
-        this.fuel = this.fuel - distance;
+    public void setFuel(int newFuel) {
+        this.fuel = newFuel;
     }
     /**
      * Gets the current health
