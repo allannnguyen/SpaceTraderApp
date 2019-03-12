@@ -51,4 +51,32 @@ public class Planet {
                 + ")| Technology Level: " + techLevel.toString() + "| Resource Level: "
                 + resourceLevel.toString();
     }
+
+    /**
+     * Gets the x coordinate of the planet.
+     *
+     * @return The x-coordinate of the planet
+     */
+    public int getXcoord() {
+        return this.xcoord;
+    }
+
+    /**
+     * Gets the y-coordinate of the planet.
+     *
+     * @return The y-coordinate of the planet
+     */
+    public int getYcoord() {
+        return this.ycoord;
+    }
+
+    /**
+     * Calculates the distance between two planets.
+     *
+     * @param planet The planet that we want to go to.
+     * @return The distance between two planets.
+     */
+    public int getDistance(Planet planet) {
+        return (int) Math.sqrt((this.xcoord - planet.getXcoord())^2 + (this.ycoord - planet.getYcoord())^2);
+    }
 }

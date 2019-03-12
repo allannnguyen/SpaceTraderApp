@@ -141,6 +141,15 @@ public class Player implements Serializable{
     }
 
     /**
+     * Sets the current location of the player.
+     *
+     * @param planet The planet where the player is located.
+     */
+    public void setPlanet(Planet planet) {
+        this.currPlanet = planet;
+    }
+
+    /**
      * Gets the market of the planet the player is currently on
      * @return the current planet's market
      */

@@ -29,6 +29,7 @@ public class Ship {
     public Ship(ShipType type, boolean escapepod, boolean insurance) {
         this.type = type;
         this.health = type.getHullHealth();
+        this.fuel = type.getFuelEconomy();
         this.escapepod = escapepod;
         this.insurance = insurance;
         goods = new HashMap<>();
@@ -81,6 +82,14 @@ public class Ship {
         return fuel;
     }
 
+    /**
+     * Sets the fuel of the ship
+     *
+     * @param distance The distance that the ship travelled.
+     */
+    public void setFuel(int distance) {
+        this.fuel = this.fuel - distance;
+    }
     /**
      * Gets the current health
      * @return health

@@ -61,4 +61,13 @@ public enum ShipType {
     public int getHullHealth() {
         return hullHealth;
     }
+
+    /**
+     * Gets the max fuel capacity of the shiptype.
+     *
+     * @return The max fuel capacity of the shiptype.
+     */
+    public int getFuelEconomy() {
+        return this.fuelEconomy;
+    }
 }
