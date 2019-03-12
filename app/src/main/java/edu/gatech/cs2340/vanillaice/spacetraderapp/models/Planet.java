@@ -10,6 +10,7 @@ public class Planet {
     private Technology techLevel;
     private Resource resourceLevel;
     private Market market;
+    private int distance;
 
     /**
      * Creates an instance of a planet.
@@ -47,9 +48,7 @@ public class Planet {
         return name;
     }
     public String toString() {
-        return "|Planet Name: " + name + "| Coordinates: (" + xcoord + ", "+ ycoord
-                + ")| Technology Level: " + techLevel.toString() + "| Resource Level: "
-                + resourceLevel.toString();
+        return name + "  " + distance;
     }
 
     /**
@@ -76,7 +75,17 @@ public class Planet {
      * @param planet The planet that we want to go to.
      * @return The distance between two planets.
      */
-    public int getDistance(Planet planet) {
-        return (int) Math.sqrt((this.xcoord - planet.getXcoord())^2 + (this.ycoord - planet.getYcoord())^2);
+    public int calcDistance(Planet planet) {
+        distance = (int) Math.sqrt((this.xcoord - planet.getXcoord())^2 + (this.ycoord - planet.getYcoord())^2);
+        return distance;
+    }
+
+    /**
+     * Gets the distance of this planet.
+     *
+     * @return The distance of this planet.
+     */
+    public int getDistance() {
+        return distance;
     }
 }
