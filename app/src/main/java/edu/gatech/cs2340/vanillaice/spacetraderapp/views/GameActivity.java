@@ -27,7 +27,7 @@ public class GameActivity extends AppCompatActivity {
         travelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(GameActivity.this, EncounterActivity.class));
+                startActivity(new Intent(GameActivity.this, TravelActivity.class));
             }
         });
 

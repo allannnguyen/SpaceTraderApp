@@ -35,10 +35,14 @@ public class TravelViewModel {
         return ship.getFuel();
     }
 
+    public Planet getCurrentPlanet() {
+        return player.getPlanet();
+    }
+
     public List<Planet> planetsInRange() {
         List<Planet> planetList = new ArrayList<Planet>();
         for (Planet planet: universe.getPlanets()) {
-            if (player.getPlanet().calcDistance(planet) <= ship.getFuel()) {
+            if (planet.calcDistance(player.getPlanet()) <= ship.getFuel()) {
                 planetList.add(planet);
             }
         }

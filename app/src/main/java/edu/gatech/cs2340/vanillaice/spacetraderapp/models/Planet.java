@@ -72,7 +72,7 @@ public class Planet {
     /**
      * Calculates the distance between two planets.
      *
-     * @param planet The planet that we want to go to.
+     * @param planet player's current planet.
      * @return The distance between two planets.
      */
     public int calcDistance(Planet planet) {
@@ -81,7 +81,7 @@ public class Planet {
     }
 
     /**
-     * Gets the distance of this planet.
+     * Gets the distance of this planet from the current planet.
      *
      * @return The distance of this planet.
      */
