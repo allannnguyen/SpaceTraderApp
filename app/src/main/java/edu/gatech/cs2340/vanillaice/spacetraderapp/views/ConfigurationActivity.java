@@ -11,5 +11,8 @@ public class ConfigurationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuration);
+        //Link to UML planning Google drive
+        //https://docs.google.com/document/d/1RXpMoqJ7fL1oYSB40rsdBB-pc201aEhcZjAnZ7OewcI/edit?ts=5c813dbc
+        //Main setup screen
     }
 }
