@@ -11,27 +11,27 @@ import java.util.Random;
 public class Universe {
     private List<Planet> tenplanets;
     Planet CharlesTheRed = new Planet("Charles The Red", 1, 1, Technology.PREAGRICULTURAL, Resource.WARLIKE); //ANARCHY
-    Planet Wrangler = new Planet("Wrangler", 2, 1, Technology.AGRICULTURAL, Resource.RICHSOIL); //DICTATORSHIP
-    Planet Yojimbo = new Planet("Yojimbo", 3, 1, Technology.MEDIEVAL, Resource.RICHFAUNA); //FEUDALSTATE
-    Planet Cobaltea = new Planet("Cobaltea", 4, 1, Technology.RENAISSANCE, Resource.ARTISTIC); //DEMOCRACY
-    Planet SuperFunTimeLand = new Planet("Super-Fun-Time-Land", 5, 1, Technology.EARLYINDUSTRIAL, Resource.WEIRDMUSHROOMS); //MONARCHY
-    Planet StreronR2Y = new Planet("Streron R2Y", 6, 1, Technology.INDUSTRIAL, Resource.MINERALRICH); //FACISTSTATE
-    Planet Cendicarro = new Planet("Cendicarro", 7, 1, Technology.POSTINDUSTRIAL, Resource.MINERALPOOR); //DICTATORSHIP
-    Planet Nunvolla = new Planet("Nunvolla", 8, 1, Technology.HITECH, Resource.LOTSOFWATER); //PACIFISTSTATE
-    Planet Laewei = new Planet("Laewei", 9, 1, Technology.PREAGRICULTURAL, Resource.LIFELESS); //DEMOCRACY
-    Planet Huthone = new Planet("Huthone", 10, 1, Technology.AGRICULTURAL, Resource.LOTSOFHERBS); //CONFEDERACY
+    Planet Wrangler = new Planet("Wrangler", 30, 30, Technology.AGRICULTURAL, Resource.RICHSOIL); //DICTATORSHIP
+    Planet Yojimbo = new Planet("Yojimbo", 13, 30, Technology.MEDIEVAL, Resource.RICHFAUNA); //FEUDALSTATE
+    Planet Cobaltea = new Planet("Cobaltea", 25, 30, Technology.RENAISSANCE, Resource.ARTISTIC); //DEMOCRACY
+    Planet SuperFunTimeLand = new Planet("Super-Fun-Time-Land", 17, 20, Technology.EARLYINDUSTRIAL, Resource.WEIRDMUSHROOMS); //MONARCHY
+    Planet StreronR2Y = new Planet("Streron R2Y", 16, 10, Technology.INDUSTRIAL, Resource.MINERALRICH); //FACISTSTATE
+    Planet Cendicarro = new Planet("Cendicarro", 17, 11, Technology.POSTINDUSTRIAL, Resource.MINERALPOOR); //DICTATORSHIP
+    Planet Nunvolla = new Planet("Nunvolla", 25, 22, Technology.HITECH, Resource.LOTSOFWATER); //PACIFISTSTATE
+    Planet Laewei = new Planet("Laewei", 9, 30, Technology.PREAGRICULTURAL, Resource.LIFELESS); //DEMOCRACY
+    Planet Huthone = new Planet("Huthone", 15, 4, Technology.AGRICULTURAL, Resource.LOTSOFHERBS); //CONFEDERACY
     Planet Besars = new Planet("Besars", 11, 1, Technology.MEDIEVAL, Resource.DESERT); //COMMUNISTSTATE
-    Planet Gninda9D3 = new Planet("Gninda 9D3", 12, 1, Technology.RENAISSANCE, Resource.NOSPECIALRESOURCES); //FACISTSTATE
-    Planet Cusurn = new Planet("Cusurn", 13, 1, Technology.EARLYINDUSTRIAL, Resource.MINERALPOOR); //SOCIALISTSTATE
-    Planet Choivis = new Planet("Choivis", 14, 1, Technology.INDUSTRIAL, Resource.POORSOIL); //DEMOCRACY
-    Planet GaraDPX = new Planet("Gara DPX", 15, 1, Technology.POSTINDUSTRIAL, Resource.NOSPECIALRESOURCES); //DICTATORSHIP
-    Planet Broanus = new Planet("Broanus", 16, 1, Technology.HITECH, Resource.MINERALRICH); //CYBERNETICSTATE
-    Planet Gunkilia = new Planet("Gunkilia", 17, 1, Technology.HITECH, Resource.WARLIKE); //ANARCHY
-    Planet Bralatune = new Planet("Bralatune", 18, 1, Technology.POSTINDUSTRIAL, Resource.ARTISTIC); //THEOCRACY
-    Planet Ebbichi = new Planet("Ebbichi", 19, 1, Technology.INDUSTRIAL, Resource.LOTSOFWATER); //CAPITALISTSTATE
-    Planet Xamecarro = new Planet("Xamecarro", 20, 1, Technology.MEDIEVAL, Resource.WEIRDMUSHROOMS); //STATEOFSTAORI
-    Planet Lichetune = new Planet("Lichetune", 127, 1, Technology.HITECH, Resource.NOSPECIALRESOURCES); //TECHNOCRACY
-    Planet Brichi8X5 = new Planet("Brichi 8X5", 70, 1, Technology.POSTINDUSTRIAL, Resource.RICHSOIL); //FEUDALSTATE
+    Planet Gninda9D3 = new Planet("Gninda 9D3", 19, 15, Technology.RENAISSANCE, Resource.NOSPECIALRESOURCES); //FACISTSTATE
+    Planet Cusurn = new Planet("Cusurn", 30, 25, Technology.EARLYINDUSTRIAL, Resource.MINERALPOOR); //SOCIALISTSTATE
+    Planet Choivis = new Planet("Choivis", 10, 26, Technology.INDUSTRIAL, Resource.POORSOIL); //DEMOCRACY
+    Planet GaraDPX = new Planet("Gara DPX", 20, 18, Technology.POSTINDUSTRIAL, Resource.NOSPECIALRESOURCES); //DICTATORSHIP
+    Planet Broanus = new Planet("Broanus", 15, 9, Technology.HITECH, Resource.MINERALRICH); //CYBERNETICSTATE
+    Planet Gunkilia = new Planet("Gunkilia", 22, 29, Technology.HITECH, Resource.WARLIKE); //ANARCHY
+    Planet Bralatune = new Planet("Bralatune", 26, 14, Technology.POSTINDUSTRIAL, Resource.ARTISTIC); //THEOCRACY
+    Planet Ebbichi = new Planet("Ebbichi", 24, 6, Technology.INDUSTRIAL, Resource.LOTSOFWATER); //CAPITALISTSTATE
+    Planet Xamecarro = new Planet("Xamecarro", 9, 29, Technology.MEDIEVAL, Resource.WEIRDMUSHROOMS); //STATEOFSTAORI
+    Planet Lichetune = new Planet("Lichetune", 18, 11, Technology.HITECH, Resource.NOSPECIALRESOURCES); //TECHNOCRACY
+    Planet Brichi8X5 = new Planet("Brichi 8X5", 5, 13, Technology.POSTINDUSTRIAL, Resource.RICHSOIL); //FEUDALSTATE
 
     /**
      * Selects the planets for this game randomly from all options

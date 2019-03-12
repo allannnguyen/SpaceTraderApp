@@ -48,7 +48,7 @@ public class Planet {
         return name;
     }
     public String toString() {
-        return name + "  " + distance;
+        return name + "   " + distance;
     }
 
     /**
