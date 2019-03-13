@@ -15,6 +15,7 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.MarketViewModel;
 public class MarketActivity extends AppCompatActivity {
     private Button buyButton;
     private Button sellButton;
+    private Button returnButton;
     private TextView credits;
     private TextView planet;
     private TextView cargo;
@@ -31,6 +32,7 @@ public class MarketActivity extends AppCompatActivity {
         cargo = findViewById(R.id.marketCargo);
         buyButton = findViewById(R.id.buyButton);
         sellButton = findViewById(R.id.buyButton2);
+        returnButton = findViewById(R.id.returnButton);
         planet = findViewById(R.id.marketPlanet);
         String creditsText = "Cargo Credits: " + viewModel.getPlayerCredits();
         String planetText = "Planet: " + player.getPlanet().getName();
@@ -62,6 +64,13 @@ public class MarketActivity extends AppCompatActivity {
             }
         });
 
+        returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MarketActivity.this, GameActivity.class);
+                startActivity(i);
+            }
+        });
 
 
 
