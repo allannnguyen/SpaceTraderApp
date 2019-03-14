@@ -3,11 +3,18 @@ package edu.gatech.cs2340.vanillaice.spacetraderapp.views;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import java.io.File;
+
 import edu.gatech.cs2340.vanillaice.spacetraderapp.R;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Player;
+import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.ConfigurationViewModel;
 
 public class GameActivity extends AppCompatActivity {
     private Button travelButton;
@@ -40,6 +47,29 @@ public class GameActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        ConfigurationViewModel cvm = ConfigurationViewModel.getInstance();
+        File file;
+        if (item.getItemId() == R.id.save_game) {
+            file = new File(this.getFilesDir(), ConfigurationViewModel.DEFAULT_BINARY_FILE_NAME);
+            Log.d("MY APP", "Saving");
+            return cvm.saveBinary(file);
+        }
+        else {
+            //create a file object in the local files section
+            file = new File(this.getFilesDir(), ConfigurationViewModel.DEFAULT_BINARY_FILE_NAME);
+            Log.d("MY APP", "Loading Binary Data");
+            cvm.loadBinary(file);
+            return true;
+        }
 
     }
 }
