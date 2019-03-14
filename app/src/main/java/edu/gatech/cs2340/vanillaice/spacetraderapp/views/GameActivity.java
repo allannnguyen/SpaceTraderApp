@@ -68,6 +68,7 @@ public class GameActivity extends AppCompatActivity {
             file = new File(this.getFilesDir(), ConfigurationViewModel.DEFAULT_BINARY_FILE_NAME);
             Log.d("MY APP", "Loading Binary Data");
             cvm.loadBinary(file);
+            Intent i = new Intent(GameActivity.this, GameActivity.class);
             return true;
         }
 
