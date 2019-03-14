@@ -1,5 +1,6 @@
 package edu.gatech.cs2340.vanillaice.spacetraderapp.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -8,7 +9,7 @@ import java.util.Random;
  * Represents the Universe the game takes place in
  * A universe has a list of randomly selected planets from all precreated options
  */
-public class Universe {
+public class Universe implements Serializable {
     private List<Planet> tenplanets;
     Planet CharlesTheRed = new Planet("Charles The Red", 1, 1, Technology.PREAGRICULTURAL, Resource.WARLIKE); //ANARCHY
     Planet Wrangler = new Planet("Wrangler", 30, 30, Technology.AGRICULTURAL, Resource.RICHSOIL); //DICTATORSHIP
