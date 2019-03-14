@@ -1,9 +1,11 @@
 package edu.gatech.cs2340.vanillaice.spacetraderapp.models;
 
+import java.io.Serializable;
+
 /**
  * Represents a planet. A planet has a name, coordinates, a tech level, and a resource level.
  */
-public class Planet {
+public class Planet implements Serializable {
     private String name;
     private int xcoord;
     private int ycoord;

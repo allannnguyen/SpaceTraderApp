@@ -1,11 +1,12 @@
 package edu.gatech.cs2340.vanillaice.spacetraderapp.models;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 /**
  * Represents the player's current ship
  */
-public class Ship {
+public class Ship implements Serializable {
     private int fuel;
     private int health;
     private boolean escapepod;

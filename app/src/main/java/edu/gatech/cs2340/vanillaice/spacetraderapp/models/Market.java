@@ -1,11 +1,12 @@
 package edu.gatech.cs2340.vanillaice.spacetraderapp.models;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 /**
  * Represents the marketplace of a planet.
  */
-public class Market {
+public class Market implements Serializable {
     private Technology techLevel;
     private Resource resourceLevel;
     private HashMap<Good, Boolean> goodsBuy;
