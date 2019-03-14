@@ -83,14 +83,14 @@ public class ConfigurationViewModel {
              */
             ObjectInputStream in = new ObjectInputStream(new FileInputStream(file));
             // assuming we saved our top level object, we read it back in with one line of code.
-            universe = (Universe) in.readObject();
             player = (Player) in.readObject();
+            universe = (Universe) in.readObject();
             in.close();
         } catch (IOException e) {
-            Log.e("UserManagementFacade", "Error reading an entry from binary file",e);
+            Log.e("MY APP", "Error reading an entry from binary file",e);
             success = false;
         } catch (ClassNotFoundException e) {
-            Log.e("UserManagementFacade", "Error casting a class from the binary file",e);
+            Log.e("MY APP", "Error casting a class from the binary file",e);
             success = false;
         }
 
