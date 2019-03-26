@@ -22,24 +22,31 @@
         android:id="@+id/travelButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="72dp"
         android:layout_marginTop="204dp"
-        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="8dp"
         android:text="Travel"
-        app:layout_constraintEnd_toStartOf="@+id/tradeButton"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/universeTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/universeTextView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/tradeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="192dp"
         android:layout_marginEnd="48dp"
+        android:layout_marginBottom="8dp"
         android:text="trade"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/universeTextView" />
+        app:layout_constraintHorizontal_bias="0.927"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/universeTextView"
+        app:layout_constraintVertical_bias="0.029" />
 
     <TextView
         android:id="@+id/universeTextView"

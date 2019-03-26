@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -48,8 +49,12 @@ public class TravelActivity extends AppCompatActivity {
         travelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                travelViewModel.travel((Planet) travelSpinner.getSelectedItem());
+                String toastMessage;
+                toastMessage = travelViewModel.travel((Planet) travelSpinner.getSelectedItem());
                 startActivity(new Intent(TravelActivity.this, GameActivity.class));
+                Toast toast = Toast.makeText(getApplicationContext(), toastMessage, Toast.LENGTH_LONG);
+                toast.show();
+
 
             }
         });

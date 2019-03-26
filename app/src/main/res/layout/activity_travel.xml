@@ -53,23 +53,29 @@
         android:id="@+id/travelButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
-        android:layout_marginEnd="56dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/trade_winds"
         android:text="Travel"
+        app:layout_constraintBottom_toBottomOf="@+id/background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/travelPlanets" />
+        app:layout_constraintTop_toBottomOf="@+id/travelPlanets"
+        app:layout_constraintVertical_bias="0.174" />
 
     <Button
         android:id="@+id/cancelButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/trade_winds"
         android:text="Cancel"
+        app:layout_constraintBottom_toBottomOf="@+id/background"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/travelPlanets" />
+        app:layout_constraintTop_toBottomOf="@+id/travelPlanets"
+        app:layout_constraintVertical_bias="0.167" />
 
     <TextView
         android:id="@+id/currentPlanetTextView"
@@ -105,8 +111,8 @@
 
     <Spinner
         android:id="@+id/travelPlanets"
-        android:layout_width="380dp"
-        android:layout_height="40dp"
+        android:layout_width="311dp"
+        android:layout_height="53dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"

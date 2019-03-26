@@ -1,5 +1,7 @@
 package edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels;
 
+import android.app.Activity;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -14,6 +16,7 @@ public class TravelViewModel {
     private Player player;
     private Ship ship;
     private Universe universe;
+    private Activity context;
 
     /**
      * Creates an instance of a Travel viewmodel
@@ -56,19 +59,24 @@ public class TravelViewModel {
      *
      * @param planet The planet that we want to travel to.
      */
-    public void travel(Planet planet) {
+    public String travel(Planet planet) {
         Random rand = new Random();
         int chance = rand.nextInt(100);
         player.setPlanet(planet);
-        if (chance >= 50) {
+        if (chance >= 49) {
+            return "You found a wormhole and spent no fuel to travel!";
+
+
             
         } else {
             ship.setFuel(ship.getFuel() - planet.getDistance());
         }
 
-        if (chance <= 49) {
+        if (chance <= 50) {
             player.setCredits(player.getCredits() + 100);
             //display toast about finding money in back pocket
+            return "You found extra money in your toilet!";
         }
+        return "";
     }
 }
