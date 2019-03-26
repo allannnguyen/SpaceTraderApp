@@ -65,5 +65,10 @@ public class TravelViewModel {
         } else {
             ship.setFuel(ship.getFuel() - planet.getDistance());
         }
+
+        if (chance <= 49) {
+            player.setCredits(player.getCredits() + 100);
+            //display toast about finding money in back pocket
+        }
     }
 }
