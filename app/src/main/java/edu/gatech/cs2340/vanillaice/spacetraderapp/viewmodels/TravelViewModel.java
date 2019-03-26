@@ -2,6 +2,7 @@ package edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Planet;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Player;
@@ -56,7 +57,13 @@ public class TravelViewModel {
      * @param planet The planet that we want to travel to.
      */
     public void travel(Planet planet) {
+        Random rand = new Random();
+        int chance = rand.nextInt(100);
         player.setPlanet(planet);
-        ship.setFuel(ship.getFuel() - planet.getDistance());
+        if (chance >= 50) {
+            
+        } else {
+            ship.setFuel(ship.getFuel() - planet.getDistance());
+        }
     }
 }
