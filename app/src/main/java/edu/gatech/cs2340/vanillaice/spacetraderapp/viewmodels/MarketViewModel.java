@@ -17,6 +17,7 @@ public class MarketViewModel implements Serializable {
 
     /**
      * Constructor for the MarketViewModel
+     * @param player The player whose is at the market.
      */
     public MarketViewModel(Player player) {
         this.player = player;

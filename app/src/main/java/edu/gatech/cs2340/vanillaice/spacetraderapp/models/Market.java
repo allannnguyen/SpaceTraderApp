@@ -46,16 +46,18 @@ public class Market implements Serializable {
     }
 
     /**
-     * Gets the hash map of sellable goods
-     * @return hash map of sellable goods
+     * Gets the sell status of a good.
+     * @param good The good whose sell status is being checked.
+     * @return True if the good is sellable. False otherwise.
      */
     public boolean getGoodsSell(Good good) {
         return goodsSell.get(good);
     }
 
     /**
-     * Gets the hash map of buyable goods
-     * @return hash map of buyable goods
+     * Gets the buy status of a good.
+     * @param good The good whose buy status is being checked
+     * @return True if the good is buyable. False otherwise.
      */
     public boolean getGoodsBuy(Good good) {
         return goodsBuy.get(good);
