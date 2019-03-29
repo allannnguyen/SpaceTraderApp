@@ -17,6 +17,9 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Planet;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.ConfigurationViewModel;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.TravelViewModel;
 
+/**
+ * Represents the travel screen.
+ */
 public class TravelActivity extends AppCompatActivity {
     private TextView fuel;
     private TextView planet;
@@ -26,6 +29,10 @@ public class TravelActivity extends AppCompatActivity {
     private List<Planet> planets;
     private TravelViewModel travelViewModel;
 
+    /**
+     * Creates the travel screen.
+     * @param savedInstanceState The last known state of the travel screen.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,5 +1,7 @@
 package edu.gatech.cs2340.vanillaice.spacetraderapp.models;
 
+import android.support.annotation.NonNull;
+
 import java.io.Serializable;
 
 /**
@@ -41,14 +43,19 @@ public class Planet implements Serializable {
     }
 
     /**
-     * Prints the planet information to the logs.
+     * Gets the name of the planet.
      *
-     * @ A string listing the planet's parameters.
+     * @return The planet's name
      */
-
     public String getName() {
         return name;
     }
+
+    /**
+     * Gets the name and distance of the planet
+     * @return The planet's name and distance
+     */
+    @NonNull
     public String toString() {
         return name + "   " + distance;
     }

@@ -11,6 +11,9 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Player;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Ship;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Universe;
 
+/**
+ * Handles travel actions
+ */
 public class TravelViewModel {
 
     private Player player;
@@ -39,10 +42,18 @@ public class TravelViewModel {
         return ship.getFuel();
     }
 
+    /**
+     * Gets the planet on which the player is currently located.
+     * @return The player's current planet
+     */
     public Planet getCurrentPlanet() {
         return player.getPlanet();
     }
 
+    /**
+     * Gets all of the planets that are within travel range of teh player.
+     * @return The list of planet the player can travel to
+     */
     public List<Planet> planetsInRange() {
         List<Planet> planetList = new ArrayList<Planet>();
         for (Planet planet: universe.getPlanets()) {

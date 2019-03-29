@@ -1,5 +1,7 @@
 package edu.gatech.cs2340.vanillaice.spacetraderapp.models;
 
+import android.support.annotation.NonNull;
+
 import java.io.Serializable;
 import java.util.HashMap;
 
@@ -91,6 +93,7 @@ public class Ship implements Serializable {
     public void setFuel(int newFuel) {
         this.fuel = newFuel;
     }
+
     /**
      * Gets the current health
      * @return health
@@ -278,9 +281,10 @@ public class Ship implements Serializable {
     }
 
     /**
-     * Prints out the ship
-     * @return string representing the ship
+     * Gets the type of the ship
+     * @return The type of the ship
      */
+    @NonNull
     public String toString() {
         return type.toString();
     }

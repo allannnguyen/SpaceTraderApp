@@ -12,6 +12,9 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Player;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.ConfigurationViewModel;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.MarketViewModel;
 
+/**
+ * Represents the market screen.
+ */
 public class MarketActivity extends AppCompatActivity {
     private Button buyButton;
     private Button sellButton;
@@ -22,7 +25,10 @@ public class MarketActivity extends AppCompatActivity {
     private Player player;
     private MarketViewModel viewModel = new MarketViewModel(ConfigurationViewModel.getInstance().getPlayer());
 
-
+    /**
+     * Creates the market screen.
+     * @param savedInstanceState The last known state of teh market screen.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -23,6 +23,9 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Difficulty;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Player;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.ConfigurationViewModel;
 
+/**
+ * Represents the configuration screen.
+ */
 public class MainActivity extends AppCompatActivity implements Serializable {
     private ConfigurationViewModel viewModel;
     private EditText nameEntry;
@@ -48,6 +51,10 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     private Spinner difficultySpinner;
     int total = 16;
 
+    /**
+     * Creates the configuration screen
+     * @param savedInstanceState The last known state of the configuration screen
+     */
     @Override
     @SuppressWarnings("serial")
     protected void onCreate(Bundle savedInstanceState) {
@@ -202,12 +209,23 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
     }
 
+    /**
+     * Creates a drop down menu on the corner of teh screen.
+     * @param menu The menu that will be shown when the drop down is selected.
+     * @return True if the drop down menu is selected.
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
         return true;
     }
+
+    /**
+     * Sends the call to save or load the game when the save or load button is pressed.
+     * @param item The button from the drop down menu that is pressed.
+     * @return True if the save/load is successful. False otherwise.
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         ConfigurationViewModel cvm = ConfigurationViewModel.getInstance();

@@ -7,6 +7,9 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Player;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Ship;
 import java.io.Serializable;
 
+/**
+ * Handles the creation of each planet's market and trade actions.
+ */
 public class MarketViewModel implements Serializable {
     private Player player;
     private Ship ship;
@@ -120,7 +123,6 @@ public class MarketViewModel implements Serializable {
      * @param narcoticSold the quantity of narcotic sold
      * @param robotSold the quantity of robot sold
      */
-
     public void sell(int waterSold, int furSold, int foodSold, int oreSold, int gameSold,
                      int firearmSold, int medicineSold, int machineSold, int narcoticSold
             , int robotSold) {

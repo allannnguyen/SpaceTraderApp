@@ -1,5 +1,7 @@
 package edu.gatech.cs2340.vanillaice.spacetraderapp.models;
 
+import android.support.annotation.NonNull;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -75,7 +77,7 @@ public class Universe implements Serializable {
      *
      * @return A string of the planets in the universe
      */
-    @Override
+    @NonNull
     public String toString() {
         String universeString = "The Universe: \n";
         for (Planet planet : tenplanets) {

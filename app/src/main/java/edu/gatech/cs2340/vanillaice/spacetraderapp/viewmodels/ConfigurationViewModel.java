@@ -25,6 +25,10 @@ public class ConfigurationViewModel {
 
     private ConfigurationViewModel() {}
 
+    /**
+     * Gets the singleton instance of teh configuration viewmodel
+     * @return The instance of teh configuration viewmodel
+     */
     public static ConfigurationViewModel getInstance() {
         return configSingle;
     }
@@ -62,8 +66,8 @@ public class ConfigurationViewModel {
 
     /**
      * Prints out large log numbers
-     * @param tag
-     * @param content
+     * @param tag The type of the log message
+     * @param content The message that will be printed in the log
      */
     public static void largeLog(String tag, String content) {
         if (content.length() > 4000) {
@@ -74,6 +78,11 @@ public class ConfigurationViewModel {
         }
     }
 
+    /**
+     * Loads the data of the game.
+     * @param file The file from which the data will be loaded
+     * @return True if the data is loaded. False if there is an exception.
+     */
     public boolean loadBinary(File file) {
         boolean success = true;
         try {
@@ -97,6 +106,11 @@ public class ConfigurationViewModel {
         return success;
     }
 
+    /**
+     * Saves the data of the game
+     * @param file The file to which the data will be saved
+     * @return True if the data is saved. False if there is an exception.
+     */
     public boolean saveBinary(File file) {
         boolean success = true;
         try {

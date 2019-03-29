@@ -12,6 +12,9 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Good;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.ConfigurationViewModel;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.MarketViewModel;
 
+/**
+ * Represents the sell screen.
+ */
 public class SellActivity extends AppCompatActivity {
 
     private Button upButton1;
@@ -79,6 +82,10 @@ public class SellActivity extends AppCompatActivity {
     private Button sellButton;
 
 
+    /**
+     * Creates the sell screen.
+     * @param savedInstanceState The last known state of teh sell screen.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

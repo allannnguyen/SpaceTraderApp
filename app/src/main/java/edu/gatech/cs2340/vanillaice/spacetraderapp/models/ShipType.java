@@ -55,6 +55,30 @@ public enum ShipType {
     }
 
     /**
+     * Gets the base number of weapon slots for the ship
+     * @return max weapon slots of the ship
+     */
+    public int getWeaponSlots() {
+        return weaponSlots;
+    }
+
+    /**
+     * Gets the base number of shield slots for the ship
+     * @return max shield slots of the ship
+     */
+    public int getShieldSlots() {
+        return shieldSlots;
+    }
+
+    /**
+     * Gets the base number of gadget slots for the ship
+     * @return max gadget slots of the ship
+     */
+    public int getGadgetSlots() {
+        return gadgetSlots;
+    }
+
+    /**
      * Gets the base health of the ship
      * @return max health of the ship
      */
@@ -69,5 +93,21 @@ public enum ShipType {
      */
     public int getFuelEconomy() {
         return this.fuelEconomy;
+    }
+
+    /**
+     * Gets the base number of crew slots for the ship
+     * @return max crew slots of the ship
+     */
+    public int getCrewQuarters() {
+        return crewQuarters;
+    }
+
+    /**
+     * Gets the base price of the ship
+     * @return the base price of the ship
+     */
+    public int getBasePrice() {
+        return basePrice;
     }
 }
