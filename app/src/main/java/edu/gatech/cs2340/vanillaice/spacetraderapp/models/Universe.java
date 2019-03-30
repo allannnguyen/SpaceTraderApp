@@ -71,6 +71,14 @@ public class Universe implements Serializable {
     }
 
     /**
+     * Creates a universe with specific planets.
+     * @param planets The planets that we want to put into the universe.
+     */
+    public Universe(List<Planet> planets) {
+        tenplanets = planets;
+    }
+
+    /**
      * Prints a string of the planets in the universe
      *
      * @return A string of the planets in the universe
