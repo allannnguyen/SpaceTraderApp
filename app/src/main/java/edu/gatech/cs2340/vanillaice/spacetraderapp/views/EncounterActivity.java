@@ -12,10 +12,6 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.R;
  * Represents the screen where the player will randomly encounter other characters
  */
 public class EncounterActivity extends AppCompatActivity {
-    private Button cancelButton;
-    private Button fightButton;
-    private Button fleeButton;
-    private Button acceptButton;
 
     /**
      * Creates the screen where the random encounter occurs
@@ -26,7 +22,7 @@ public class EncounterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_encounter);
 
-        cancelButton = findViewById(R.id.cancelButton);
+        Button cancelButton = findViewById(R.id.cancelButton);
 
 
         cancelButton.setOnClickListener(new View.OnClickListener() {

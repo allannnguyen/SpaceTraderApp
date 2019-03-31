@@ -20,7 +20,6 @@ import java.io.Serializable;
 
 import edu.gatech.cs2340.vanillaice.spacetraderapp.R;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Difficulty;
-import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Player;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.ConfigurationViewModel;
 
 /**
@@ -30,33 +29,23 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     private ConfigurationViewModel viewModel;
     private EditText nameEntry;
     private TextView remainingPoints;
-    private Button pUp;
-    private Button pDown;
-    private Button fUp;
-    private Button fDown;
-    private Button tUp;
-    private Button tDown;
-    private Button eUp;
-    private Button eDown;
-    private Button createButton;
-    private Button exitButton;
     private TextView pilotPoints;
     private TextView fighterPoints;
     private TextView traderPoints;
     private TextView engineerPoints;
-    private int pCounter = 0;
-    private int fCounter = 0;
-    private int tCounter = 0;
-    private int eCounter = 0;
+    private int pCounter;
+    private int fCounter;
+    private int tCounter;
+    private int eCounter;
     private Spinner difficultySpinner;
-    int total = 16;
+    private int total = 16;
+    private final String emptyStr = "";
 
     /**
      * Creates the configuration screen
      * @param savedInstanceState The last known state of the configuration screen
      */
     @Override
-    @SuppressWarnings("serial")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -65,16 +54,15 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         viewModel = ConfigurationViewModel.getInstance();
         nameEntry = findViewById(R.id.nameEntry);
         remainingPoints = findViewById(R.id.remainingPoints);
-        pUp = findViewById(R.id.pUp);
-        pDown = findViewById(R.id.pDown);
-        fUp = findViewById(R.id.fUp);
-        fDown = findViewById(R.id.fDown);
-        tUp = findViewById(R.id.tUp);
-        tDown = findViewById(R.id.tDown);
-        eUp = findViewById(R.id.eUp);
-        eDown = findViewById(R.id.eDown);
-        createButton = findViewById(R.id.createButton);
-        exitButton = findViewById(R.id.exitButton);
+        Button pUp = findViewById(R.id.pUp);
+        Button pDown = findViewById(R.id.pDown);
+        Button fUp = findViewById(R.id.fUp);
+        Button fDown = findViewById(R.id.fDown);
+        Button tUp = findViewById(R.id.tUp);
+        Button tDown = findViewById(R.id.tDown);
+        Button eUp = findViewById(R.id.eUp);
+        Button eDown = findViewById(R.id.eDown);
+        Button createButton = findViewById(R.id.createButton);
         pilotPoints = findViewById(R.id.pilotPoints);
         fighterPoints = findViewById(R.id.fighterPoints);
         traderPoints = findViewById(R.id.traderPoints);
@@ -84,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         //int total = 16;
         remainingPoints.setText("Remaining Points: " + Integer.toString(total));
 
-        difficultySpinner.setAdapter(new ArrayAdapter<Difficulty>(this,
+        difficultySpinner.setAdapter(new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, Difficulty.values()));
 
         pUp.setOnClickListener(new View.OnClickListener() {
@@ -104,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         pDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (total < 16 && pCounter > 0) {
+                if ((total < 16) && (pCounter > 0)) {
                     pCounter--;
                     pilotPoints.setText(Integer.toString(pCounter));
                     total++;
@@ -116,6 +104,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
 
         fUp.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
                 if (total > 0) {
@@ -130,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         fDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (total < 16 && fCounter > 0) {
+                if ((total < 16) && (fCounter > 0)) {
                     fCounter--;
                     fighterPoints.setText(Integer.toString(fCounter));
                     total++;
@@ -154,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         tDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (total < 16 && tCounter > 0) {
+                if ((total < 16) && (tCounter > 0)) {
                     tCounter--;
                     traderPoints.setText(Integer.toString(tCounter));
                     total++;
@@ -168,7 +157,6 @@ public class MainActivity extends AppCompatActivity implements Serializable {
             @Override
             public void onClick(View v) {
                 if (total > 0) {
-                    int x =6;
                     eCounter++;
                     engineerPoints.setText(Integer.toString(eCounter));
                     total--;
@@ -180,7 +168,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         eDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (total < 16 && eCounter > 0) {
+                if ((total < 16) && (eCounter > 0)) {
                     eCounter--;
                     engineerPoints.setText(Integer.toString(eCounter));
                     total++;
@@ -192,11 +180,11 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         createButton.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               if (total == 0 && pCounter >= 0 && fCounter >= 0 && tCounter >= 0 && eCounter >= 0 && !nameEntry.getText().toString().equals("")) {
+               if ((total == 0) && (pCounter >= 0) && (fCounter >= 0) && (tCounter >= 0)
+                       && (eCounter >= 0) && (!emptyStr.equals(nameEntry.getText().toString()))) {
                    viewModel.createPlayer(nameEntry.getText().toString(),
                            (Difficulty) difficultySpinner.getSelectedItem(),
                            pCounter, fCounter, tCounter, eCounter);
-                   Player player = viewModel.getPlayer();
 
                    Intent i = new Intent(MainActivity.this, GameActivity.class);
                    //i.putExtra("player", player);
@@ -240,6 +228,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
             Log.d("MY APP", "Loading Binary Data");
             cvm.loadBinary(file);
             Intent i = new Intent(MainActivity.this, GameActivity.class);
+            startActivity(i);
             return true;
         }
     }

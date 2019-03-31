@@ -5,7 +5,7 @@ package edu.gatech.cs2340.vanillaice.spacetraderapp.models;
  */
 public enum ShipType {
     FLEA(3, 0, 0, 0, 20, 0, 0, 0), //weak hull, cheap
-    GNAT(15, 1, 0, 1, 14, 0, 0, 0),
+    GNAT(15, 1, 0, 1, 14, 0, 10, 100),
     FIREFLY(20, 1, 1, 1, 17, 0, 0, 0), //fairly cheap
     MOSQUITO(15, 2, 1, 1, 13, 0, 0, 0), //fairly strong hull
     BUMBLEBEE(20, 1, 2, 2, 15, 1, 0, 0), //same hull strength as firefly
@@ -35,7 +35,8 @@ public enum ShipType {
      * @param basePrice base cost to purchase or sell ship
      * @param hullHealth base health of the ship
      */
-    ShipType(int cargoHolds, int weaponSlots, int shieldSlots, int gadgetSlots, int fuelEconomy, int crewQuarters, int basePrice, int hullHealth) {
+    ShipType(int cargoHolds, int weaponSlots, int shieldSlots, int gadgetSlots, int fuelEconomy,
+             int crewQuarters, int basePrice, int hullHealth) {
         this.cargoHolds = cargoHolds;
         this.weaponSlots = weaponSlots;
         this.shieldSlots = shieldSlots;

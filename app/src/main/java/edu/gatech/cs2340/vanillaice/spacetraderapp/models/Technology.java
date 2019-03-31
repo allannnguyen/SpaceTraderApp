@@ -11,5 +11,5 @@ public enum Technology {
     EARLYINDUSTRIAL,
     INDUSTRIAL,
     POSTINDUSTRIAL,
-    HITECH;
+    HITECH
 }

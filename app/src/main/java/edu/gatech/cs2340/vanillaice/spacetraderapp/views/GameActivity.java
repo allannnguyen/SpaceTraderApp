@@ -13,16 +13,12 @@ import android.widget.Button;
 import java.io.File;
 
 import edu.gatech.cs2340.vanillaice.spacetraderapp.R;
-import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Player;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.ConfigurationViewModel;
 
 /**
  * Represents the main menu screen.
  */
 public class GameActivity extends AppCompatActivity {
-    private Button travelButton;
-    private Button tradeButton;
-    private Player player;
 
     /**
      * Creates the screen of the main menu
@@ -35,8 +31,8 @@ public class GameActivity extends AppCompatActivity {
         //Intent i = getIntent();
         //player = (Player)i.getSerializableExtra("player");
 
-        travelButton = findViewById(R.id.travelButton);
-        tradeButton = findViewById(R.id.tradeButton);
+        Button travelButton = findViewById(R.id.travelButton);
+        Button tradeButton = findViewById(R.id.tradeButton);
 
         travelButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +84,7 @@ public class GameActivity extends AppCompatActivity {
             Log.d("MY APP", "Loading Binary Data");
             //cvm.loadBinary(file);
             Intent i = new Intent(GameActivity.this, GameActivity.class);
+            startActivity(i);
             return cvm.loadBinary(file);
         }
 

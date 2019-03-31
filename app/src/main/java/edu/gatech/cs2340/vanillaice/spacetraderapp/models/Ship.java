@@ -14,7 +14,7 @@ public class Ship implements Serializable {
     private boolean escapepod;
     private boolean insurance;
     private ShipType type;
-    private HashMap<Good, Integer> goods;
+    private final HashMap<Good, Integer> goods;
 
     /**
      * Default constructor for player with a GNAT ship

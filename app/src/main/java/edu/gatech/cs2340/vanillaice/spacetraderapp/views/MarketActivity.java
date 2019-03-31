@@ -16,14 +16,8 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.MarketViewModel;
  * Represents the market screen.
  */
 public class MarketActivity extends AppCompatActivity {
-    private Button buyButton;
-    private Button sellButton;
-    private Button returnButton;
-    private TextView credits;
-    private TextView planet;
-    private TextView cargo;
-    private Player player;
-    private MarketViewModel viewModel = new MarketViewModel(ConfigurationViewModel.getInstance().getPlayer());
+    private final MarketViewModel viewModel = new MarketViewModel(ConfigurationViewModel
+            .getInstance().getPlayer());
 
     /**
      * Creates the market screen.
@@ -33,13 +27,13 @@ public class MarketActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
-        player = ConfigurationViewModel.getInstance().getPlayer();
-        credits = findViewById(R.id.marketCredits);
-        cargo = findViewById(R.id.marketCargo);
-        buyButton = findViewById(R.id.buyButton);
-        sellButton = findViewById(R.id.buyButton2);
-        returnButton = findViewById(R.id.returnButton);
-        planet = findViewById(R.id.marketPlanet);
+        Player player = ConfigurationViewModel.getInstance().getPlayer();
+        TextView credits = findViewById(R.id.marketCredits);
+        TextView cargo = findViewById(R.id.marketCargo);
+        Button buyButton = findViewById(R.id.buyButton);
+        Button sellButton = findViewById(R.id.buyButton2);
+        Button returnButton = findViewById(R.id.returnButton);
+        TextView planet = findViewById(R.id.marketPlanet);
         String creditsText = "Cargo Credits: " + viewModel.getPlayerCredits();
         String planetText = "Planet: " + player.getPlanet().getName();
         String cargoText = "Cargo Space: " + viewModel.getCargoSpace();

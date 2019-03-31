@@ -1,7 +1,5 @@
 package edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels;
 
-import android.app.Activity;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -16,10 +14,9 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Universe;
  */
 public class TravelViewModel {
 
-    private Player player;
-    private Ship ship;
-    private Universe universe;
-    private Activity context;
+    private final Player player;
+    private final Ship ship;
+    private final Universe universe;
 
     /**
      * Creates an instance of a Travel viewmodel
@@ -55,7 +52,7 @@ public class TravelViewModel {
      * @return The list of planet the player can travel to
      */
     public List<Planet> planetsInRange() {
-        List<Planet> planetList = new ArrayList<Planet>();
+        List<Planet> planetList = new ArrayList<>();
         for (Planet planet: universe.getPlanets()) {
             if (planet.calcDistance(player.getPlanet()) <= ship.getFuel()) {
                 planetList.add(planet);

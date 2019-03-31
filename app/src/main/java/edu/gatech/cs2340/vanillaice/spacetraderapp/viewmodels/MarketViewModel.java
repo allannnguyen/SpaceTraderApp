@@ -11,9 +11,9 @@ import java.io.Serializable;
  * Handles the creation of each planet's market and trade actions.
  */
 public class MarketViewModel implements Serializable {
-    private Player player;
-    private Ship ship;
-    private Market market;
+    private final Player player;
+    private final Ship ship;
+    private final Market market;
 
     /**
      * Constructor for the MarketViewModel

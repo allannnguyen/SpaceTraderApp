@@ -8,12 +8,12 @@ import java.io.Serializable;
  * Represents a planet. A planet has a name, coordinates, a tech level, and a resource level.
  */
 public class Planet implements Serializable {
-    private String name;
-    private int xcoord;
-    private int ycoord;
-    private Technology techLevel;
-    private Resource resourceLevel;
-    private Market market;
+    private final String name;
+    private final int xcoord;
+    private final int ycoord;
+    private final Technology techLevel;
+    private final Resource resourceLevel;
+    private final Market market;
     private int distance;
 
     /**
@@ -25,7 +25,8 @@ public class Planet implements Serializable {
      * @param techLevel The technology level of the planet.
      * @param resourceLevel The resource level of the planet.
      */
-    public Planet(String name, int xcoord, int ycoord, Technology techLevel, Resource resourceLevel) {
+    public Planet(String name, int xcoord, int ycoord, Technology techLevel,
+                  Resource resourceLevel) {
         this.name = name;
         this.xcoord = xcoord;
         this.ycoord = ycoord;
@@ -85,7 +86,8 @@ public class Planet implements Serializable {
      * @return The distance between two planets.
      */
     public int calcDistance(Planet planet) {
-        distance = (int) Math.sqrt(Math.pow(this.xcoord - planet.getXcoord(), 2) + Math.pow((this.ycoord - planet.getYcoord()), 2));
+        distance = (int) Math.sqrt(Math.pow(this.xcoord - planet.getXcoord(), 2)
+                + Math.pow((this.ycoord - planet.getYcoord()), 2));
         return distance;
     }
 
@@ -97,5 +99,21 @@ public class Planet implements Serializable {
      */
     public int getDistance() {
         return distance;
+    }
+
+    /**
+     * Gets the planet's technology level.
+     * @return The planet's tech level
+     */
+    public Technology getTechLevel() {
+        return this.techLevel;
+    }
+
+    /**
+     * Gets the planet's resource level.
+     * @return The planet's resource level
+     */
+    public Resource getResourceLevel() {
+        return this.resourceLevel;
     }
 }

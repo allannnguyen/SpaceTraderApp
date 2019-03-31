@@ -21,12 +21,7 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.TravelViewModel;
  * Represents the travel screen.
  */
 public class TravelActivity extends AppCompatActivity {
-    private TextView fuel;
-    private TextView planet;
     private Spinner travelSpinner;
-    private Button travelButton;
-    private Button cancelButton;
-    private List<Planet> planets;
     private TravelViewModel travelViewModel;
 
     /**
@@ -37,21 +32,22 @@ public class TravelActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_travel);
-        fuel = findViewById(R.id.fuel);
-        planet = findViewById(R.id.currentPlanetTextView);
-        travelButton = findViewById(R.id.travelButton);
-        cancelButton = findViewById(R.id.cancelButton);
+        TextView fuel = findViewById(R.id.fuel);
+        TextView planet = findViewById(R.id.currentPlanetTextView);
+        Button travelButton = findViewById(R.id.travelButton);
+        Button cancelButton = findViewById(R.id.cancelButton);
         travelSpinner = findViewById(R.id.travelPlanets);
         travelViewModel =
                 new TravelViewModel(ConfigurationViewModel.getInstance().getPlayer(),
                         ConfigurationViewModel.getInstance().getUniverse());
         String fueltext = "Fuel: " + travelViewModel.getFuel();
-        planets = travelViewModel.planetsInRange();
+        List<Planet> planets = travelViewModel.planetsInRange();
         String planettext = "Current Planet: " + travelViewModel.getCurrentPlanet();
         fuel.setText(fueltext);
         planet.setText(planettext);
 
-        travelSpinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, planets));
+        travelSpinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,
+                planets));
 
         travelButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +55,8 @@ public class TravelActivity extends AppCompatActivity {
                 String toastMessage;
                 toastMessage = travelViewModel.travel((Planet) travelSpinner.getSelectedItem());
                 startActivity(new Intent(TravelActivity.this, GameActivity.class));
-                Toast toast = Toast.makeText(getApplicationContext(), toastMessage, Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(getApplicationContext(), toastMessage,
+                        Toast.LENGTH_LONG);
                 toast.show();
 
 

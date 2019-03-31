@@ -9,13 +9,13 @@ import java.io.Serializable;
  * a difficulty setting for the game, their number of credits, and a ship they own.
  */
 public class Player implements Serializable{
-    private String name;
-    private int pilot;
-    private int fighter;
-    private int trader;
-    private int engineer;
+    private final  String name;
+    private final int pilot;
+    private final int fighter;
+    private final int trader;
+    private final int engineer;
     private int credits;
-    private Difficulty difficulty;
+    private final Difficulty difficulty;
     private Ship ship;
     private Planet currPlanet;
 
@@ -29,7 +29,8 @@ public class Player implements Serializable{
      * @param engineer number of skill points allocated to the engineer skill
      * @param currPlanet the player's current location
      */
-    public Player(String name, Difficulty difficulty, int pilot, int fighter, int trader, int engineer, Planet currPlanet) {
+    public Player(String name, Difficulty difficulty, int pilot, int fighter, int trader,
+                  int engineer, Planet currPlanet) {
         this.name = name;
         this.difficulty = difficulty;
         this.pilot = pilot;

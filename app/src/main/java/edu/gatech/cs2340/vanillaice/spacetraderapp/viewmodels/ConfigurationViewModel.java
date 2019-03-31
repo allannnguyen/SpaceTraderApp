@@ -7,21 +7,21 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Difficulty;
-import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Good;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Player;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Universe;
 
 /**
  * Handles the player creation process and subsequent checks
  */
-public class ConfigurationViewModel {
+public final class ConfigurationViewModel {
     private Player player;
     private Universe universe;
-    private static ConfigurationViewModel configSingle = new ConfigurationViewModel();
-    public final static String DEFAULT_BINARY_FILE_NAME = "data.bin";
+    private static final ConfigurationViewModel configSingle = new ConfigurationViewModel();
+    public static final String DEFAULT_BINARY_FILE_NAME = "data.bin";
 
     private ConfigurationViewModel() {}
 
@@ -41,9 +41,11 @@ public class ConfigurationViewModel {
      * @param trader player's selected trader skillpoints
      * @param engineer player's selected engineer skillpoints
      */
-    public void createPlayer(String name, Difficulty difficulty, int pilot, int fighter, int trader, int engineer) {
+    public void createPlayer(String name, Difficulty difficulty, int pilot, int fighter,
+                             int trader, int engineer) {
         universe = new Universe();
-        player = new Player(name, difficulty, pilot, fighter, trader, engineer, universe.getPlanets().get(0));
+        player = new Player(name, difficulty, pilot, fighter, trader, engineer,
+                universe.getPlanets().get(0));
         Log.d("Player", player.toString());
         largeLog("Universe", universe.toString());
     }
@@ -69,7 +71,7 @@ public class ConfigurationViewModel {
      * @param tag The type of the log message
      * @param content The message that will be printed in the log
      */
-    public static void largeLog(String tag, String content) {
+    private static void largeLog(String tag, String content) {
         if (content.length() > 4000) {
             Log.d(tag, content.substring(0, 4000));
             largeLog(tag, content.substring(4000));
@@ -126,7 +128,7 @@ public class ConfigurationViewModel {
              */
 
 
-            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
+            ObjectOutput out = new ObjectOutputStream(new FileOutputStream(file));
             // We basically can save our entire data model with one write, since this will follow
             // all the links and pointers to save everything.  Just save the top level object.
             out.writeObject(player);
