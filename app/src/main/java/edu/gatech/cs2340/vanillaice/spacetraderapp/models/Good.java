@@ -71,43 +71,10 @@ public enum Good {
     }
 
     /**
-     * Gets the tech level which produces the most of this resource
-     * @return tech level which produces the most
-     */
-    public int getTtp() {
-        return ttp;
-    }
-
-    /**
      * Gets the price increase per tech level
      * @return price increase per tech level
      */
     public int getIpl() {
         return ipl;
-    }
-
-    /**
-     * Gets the variance which is the maximum percentage that the price can
-     * vary above or below the base
-     * @return variance
-     */
-    public int getVar() {
-        return var;
-    }
-
-    /**
-     * Gets the minimum price offered in space trade with a random trader
-     * @return min price offered in random space trade
-     */
-    public int getMtl() {
-        return mtl;
-    }
-
-    /**
-     * Gets the max price offered in space trade with a random trader
-     * @return max price offered in random space trade
-     */
-    public int getMth() {
-        return mth;
     }
 }

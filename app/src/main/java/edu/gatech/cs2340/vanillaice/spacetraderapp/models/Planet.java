@@ -100,20 +100,4 @@ public class Planet implements Serializable {
     public int getDistance() {
         return distance;
     }
-
-    /**
-     * Gets the planet's technology level.
-     * @return The planet's tech level
-     */
-    public Technology getTechLevel() {
-        return this.techLevel;
-    }
-
-    /**
-     * Gets the planet's resource level.
-     * @return The planet's resource level
-     */
-    public Resource getResourceLevel() {
-        return this.resourceLevel;
-    }
 }

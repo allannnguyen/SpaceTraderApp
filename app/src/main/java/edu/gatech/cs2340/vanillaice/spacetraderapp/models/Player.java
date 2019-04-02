@@ -43,59 +43,11 @@ public class Player implements Serializable{
     }
 
     /**
-     * Gets the name of the player
-     * @return this player's name
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * Gets the amount of skill points allocated to the pilot skill
-     * @return player's pilot skill points
-     */
-    public int getPilot(){
-        return pilot;
-    }
-
-    /**
-     * Gets the amount of skill points allocated to the fighter skill
-     * @return player's fighter skill points
-     */
-    public int getFighter(){
-        return fighter;
-    }
-
-    /**
-     * Gets the amount of skill points allocated to the trader skill
-     * @return player's trader skill points
-     */
-    public int getTrader(){
-        return trader;
-    }
-
-    /**
-     * Gets the amount of skill points allocated to the engineer skill
-     * @return player's engineer skill points
-     */
-    public int getEngineer(){
-        return engineer;
-    }
-
-    /**
      * Gets the amount of credits the player has
      * @return player's number of credits
      */
     public int getCredits() {
         return credits;
-    }
-
-    /**
-     * Gets the difficulty the player selected
-     * @return player's difficulty setting
-     */
-    public Difficulty getDifficulty(){
-        return difficulty;
     }
 
     /**
@@ -112,14 +64,6 @@ public class Player implements Serializable{
      */
     public void setCredits(int credits) {
         this.credits = credits;
-    }
-
-    /**
-     * Sets the current ship for the player
-     * @param ship player's new ship
-     */
-    public void setShip(Ship ship) {
-        this.ship = ship;
     }
 
     /**
