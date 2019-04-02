@@ -17,26 +17,26 @@ public class Universe implements Serializable {
      */
     public Universe() {
         int x1 = 1;
-        int x2 = 3*9 + 3;
-        int x3 = 3*4 + 1;
+        int x2 = (3*9) + 3;
+        int x3 = (3*4) + 1;
         int x4 = 5*5;
 
-        int x5 = 4*4 + 1;
+        int x5 = (4*4) + 1;
         int x6 = 4*4;
-        int x7 = 4*4 + 1;
+        int x7 = (4*4) + 1;
 
         int x8 = 5*5;
         int x9 = 9;
         int x10 = 5*3;
-        int x11 =5*2 +1;
+        int x11 =(5*2) +1;
 
-        int x12 = 4*4 + 3;
+        int x12 = (4*4) + 3;
         int x13 = 3 * 10;
         int x14 = 10;
         int x15 = 2* 10;
         int x16 = 3*5;
-        int x17 = 10*2 + 2;
-        int x18 = 5*5 + 1;
+        int x17 = (10*2) + 2;
+        int x18 = (5*5) + 1;
         int x19 = 6*4;
         int x20 = 9;
         int x21 = 6*3;
@@ -50,7 +50,7 @@ public class Universe implements Serializable {
         int y5 =10*2;
         int y6 =10;
         int y7 =10 + 1;
-        int y8 = 10*2 + 2;
+        int y8 = (10*2) + 2;
 
         int y9 =10*3;
         int y10 =4;
@@ -58,15 +58,15 @@ public class Universe implements Serializable {
         int y12 = 5*3;
 
         int y13 =5*5;
-        int y14 =5*5 + 1;
+        int y14 =(5*5) + 1;
         int y15 = 6*3;
 
         int y16 = 9;
-        int y17 = 10*3 -1;
+        int y17 = (10*3) -1;
         int y18 = 7*2;
 
         int y19 = 6;
-        int y20 = 10*3 -1;
+        int y20 = (10*3) -1;
         int y21 =10 + 1;
 
         int y22 = 10 + 3;

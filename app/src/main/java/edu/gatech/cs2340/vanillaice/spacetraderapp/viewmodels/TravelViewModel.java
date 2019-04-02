@@ -17,8 +17,6 @@ public class TravelViewModel {
     private final Player player;
     private final Ship ship;
     private final Universe universe;
-    private final int chance1 = 44;
-    private final int chance2 = 55;
 
     /**
      * Creates an instance of a Travel viewmodel
@@ -71,6 +69,8 @@ public class TravelViewModel {
      * @return A message describing what happened while travelling
      */
     public String travel(Planet planet) {
+        int chance1 = (4 * 10) + 4;
+        int chance2 = (5 * 10) + 5;
         Random rand = new Random();
         int chance = rand.nextInt(100);
         setPlanet(planet);
