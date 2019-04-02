@@ -10,9 +10,6 @@ import java.util.HashMap;
  */
 public class Ship implements Serializable {
     private int fuel;
-    private int health;
-    private boolean escapepod;
-    private boolean insurance;
     private ShipType type;
     private final HashMap<Good, Integer> goods;
 
@@ -20,21 +17,16 @@ public class Ship implements Serializable {
      * Default constructor for player with a GNAT ship
      */
     public Ship() {
-        this(ShipType.GNAT, false, false);
+        this(ShipType.GNAT);
     }
 
     /**
      * Constructor for ship
      * @param type the ShipType
-     * @param escapepod boolean whether the ship has an escape pod
-     * @param insurance boolean whether the ship has insurance
      */
-    public Ship(ShipType type, boolean escapepod, boolean insurance) {
+    public Ship(ShipType type) {
         this.type = type;
-        this.health = type.getHullHealth();
         this.fuel = type.getFuelEconomy();
-        this.escapepod = escapepod;
-        this.insurance = insurance;
         goods = new HashMap<>();
         for (Good good : Good.values()) {
             goods.put(good, 0);
