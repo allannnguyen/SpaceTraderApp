@@ -3,6 +3,7 @@ package edu.gatech.cs2340.vanillaice.spacetraderapp.views;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -181,9 +182,10 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         createButton.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+               Editable name = nameEntry.getText();
                if ((total == 0) && (pCounter >= 0) && (fCounter >= 0) && (tCounter >= 0)
-                       && (eCounter >= 0) && (!emptyStr.equals(nameEntry.getText().toString()))) {
-                   viewModel.createPlayer(nameEntry.getText().toString(),
+                       && (eCounter >= 0) && (!emptyStr.equals(name.toString()))) {
+                   viewModel.createPlayer(name.toString(),
                            (Difficulty) difficultySpinner.getSelectedItem(),
                            pCounter, fCounter, tCounter, eCounter);
 

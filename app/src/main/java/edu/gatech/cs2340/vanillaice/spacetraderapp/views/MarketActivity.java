@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import edu.gatech.cs2340.vanillaice.spacetraderapp.R;
+import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Planet;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Player;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.ConfigurationViewModel;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.MarketViewModel;
@@ -18,6 +19,7 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.MarketViewModel;
 public class MarketActivity extends AppCompatActivity {
     private final MarketViewModel viewModel = new MarketViewModel(ConfigurationViewModel
             .getInstance().getPlayer());
+    private final Player player = viewModel.getPlayer();
 
     /**
      * Creates the market screen.
@@ -27,15 +29,15 @@ public class MarketActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
-        Player player = ConfigurationViewModel.getInstance().getPlayer();
         TextView credits = findViewById(R.id.marketCredits);
         TextView cargo = findViewById(R.id.marketCargo);
         Button buyButton = findViewById(R.id.buyButton);
         Button sellButton = findViewById(R.id.buyButton2);
         Button returnButton = findViewById(R.id.returnButton);
         TextView planet = findViewById(R.id.marketPlanet);
+        Planet currPlanet = player.getPlanet();
         String creditsText = "Cargo Credits: " + viewModel.getPlayerCredits();
-        String planetText = "Planet: " + player.getPlanet().getName();
+        String planetText = "Planet: " + currPlanet.getName();
         String cargoText = "Cargo Space: " + viewModel.getCargoSpace();
         credits.setText(creditsText);
         planet.setText(planetText);

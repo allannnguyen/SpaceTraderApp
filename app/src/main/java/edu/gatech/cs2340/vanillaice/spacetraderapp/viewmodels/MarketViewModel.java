@@ -186,4 +186,12 @@ public class MarketViewModel implements Serializable {
     private int getCredits() {
         return player.getCredits();
     }
+
+    /**
+     * Gets the Player
+     * @return Player
+     */
+    public Player getPlayer() {
+        return player;
+    }
 }

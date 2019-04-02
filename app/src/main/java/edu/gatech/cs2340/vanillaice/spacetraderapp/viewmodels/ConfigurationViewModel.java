@@ -9,8 +9,10 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
+import java.util.List;
 
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Difficulty;
+import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Planet;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Player;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Universe;
 
@@ -44,8 +46,9 @@ public final class ConfigurationViewModel {
     public void createPlayer(String name, Difficulty difficulty, int pilot, int fighter,
                              int trader, int engineer) {
         universe = new Universe();
+        List<Planet> listofplanets = universe.getPlanets();
         player = new Player(name, difficulty, pilot, fighter, trader, engineer,
-                universe.getPlanets().get(0));
+                listofplanets.get(0));
     }
 
     /**
