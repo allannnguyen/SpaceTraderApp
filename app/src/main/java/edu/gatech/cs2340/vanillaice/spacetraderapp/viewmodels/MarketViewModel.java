@@ -42,29 +42,29 @@ public class MarketViewModel implements Serializable {
                     int firearmBuy, int medicineBuy, int machineBuy, int narcoticBuy
             , int robotBuy) {
         int total = 0;
-        total += market.getPrice(Good.WATER) * waterBuy;
-        total += market.getPrice(Good.FURS) * furBuy;
-        total += market.getPrice(Good.FOOD) * foodBuy;
-        total += market.getPrice(Good.ORE) * oreBuy;
-        total += market.getPrice(Good.GAMES) * gameBuy;
-        total += market.getPrice(Good.FIREARMS) * firearmBuy;
-        total += market.getPrice(Good.MEDICINE) * medicineBuy;
-        total += market.getPrice(Good.MACHINES) * machineBuy;
-        total += market.getPrice(Good.NARCOTICS) * narcoticBuy;
-        total += market.getPrice(Good.ROBOTS) * robotBuy;
+        total += getGoodPrice(Good.WATER) * waterBuy;
+        total += getGoodPrice(Good.FURS) * furBuy;
+        total += getGoodPrice(Good.FOOD) * foodBuy;
+        total += getGoodPrice(Good.ORE) * oreBuy;
+        total += getGoodPrice(Good.GAMES) * gameBuy;
+        total += getGoodPrice(Good.FIREARMS) * firearmBuy;
+        total += getGoodPrice(Good.MEDICINE) * medicineBuy;
+        total += getGoodPrice(Good.MACHINES) * machineBuy;
+        total += getGoodPrice(Good.NARCOTICS) * narcoticBuy;
+        total += getGoodPrice(Good.ROBOTS) * robotBuy;
 
         if (total <= player.getCredits()) {
-            ship.setGood(Good.WATER, ship.getGood(Good.WATER) + waterBuy);
-            ship.setGood(Good.FURS, ship.getGood(Good.FURS) + furBuy);
-            ship.setGood(Good.FOOD, ship.getGood(Good.FOOD) + foodBuy);
-            ship.setGood(Good.ORE, ship.getGood(Good.ORE) + oreBuy);
-            ship.setGood(Good.GAMES, ship.getGood(Good.GAMES) + gameBuy);
-            ship.setGood(Good.FIREARMS, ship.getGood(Good.FIREARMS) + firearmBuy);
-            ship.setGood(Good.MEDICINE, ship.getGood(Good.MEDICINE) + medicineBuy);
-            ship.setGood(Good.MACHINES, ship.getGood(Good.MACHINES) + machineBuy);
-            ship.setGood(Good.NARCOTICS, ship.getGood(Good.NARCOTICS) + narcoticBuy);
-            ship.setGood(Good.ROBOTS, ship.getGood(Good.ROBOTS) + robotBuy);
-            player.setCredits(player.getCredits() - total);
+            setGood(Good.WATER, getGoodQuantity(Good.WATER) + waterBuy);
+            setGood(Good.FURS, getGoodQuantity(Good.FURS) + furBuy);
+            setGood(Good.FOOD, getGoodQuantity(Good.FOOD) + foodBuy);
+            setGood(Good.ORE, getGoodQuantity(Good.ORE) + oreBuy);
+            setGood(Good.GAMES, getGoodQuantity(Good.GAMES) + gameBuy);
+            setGood(Good.FIREARMS, getGoodQuantity(Good.FIREARMS) + firearmBuy);
+            setGood(Good.MEDICINE, getGoodQuantity(Good.MEDICINE) + medicineBuy);
+            setGood(Good.MACHINES, getGoodQuantity(Good.MACHINES) + machineBuy);
+            setGood(Good.NARCOTICS, getGoodQuantity(Good.NARCOTICS) + narcoticBuy);
+            setGood(Good.ROBOTS, getGoodQuantity(Good.ROBOTS) + robotBuy);
+            setCredits(getCredits() - total);
         }
     }
 
@@ -128,29 +128,29 @@ public class MarketViewModel implements Serializable {
                      int firearmSold, int medicineSold, int machineSold, int narcoticSold
             , int robotSold) {
         int total = 0;
-        total += market.getPrice(Good.WATER) * waterSold;
-        total += market.getPrice(Good.FURS) * furSold;
-        total += market.getPrice(Good.FOOD) * foodSold;
-        total += market.getPrice(Good.ORE) * oreSold;
-        total += market.getPrice(Good.GAMES) * gameSold;
-        total += market.getPrice(Good.FIREARMS) * firearmSold;
-        total += market.getPrice(Good.MEDICINE) * medicineSold;
-        total += market.getPrice(Good.MACHINES) * machineSold;
-        total += market.getPrice(Good.NARCOTICS) * narcoticSold;
-        total += market.getPrice(Good.ROBOTS) * robotSold;
+        total += getGoodPrice(Good.WATER) * waterSold;
+        total += getGoodPrice(Good.FURS) * furSold;
+        total += getGoodPrice(Good.FOOD) * foodSold;
+        total += getGoodPrice(Good.ORE) * oreSold;
+        total += getGoodPrice(Good.GAMES) * gameSold;
+        total += getGoodPrice(Good.FIREARMS) * firearmSold;
+        total += getGoodPrice(Good.MEDICINE) * medicineSold;
+        total += getGoodPrice(Good.MACHINES) * machineSold;
+        total += getGoodPrice(Good.NARCOTICS) * narcoticSold;
+        total += getGoodPrice(Good.ROBOTS) * robotSold;
 
-        ship.setGood(Good.WATER, ship.getGood(Good.WATER) - waterSold);
-        ship.setGood(Good.FURS, ship.getGood(Good.FURS) - furSold);
-        ship.setGood(Good.FOOD, ship.getGood(Good.FOOD) - foodSold);
-        ship.setGood(Good.ORE, ship.getGood(Good.ORE) - oreSold);
-        ship.setGood(Good.GAMES, ship.getGood(Good.GAMES) - gameSold);
-        ship.setGood(Good.FIREARMS, ship.getGood(Good.FIREARMS) - firearmSold);
-        ship.setGood(Good.MEDICINE, ship.getGood(Good.MEDICINE) - medicineSold);
-        ship.setGood(Good.MACHINES, ship.getGood(Good.MACHINES) - machineSold);
-        ship.setGood(Good.NARCOTICS, ship.getGood(Good.NARCOTICS) - narcoticSold);
-        ship.setGood(Good.ROBOTS, ship.getGood(Good.ROBOTS) - robotSold);
+        setGood(Good.WATER, getGoodQuantity(Good.WATER) - waterSold);
+        setGood(Good.FURS, getGoodQuantity(Good.FURS) - furSold);
+        setGood(Good.FOOD, getGoodQuantity(Good.FOOD) - foodSold);
+        setGood(Good.ORE, getGoodQuantity(Good.ORE) - oreSold);
+        setGood(Good.GAMES, getGoodQuantity(Good.GAMES) - gameSold);
+        setGood(Good.FIREARMS, getGoodQuantity(Good.FIREARMS) - firearmSold);
+        setGood(Good.MEDICINE, getGoodQuantity(Good.MEDICINE) - medicineSold);
+        setGood(Good.MACHINES, getGoodQuantity(Good.MACHINES) - machineSold);
+        setGood(Good.NARCOTICS, getGoodQuantity(Good.NARCOTICS) - narcoticSold);
+        setGood(Good.ROBOTS, getGoodQuantity(Good.ROBOTS) - robotSold);
 
-        player.setCredits(player.getCredits() + total);
+        setCredits(getCredits() + total);
     }
 
     /**
@@ -160,5 +160,26 @@ public class MarketViewModel implements Serializable {
      */
     public int getGoodPrice(Good good) {
         return market.getPrice(good);
+    }
+
+    /**
+     * Sets the quantity of a good from the current market
+     * @param good the good to change
+     * @param quantity the good's quantity
+     */
+    public void setGood(Good good, int quantity) {
+        ship.setGood(good, quantity);
+    }
+
+    /**
+     * Sets the amount of credits player has
+     * @param credit amount of credits
+     */
+    public void setCredits(int credit) {
+       player.setCredits(credit);
+    }
+
+    public int getCredits() {
+        return player.getCredits();
     }
 }

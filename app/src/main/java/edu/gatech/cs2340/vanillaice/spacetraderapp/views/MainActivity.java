@@ -38,7 +38,8 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     private int tCounter;
     private int eCounter;
     private Spinner difficultySpinner;
-    private int total = 16;
+    private final int maxTotal = 16;
+    private int total = maxTotal;
     private final String emptyStr = "";
 
     /**
@@ -92,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         pDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ((total < 16) && (pCounter > 0)) {
+                if ((total < maxTotal) && (pCounter > 0)) {
                     pCounter--;
                     pilotPoints.setText(Integer.toString(pCounter));
                     total++;
@@ -119,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         fDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ((total < 16) && (fCounter > 0)) {
+                if ((total < maxTotal) && (fCounter > 0)) {
                     fCounter--;
                     fighterPoints.setText(Integer.toString(fCounter));
                     total++;
@@ -143,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         tDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ((total < 16) && (tCounter > 0)) {
+                if ((total < maxTotal) && (tCounter > 0)) {
                     tCounter--;
                     traderPoints.setText(Integer.toString(tCounter));
                     total++;
@@ -168,7 +169,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         eDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ((total < 16) && (eCounter > 0)) {
+                if ((total < maxTotal) && (eCounter > 0)) {
                     eCounter--;
                     engineerPoints.setText(Integer.toString(eCounter));
                     total++;
@@ -216,20 +217,37 @@ public class MainActivity extends AppCompatActivity implements Serializable {
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        ConfigurationViewModel cvm = ConfigurationViewModel.getInstance();
         File file;
         if (item.getItemId() == R.id.save_game) {
             file = new File(this.getFilesDir(), ConfigurationViewModel.DEFAULT_BINARY_FILE_NAME);
             Log.d("MY APP", "Saving");
-            return cvm.saveBinary(file);
+            return saveBinary(file);
         } else {
             //create a file object in the local files section
             file = new File(this.getFilesDir(), ConfigurationViewModel.DEFAULT_BINARY_FILE_NAME);
             Log.d("MY APP", "Loading Binary Data");
-            cvm.loadBinary(file);
+            loadBinary(file);
             Intent i = new Intent(MainActivity.this, GameActivity.class);
             startActivity(i);
             return true;
         }
+    }
+
+    /**
+     * Saves data onto a file
+     * @param file the file that data is saved on
+     * @return whether the data is saved
+     */
+    public boolean saveBinary(File file) {
+        return viewModel.saveBinary(file);
+    }
+
+    /**
+     * Loads data from file
+     * @param file the file that data is located on
+     * @return whether the data is loaded.
+     */
+    public boolean loadBinary(File file) {
+        return viewModel.loadBinary(file);
     }
 }
