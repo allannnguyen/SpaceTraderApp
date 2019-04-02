@@ -19,7 +19,7 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.ConfigurationViewM
  * Represents the main menu screen.
  */
 public class GameActivity extends AppCompatActivity {
-    private ConfigurationViewModel cvm = ConfigurationViewModel.getInstance();
+    private final ConfigurationViewModel cvm = ConfigurationViewModel.getInstance();
 
     /**
      * Creates the screen of the main menu
@@ -94,7 +94,7 @@ public class GameActivity extends AppCompatActivity {
      * @param file the save file to be loaded
      * @return whether the file was loaded
      */
-    public boolean loadBinary(File file) {
+    private boolean loadBinary(File file) {
         return cvm.loadBinary(file);
     }
 
@@ -103,7 +103,7 @@ public class GameActivity extends AppCompatActivity {
      * @param file file where data is saved
      * @return whether the data is saved onto the file
      */
-    public boolean saveBinary(File file) {
+    private boolean saveBinary(File file) {
         return cvm.saveBinary(file);
     }
 }

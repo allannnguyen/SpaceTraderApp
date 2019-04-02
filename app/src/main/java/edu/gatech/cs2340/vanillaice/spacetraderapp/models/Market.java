@@ -30,12 +30,12 @@ public class Market implements Serializable {
             goodsSell.put(good, false);
 
             // If they can produce, they can buy and sell
-            if (techLevel.ordinal() >= good.getMtlp()) {
+            if (techLevel.ordinal() >= getMtlp(good)) {
                 goodsBuy.put(good, true);
                 goodsSell.put(good, true);
 
             // if they can use, they can buy but not sell
-            } else if (techLevel.ordinal() >= good.getMtlu()) {
+            } else if (techLevel.ordinal() >= getMtlu(good)) {
                 //goodsBuy.put(good, false);
                 goodsSell.put(good, true);
             }
@@ -133,16 +133,36 @@ public class Market implements Serializable {
         return getBasePrice(good) + (getIpl(good) * (techLevel.ordinal() - getMtlp(good)));
     }
 
+    /**
+     * Gets the price increase per tech level
+     * @return price increase per tech level
+     */
     private int getIpl(Good good) {
         return good.getIpl();
     }
 
+    /**
+     * Gets the base price of the resource
+     * @return base price
+     */
     private int getBasePrice(Good good) {
         return good.getBasePrice();
     }
 
+    /**
+     * Gets the minimum tech level to produce this resource
+     * @return minimum tech level to produce
+     */
     private int getMtlp(Good good) {
         return good.getMtlp();
+    }
+
+    /**
+     * Gets the minimum tech level to use this resource
+     * @return minimum tech level to use
+     */
+    private int getMtlu(Good good) {
+        return good.getMtlu();
     }
 }
 

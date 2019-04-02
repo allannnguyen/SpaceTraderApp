@@ -10,7 +10,7 @@ import java.util.HashMap;
  */
 public class Ship implements Serializable {
     private int fuel;
-    private ShipType type;
+    private final ShipType type;
     private final HashMap<Good, Integer> goods;
 
     /**
@@ -24,7 +24,7 @@ public class Ship implements Serializable {
      * Constructor for ship
      * @param type the ShipType
      */
-    public Ship(ShipType type) {
+    private Ship(ShipType type) {
         this.type = type;
         this.fuel = type.getFuelEconomy();
         goods = new HashMap<>();
@@ -37,7 +37,7 @@ public class Ship implements Serializable {
      * Gets the total amount of cargo on ship
      * @return the total amount of cargo on ship
      */
-    public int getTotal() {
+    private int getTotal() {
         int total = 0;
         for (Good good : Good.values()) {
             Integer value = goods.get(good);

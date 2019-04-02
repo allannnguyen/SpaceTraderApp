@@ -57,20 +57,6 @@ public class Universe implements Serializable {
     }
 
     /**
-     * Prints a string of the planets in the universe
-     *
-     * @return A string of the planets in the universe
-     */
-    @NonNull
-    public String toString() {
-        String universeString = "The Universe: \n";
-        for (Planet planet : tenplanets) {
-            universeString = universeString.concat(planet.toString() + "\n");
-        }
-        return universeString;
-    }
-
-    /**
      * Gets the list of planets in the universe
      * @return a list of planets contained within the universe
      */
