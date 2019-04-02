@@ -17,6 +17,8 @@ public class TravelViewModel {
     private final Player player;
     private final Ship ship;
     private final Universe universe;
+    private final int chance1 = 44;
+    private final int chance2 = 55;
 
     /**
      * Creates an instance of a Travel viewmodel
@@ -73,13 +75,13 @@ public class TravelViewModel {
         int chance = rand.nextInt(100);
         setPlanet(planet);
 
-        if (chance >= 55) {
+        if (chance >= chance2) {
             return "You found a wormhole and spent no fuel to travel!";
         } else {
             ship.setFuel(ship.getFuel() - planet.getDistance());
         }
 
-        if (chance <= 44) {
+        if (chance <= chance1) {
             addCredits(100);
             return "You found extra money in your toilet!";
         }
