@@ -4,19 +4,17 @@ package edu.gatech.cs2340.vanillaice.spacetraderapp.models;
  * Represents the base stats of each type of ship
  */
 public enum ShipType {
-    GNAT(15, 14);
+    GNAT();
 
     private final int cargoHolds;
     private final int fuelEconomy;
 
     /**
      * Constructs a ship with those stats
-     * @param cargoHolds base cargo holds for the ship
-     * @param fuelEconomy parsecs able to be traveled per fuel tank
      */
-    ShipType(int cargoHolds, int fuelEconomy) {
-        this.cargoHolds = cargoHolds;
-        this.fuelEconomy = fuelEconomy;
+    ShipType() {
+        this.cargoHolds = 15;
+        this.fuelEconomy = 14;
     }
 
     /**

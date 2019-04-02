@@ -16,7 +16,7 @@ public class Player implements Serializable{
     private final int engineer;
     private int credits;
     private final Difficulty difficulty;
-    private Ship ship;
+    private final Ship ship;
     private Planet currPlanet;
 
     /**
