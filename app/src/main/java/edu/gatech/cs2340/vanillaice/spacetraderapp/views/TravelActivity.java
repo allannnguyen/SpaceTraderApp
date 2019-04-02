@@ -72,10 +72,19 @@ public class TravelActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Changes the player's current planet.
+     * @param planet The planet the player wants to go to.
+     * @return A message of what happened during the travel.
+     */
     public String travel(Planet planet) {
         return travelViewModel.travel(planet);
     }
 
+    /**
+     * Gets the player's current planet.
+     * @return The planet that the player is currently on.
+     */
     public Planet getCurrentPlanet() {
         return travelViewModel.getCurrentPlanet();
     }
