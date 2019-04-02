@@ -238,7 +238,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
      * @param file the file that data is saved on
      * @return whether the data is saved
      */
-    public boolean saveBinary(File file) {
+    private boolean saveBinary(File file) {
         return viewModel.saveBinary(file);
     }
 
@@ -247,7 +247,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
      * @param file the file that data is located on
      * @return whether the data is loaded.
      */
-    public boolean loadBinary(File file) {
+    private boolean loadBinary(File file) {
         return viewModel.loadBinary(file);
     }
 }

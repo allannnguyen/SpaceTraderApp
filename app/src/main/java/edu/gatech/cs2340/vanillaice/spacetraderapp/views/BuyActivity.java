@@ -446,7 +446,7 @@ public class BuyActivity extends AppCompatActivity {
      * @param good type of good
      * @return quantity of good
      */
-    public String getGoodQuantity(Good good) {
+    private String getGoodQuantity(Good good) {
         return Integer.toString(viewModel.getGoodQuantity(good));
     }
 
@@ -455,7 +455,7 @@ public class BuyActivity extends AppCompatActivity {
      * @param good type of good
      * @return price of good
      */
-    public String getGoodPrice(Good good) {
+    private String getGoodPrice(Good good) {
         return Integer.toString(viewModel.getGoodPrice(good));
     }
 
@@ -464,7 +464,7 @@ public class BuyActivity extends AppCompatActivity {
      * @param good type of good
      * @return boolean if good is buyable
      */
-    public boolean isBuyable(Good good) {
+    private boolean isBuyable(Good good) {
         return viewModel.isBuyable(good);
     }
 }

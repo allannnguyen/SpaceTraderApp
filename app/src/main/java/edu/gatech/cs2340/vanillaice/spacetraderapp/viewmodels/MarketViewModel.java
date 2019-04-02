@@ -167,7 +167,7 @@ public class MarketViewModel implements Serializable {
      * @param good the good to change
      * @param quantity the good's quantity
      */
-    public void setGood(Good good, int quantity) {
+    private void setGood(Good good, int quantity) {
         ship.setGood(good, quantity);
     }
 
@@ -175,11 +175,15 @@ public class MarketViewModel implements Serializable {
      * Sets the amount of credits player has
      * @param credit amount of credits
      */
-    public void setCredits(int credit) {
+    private void setCredits(int credit) {
        player.setCredits(credit);
     }
 
-    public int getCredits() {
+    /**
+     * Gets the player's credits.
+     * @return The player's credits.
+     */
+    private int getCredits() {
         return player.getCredits();
     }
 }
