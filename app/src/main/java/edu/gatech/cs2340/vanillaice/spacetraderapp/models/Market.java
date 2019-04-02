@@ -48,7 +48,12 @@ public class Market implements Serializable {
      * @return True if the good is sellable. False otherwise.
      */
     public boolean getGoodsSell(Good good) {
-        return goodsSell.get(good);
+        Object value = goodsSell.get(good);
+        if (value != null) {
+            return (boolean) value;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -57,8 +62,12 @@ public class Market implements Serializable {
      * @return True if the good is buyable. False otherwise.
      */
     public boolean getGoodsBuy(Good good) {
-        return goodsBuy.get(good);
-    }
+        Object value = goodsBuy.get(good);
+        if (value != null) {
+            return (boolean) value;
+        } else {
+            return false;
+        }    }
 
     /**
      * Calculates the price of a good.

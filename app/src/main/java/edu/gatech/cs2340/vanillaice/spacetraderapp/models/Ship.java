@@ -48,7 +48,10 @@ public class Ship implements Serializable {
     public int getTotal() {
         int total = 0;
         for (Good good : Good.values()) {
-            total += goods.get(good);
+            Integer value = goods.get(good);
+            if (value != null){
+                total += value;
+            }
         }
         return total;
     }
@@ -107,7 +110,12 @@ public class Ship implements Serializable {
      * @return quantity of water
      */
     public int getWater() {
-        return goods.get(Good.WATER);
+        Integer value = goods.get(Good.WATER);
+        if (value != null) {
+            return value;
+        } else {
+            return 0;
+        }
     }
 
     /**
@@ -123,8 +131,12 @@ public class Ship implements Serializable {
      * @return quantity of fur
      */
     public int getFur() {
-        return goods.get(Good.FURS);
-    }
+        Integer value = goods.get(Good.FURS);
+        if (value != null) {
+            return value;
+        } else {
+            return 0;
+        }    }
 
     /**
      * Sets the quantity of fur in cargo
@@ -139,8 +151,12 @@ public class Ship implements Serializable {
      * @return quantity of food in cargo
      */
     public int getFood() {
-        return goods.get(Good.FOOD);
-    }
+        Integer value = goods.get(Good.FOOD);
+        if (value != null) {
+            return value;
+        } else {
+            return 0;
+        }    }
 
     /**
      * Sets the quantity of food in cargo
@@ -155,8 +171,12 @@ public class Ship implements Serializable {
      * @return quantity of ore in cargo;
      */
     public int getOre() {
-        return goods.get(Good.ORE);
-    }
+        Integer value = goods.get(Good.ORE);
+        if (value != null) {
+            return value;
+        } else {
+            return 0;
+        }    }
 
     /**
      * Sets the quantity of ore in cargo
@@ -171,8 +191,12 @@ public class Ship implements Serializable {
      * @return quantity of games in cargo
      */
     public int getGame() {
-        return goods.get(Good.GAMES);
-    }
+        Integer value = goods.get(Good.GAMES);
+        if (value != null) {
+            return value;
+        } else {
+            return 0;
+        }    }
 
     /**
      * Sets the quantity of games in cargo
@@ -187,8 +211,12 @@ public class Ship implements Serializable {
      * @return quantity of firearms in cargo
      */
     public int getFirearm() {
-        return goods.get(Good.FIREARMS);
-    }
+        Integer value = goods.get(Good.FIREARMS);
+        if (value != null) {
+            return value;
+        } else {
+            return 0;
+        }    }
 
     /**
      * Sets the quantity of firearms in cargo
@@ -203,8 +231,12 @@ public class Ship implements Serializable {
      * @return quantity of medicine in cargo
      */
     public int getMedicine() {
-        return goods.get(Good.MEDICINE);
-    }
+        Integer value = goods.get(Good.MEDICINE);
+        if (value != null) {
+            return value;
+        } else {
+            return 0;
+        }    }
 
     /**
      * Sets the quantity of medicine in cargo
@@ -219,8 +251,12 @@ public class Ship implements Serializable {
      * @return quantity of machines in cargo
      */
     public int getMachine() {
-        return goods.get(Good.MACHINES);
-    }
+        Integer value = goods.get(Good.MACHINES);
+        if (value != null) {
+            return value;
+        } else {
+            return 0;
+        }    }
 
     /**
      * Sets the quantity of machines in cargo
@@ -235,8 +271,12 @@ public class Ship implements Serializable {
      * @return quantity of narcotics in cargo
      */
     public int getNarcotic() {
-        return goods.get(Good.NARCOTICS);
-    }
+        Integer value = goods.get(Good.NARCOTICS);
+        if (value != null) {
+            return value;
+        } else {
+            return 0;
+        }    }
 
     /**
      * Sets the quantity of narcotics in cargo
@@ -251,8 +291,12 @@ public class Ship implements Serializable {
      * @return quantity of robots in cargo
      */
     public int getRobot() {
-        return goods.get(Good.ROBOTS);
-    }
+        Integer value = goods.get(Good.ROBOTS);
+        if (value != null) {
+            return value;
+        } else {
+            return 0;
+        }    }
 
     /**
      * Sets the quantity of robots in cargo
@@ -268,7 +312,12 @@ public class Ship implements Serializable {
      * @return quantity of that good in cargo
      */
     public int getGood(Good good) {
-        return goods.get(good);
+        Integer value = goods.get(good);
+        if (value != null) {
+            return value;
+        } else {
+            return 0;
+        }
     }
 
     /**
