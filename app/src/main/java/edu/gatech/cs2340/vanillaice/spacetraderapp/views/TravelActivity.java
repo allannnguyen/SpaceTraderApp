@@ -23,6 +23,7 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.TravelViewModel;
 public class TravelActivity extends AppCompatActivity {
     private Spinner travelSpinner;
     private TravelViewModel travelViewModel;
+    private final ConfigurationViewModel cvm = ConfigurationViewModel.getInstance();
 
     /**
      * Creates the travel screen.
@@ -38,11 +39,11 @@ public class TravelActivity extends AppCompatActivity {
         Button cancelButton = findViewById(R.id.cancelButton);
         travelSpinner = findViewById(R.id.travelPlanets);
         travelViewModel =
-                new TravelViewModel(ConfigurationViewModel.getInstance().getPlayer(),
-                        ConfigurationViewModel.getInstance().getUniverse());
+                new TravelViewModel(cvm.getPlayer(),
+                        cvm.getUniverse());
         String fueltext = "Fuel: " + travelViewModel.getFuel();
         List<Planet> planets = travelViewModel.planetsInRange();
-        String planettext = "Current Planet: " + travelViewModel.getCurrentPlanet();
+        String planettext = "Current Planet: " + getCurrentPlanet();
         fuel.setText(fueltext);
         planet.setText(planettext);
 
@@ -53,7 +54,7 @@ public class TravelActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String toastMessage;
-                toastMessage = travelViewModel.travel((Planet) travelSpinner.getSelectedItem());
+                toastMessage = travel((Planet) travelSpinner.getSelectedItem());
                 startActivity(new Intent(TravelActivity.this, GameActivity.class));
                 Toast toast = Toast.makeText(getApplicationContext(), toastMessage,
                         Toast.LENGTH_LONG);
@@ -69,6 +70,14 @@ public class TravelActivity extends AppCompatActivity {
                 startActivity(new Intent(TravelActivity.this, GameActivity.class));
             }
         });
+    }
+
+    public String travel(Planet planet) {
+        return travelViewModel.travel(planet);
+    }
+
+    public Planet getCurrentPlanet() {
+        return travelViewModel.getCurrentPlanet();
     }
 
 

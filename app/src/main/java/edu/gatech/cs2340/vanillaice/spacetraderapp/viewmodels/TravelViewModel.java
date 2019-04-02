@@ -71,7 +71,7 @@ public class TravelViewModel {
     public String travel(Planet planet) {
         Random rand = new Random();
         int chance = rand.nextInt(100);
-        player.setPlanet(planet);
+        setPlanet(planet);
 
         if (chance >= 55) {
             return "You found a wormhole and spent no fuel to travel!";
@@ -80,10 +80,26 @@ public class TravelViewModel {
         }
 
         if (chance <= 44) {
-            player.setCredits(player.getCredits() + 100);
+            addCredits(100);
             return "You found extra money in your toilet!";
         }
 
         return "Nothing eventful happened during your trip";
+    }
+
+    /**
+     * Sets the planet of the player
+     * @param planet the planet the player travels to
+     */
+    public void setPlanet(Planet planet) {
+        player.setPlanet(planet);
+    }
+
+    /**
+     * Adds credits for the player
+     * @param credits number of credits to be adde
+     */
+    public void addCredits(int credits) {
+        player.setCredits(player.getCredits() + credits);
     }
 }
