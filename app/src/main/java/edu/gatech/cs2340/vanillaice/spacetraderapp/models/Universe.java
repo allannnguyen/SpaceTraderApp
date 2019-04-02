@@ -18,7 +18,7 @@ public class Universe implements Serializable {
      * Selects the planets for this game randomly from all options
      */
     public Universe() {
-        ArrayList<Planet> planets = new ArrayList<>();
+        List<Planet> planets = new ArrayList<>();
         planets.add(new Planet("Charles The Red", 1, 1, Technology.PREAGRICULTURAL,
                 Resource.WARLIKE));
         planets.add(new Planet("Wrangler", 30, 30, Technology.AGRICULTURAL, Resource.RICHSOIL));
@@ -65,7 +65,7 @@ public class Universe implements Serializable {
     public String toString() {
         String universeString = "The Universe: \n";
         for (Planet planet : tenplanets) {
-            universeString += planet.toString() + "\n";
+            universeString = universeString.concat(planet.toString() + "\n");
         }
         return universeString;
     }
