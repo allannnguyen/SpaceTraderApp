@@ -46,8 +46,6 @@ public final class ConfigurationViewModel {
         universe = new Universe();
         player = new Player(name, difficulty, pilot, fighter, trader, engineer,
                 universe.getPlanets().get(0));
-        Log.d("Player", player.toString());
-        largeLog("Universe", universe.toString());
     }
 
     /**
@@ -64,20 +62,6 @@ public final class ConfigurationViewModel {
      */
     public Universe getUniverse() {
         return universe;
-    }
-
-    /**
-     * Prints out large log numbers
-     * @param tag The type of the log message
-     * @param content The message that will be printed in the log
-     */
-    private static void largeLog(String tag, String content) {
-        if (content.length() > 4000) {
-            Log.d(tag, content.substring(0, 4000));
-            largeLog(tag, content.substring(4000));
-        } else {
-            Log.d(tag, content);
-        }
     }
 
     /**
