@@ -70,16 +70,16 @@ public class SellActivity extends AppCompatActivity {
         TextView cargo9 = findViewById(R.id.cargo9);
         TextView cargo10 = findViewById(R.id.cargo10);
 
-        String cargo1text = "Cargo: " + viewModel.getGoodQuantity(Good.WATER);
-        String cargo2text = "Cargo: " + viewModel.getGoodQuantity(Good.FURS);
-        String cargo3text = "Cargo: " + viewModel.getGoodQuantity(Good.FOOD);
-        String cargo4text = "Cargo: " + viewModel.getGoodQuantity(Good.ORE);
-        String cargo5text = "Cargo: " + viewModel.getGoodQuantity(Good.GAMES);
-        String cargo6text = "Cargo: " + viewModel.getGoodQuantity(Good.FIREARMS);
-        String cargo7text = "Cargo: " + viewModel.getGoodQuantity(Good.MEDICINE);
-        String cargo8text = "Cargo: " + viewModel.getGoodQuantity(Good.MACHINES);
-        String cargo9text = "Cargo: " + viewModel.getGoodQuantity(Good.NARCOTICS);
-        String cargo10text = "Cargo: " + viewModel.getGoodQuantity(Good.ROBOTS);
+        String cargo1text = "Cargo: " + getGoodQuantity(Good.WATER);
+        String cargo2text = "Cargo: " + getGoodQuantity(Good.FURS);
+        String cargo3text = "Cargo: " + getGoodQuantity(Good.FOOD);
+        String cargo4text = "Cargo: " + getGoodQuantity(Good.ORE);
+        String cargo5text = "Cargo: " + getGoodQuantity(Good.GAMES);
+        String cargo6text = "Cargo: " + getGoodQuantity(Good.FIREARMS);
+        String cargo7text = "Cargo: " + getGoodQuantity(Good.MEDICINE);
+        String cargo8text = "Cargo: " + getGoodQuantity(Good.MACHINES);
+        String cargo9text = "Cargo: " + getGoodQuantity(Good.NARCOTICS);
+        String cargo10text = "Cargo: " + getGoodQuantity(Good.ROBOTS);
         cargo1.setText(cargo1text);
         cargo2.setText(cargo2text);
         cargo3.setText(cargo3text);
@@ -91,16 +91,16 @@ public class SellActivity extends AppCompatActivity {
         cargo9.setText(cargo9text);
         cargo10.setText(cargo10text);
 
-        amountOne = viewModel.getGoodQuantity(Good.WATER);
-        amountTwo = viewModel.getGoodQuantity(Good.FURS);
-        amountThree = viewModel.getGoodQuantity(Good.FOOD);
-        amountFour = viewModel.getGoodQuantity(Good.ORE);
-        amountFive = viewModel.getGoodQuantity(Good.GAMES);
-        amountSix = viewModel.getGoodQuantity(Good.FIREARMS);
-        amountSeven = viewModel.getGoodQuantity(Good.MEDICINE);
-        amountEight = viewModel.getGoodQuantity(Good.MACHINES);
-        amountNine = viewModel.getGoodQuantity(Good.NARCOTICS);
-        amountTen = viewModel.getGoodQuantity(Good.ROBOTS);
+        amountOne = getGoodQuantity(Good.WATER);
+        amountTwo = getGoodQuantity(Good.FURS);
+        amountThree = getGoodQuantity(Good.FOOD);
+        amountFour = getGoodQuantity(Good.ORE);
+        amountFive = getGoodQuantity(Good.GAMES);
+        amountSix = getGoodQuantity(Good.FIREARMS);
+        amountSeven = getGoodQuantity(Good.MEDICINE);
+        amountEight = getGoodQuantity(Good.MACHINES);
+        amountNine = getGoodQuantity(Good.NARCOTICS);
+        amountTen = getGoodQuantity(Good.ROBOTS);
 
         Button sellButton = findViewById(R.id.sellButton2);
 
@@ -144,81 +144,81 @@ public class SellActivity extends AppCompatActivity {
         TextView price8 = findViewById(R.id.price8);
         TextView price9 = findViewById(R.id.price9);
         TextView price10 = findViewById(R.id.price10);
-        price1.setText(Integer.toString(viewModel.getGoodPrice(Good.WATER)));
-        price2.setText(Integer.toString(viewModel.getGoodPrice(Good.FURS)));
-        price3.setText(Integer.toString(viewModel.getGoodPrice(Good.FOOD)));
-        price4.setText(Integer.toString(viewModel.getGoodPrice(Good.ORE)));
-        price5.setText(Integer.toString(viewModel.getGoodPrice(Good.GAMES)));
-        price6.setText(Integer.toString(viewModel.getGoodPrice(Good.FIREARMS)));
-        price7.setText(Integer.toString(viewModel.getGoodPrice(Good.MEDICINE)));
-        price8.setText(Integer.toString(viewModel.getGoodPrice(Good.MACHINES)));
-        price9.setText(Integer.toString(viewModel.getGoodPrice(Good.NARCOTICS)));
-        price10.setText(Integer.toString(viewModel.getGoodPrice(Good.ROBOTS)));
+        price1.setText(Integer.toString(getGoodPrice(Good.WATER)));
+        price2.setText(Integer.toString(getGoodPrice(Good.FURS)));
+        price3.setText(Integer.toString(getGoodPrice(Good.FOOD)));
+        price4.setText(Integer.toString(getGoodPrice(Good.ORE)));
+        price5.setText(Integer.toString(getGoodPrice(Good.GAMES)));
+        price6.setText(Integer.toString(getGoodPrice(Good.FIREARMS)));
+        price7.setText(Integer.toString(getGoodPrice(Good.MEDICINE)));
+        price8.setText(Integer.toString(getGoodPrice(Good.MACHINES)));
+        price9.setText(Integer.toString(getGoodPrice(Good.NARCOTICS)));
+        price10.setText(Integer.toString(getGoodPrice(Good.ROBOTS)));
 
-        if (!viewModel.isSellable(Good.WATER)) {
+        if (!isSellable(Good.WATER)) {
             price1.setVisibility(View.INVISIBLE);
             quant1.setVisibility(View.INVISIBLE);
             upButton1.setVisibility(View.INVISIBLE);
             downButton1.setVisibility(View.INVISIBLE);
         }
 
-        if (!viewModel.isSellable(Good.FURS)) {
+        if (!isSellable(Good.FURS)) {
             price2.setVisibility(View.INVISIBLE);
             quant2.setVisibility(View.INVISIBLE);
             upButton2.setVisibility(View.INVISIBLE);
             downButton2.setVisibility(View.INVISIBLE);
         }
 
-        if (!viewModel.isSellable(Good.FOOD)) {
+        if (!isSellable(Good.FOOD)) {
             price3.setVisibility(View.INVISIBLE);
             quant3.setVisibility(View.INVISIBLE);
             upButton3.setVisibility(View.INVISIBLE);
             downButton3.setVisibility(View.INVISIBLE);
         }
 
-        if (!viewModel.isSellable(Good.ORE)) {
+        if (!isSellable(Good.ORE)) {
             price4.setVisibility(View.INVISIBLE);
             quant4.setVisibility(View.INVISIBLE);
             upButton4.setVisibility(View.INVISIBLE);
             downButton4.setVisibility(View.INVISIBLE);
         }
 
-        if (!viewModel.isSellable(Good.GAMES)) {
+        if (!isSellable(Good.GAMES)) {
             price5.setVisibility(View.INVISIBLE);
             quant5.setVisibility(View.INVISIBLE);
             upButton5.setVisibility(View.INVISIBLE);
             downButton5.setVisibility(View.INVISIBLE);
         }
 
-        if (!viewModel.isSellable(Good.FIREARMS)) {
+        if (!isSellable(Good.FIREARMS)) {
             price6.setVisibility(View.INVISIBLE);
             quant6.setVisibility(View.INVISIBLE);
             upButton6.setVisibility(View.INVISIBLE);
             downButton6.setVisibility(View.INVISIBLE);
         }
 
-        if (!viewModel.isSellable(Good.MEDICINE)) {
+        if (!isSellable(Good.MEDICINE)) {
             price7.setVisibility(View.INVISIBLE);
             quant7.setVisibility(View.INVISIBLE);
             upButton7.setVisibility(View.INVISIBLE);
             downButton7.setVisibility(View.INVISIBLE);
         }
 
-        if (!viewModel.isSellable(Good.MACHINES)) {
+        if (!isSellable(Good.MACHINES)) {
             price8.setVisibility(View.INVISIBLE);
             quant8.setVisibility(View.INVISIBLE);
             upButton8.setVisibility(View.INVISIBLE);
             downButton8.setVisibility(View.INVISIBLE);
         }
 
-        if (!viewModel.isSellable(Good.NARCOTICS)) {
+        if (!isSellable(Good.NARCOTICS)) {
             price9.setVisibility(View.INVISIBLE);
             quant9.setVisibility(View.INVISIBLE);
             upButton9.setVisibility(View.INVISIBLE);
             downButton9.setVisibility(View.INVISIBLE);
         }
 
-        if (!viewModel.isSellable(Good.ROBOTS)) {
+        if (!isSellable(Good.ROBOTS)) {
             price10.setVisibility(View.INVISIBLE);
             quant10.setVisibility(View.INVISIBLE);
             upButton10.setVisibility(View.INVISIBLE);
@@ -436,5 +436,32 @@ public class SellActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+    }
+
+    /**
+     * Gets good quantity
+     * @param good type of good
+     * @return quantity of good
+     */
+    public int getGoodQuantity(Good good) {
+        return viewModel.getGoodQuantity(good);
+    }
+
+    /**
+     * Gets good price
+     * @param good type of good
+     * @return price of good
+     */
+    public int getGoodPrice(Good good) {
+        return viewModel.getGoodPrice(good);
+    }
+
+    /**
+     * Gets if good is sellable
+     * @param good type of good
+     * @return boolean if good is sellable
+     */
+    public boolean isSellable(Good good) {
+        return viewModel.isSellable(good);
     }
 }
