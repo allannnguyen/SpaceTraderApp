@@ -4,46 +4,34 @@ package edu.gatech.cs2340.vanillaice.spacetraderapp.models;
  * Represents each good available to trade in the game
  */
 public enum Good {
-    WATER(0, 0, 2, 30, 3, 4, 30, 50),
-    FURS(0, 0, 0, 250, 10, 10, 2300, 280),
-    FOOD(1, 0, 1, 100, 5, 5, 90, 160),
-    ORE(2, 2, 3, 350, 20, 10, 350, 420),
-    GAMES(3, 1, 6, 250, -10, 5, 160, 270),
-    FIREARMS(3, 1, 5, 1250, -75, 100, 600, 1100),
-    MEDICINE(4, 1, 6, 650, -20, 10, 400, 700),
-    MACHINES(4, 3, 5, 900, -30, 5, 600, 800),
-    NARCOTICS(5, 0, 5, 3500, -125, 150, 2000, 3000),
-    ROBOTS(6, 4, 7, 5000, -150, 100, 3500, 5000);
+    WATER(0, 0, 30, 3),
+    FURS(0, 0, 250, 10),
+    FOOD(1, 0, 100, 5),
+    ORE(2, 2, 350, 20),
+    GAMES(3, 1, 250, -10),
+    FIREARMS(3, 1, 1250, -75),
+    MEDICINE(4, 1, 650, -20),
+    MACHINES(4, 3, 900, -30),
+    NARCOTICS(5, 0, 3500, -125),
+    ROBOTS(6, 4, 5000, -150);
 
     private final int basePrice;
     private final int mtlp;
     private final int mtlu;
-    private final int ttp;
     private final int ipl;
-    private final int var;
-    private final int mtl;
-    private final int mth;
 
     /**
      * Constructs an individual good's stats
      * @param basePrice the base price before calculation
      * @param mtlp Minimum Tech Level to Produce this resource
      * @param mtlu Minimum Tech Level to Use this resource
-     * @param ttp Tech Level which produces the most of this item
      * @param ipl Price increase per tech level
-     * @param var variance is the maximum percentage that the price can vary above or below the base
-     * @param mtl Min price offered in space trade with random trader
-     * @param mth Max price offered in space trade with random trader
      */
-    Good(int mtlp, int mtlu, int ttp, int basePrice, int ipl, int var, int mtl, int mth) {
+    Good(int mtlp, int mtlu, int basePrice, int ipl) {
         this.basePrice = basePrice;
         this.mtlp = mtlp;
         this.mtlu = mtlu;
-        this.ttp = ttp;
         this.ipl = ipl;
-        this.var = var;
-        this.mtl = mtl;
-        this.mth = mth;
     }
 
     /**

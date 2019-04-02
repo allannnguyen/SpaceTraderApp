@@ -11,8 +11,6 @@ public class Planet implements Serializable {
     private final String name;
     private final int xcoord;
     private final int ycoord;
-    private final Technology techLevel;
-    private final Resource resourceLevel;
     private final Market market;
     private int distance;
 
@@ -30,8 +28,6 @@ public class Planet implements Serializable {
         this.name = name;
         this.xcoord = xcoord;
         this.ycoord = ycoord;
-        this.techLevel = techLevel;
-        this.resourceLevel = resourceLevel;
         this.market = new Market(techLevel, resourceLevel);
     }
 
