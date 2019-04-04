@@ -77,7 +77,7 @@ public class TravelActivity extends AppCompatActivity {
      * @param planet The planet the player wants to go to.
      * @return A message of what happened during the travel.
      */
-    private String travel(Planet planet) {
+    public String travel(Planet planet) {
         return travelViewModel.travel(planet);
     }
 
@@ -85,7 +85,7 @@ public class TravelActivity extends AppCompatActivity {
      * Gets the player's current planet.
      * @return The planet that the player is currently on.
      */
-    private Planet getCurrentPlanet() {
+    public Planet getCurrentPlanet() {
         return travelViewModel.getCurrentPlanet();
     }
 
