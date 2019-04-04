@@ -160,7 +160,7 @@ public class SellActivity extends AppCompatActivity {
         price9.setText(Integer.toString(getGoodPrice(Good.NARCOTICS)));
         price10.setText(Integer.toString(getGoodPrice(Good.ROBOTS)));
 
-        if (isSellable(Good.WATER)) {
+        /*if (isSellable(Good.WATER)) {
             price1.setVisibility(View.INVISIBLE);
             quant1.setVisibility(View.INVISIBLE);
             upButton1.setVisibility(View.INVISIBLE);
@@ -172,7 +172,7 @@ public class SellActivity extends AppCompatActivity {
             quant2.setVisibility(View.INVISIBLE);
             upButton2.setVisibility(View.INVISIBLE);
             downButton2.setVisibility(View.INVISIBLE);
-        }
+        }*/
 
         if (isSellable(Good.FOOD)) {
             price3.setVisibility(View.INVISIBLE);
