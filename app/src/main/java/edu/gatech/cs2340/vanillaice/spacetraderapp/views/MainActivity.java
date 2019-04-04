@@ -18,6 +18,8 @@ import android.widget.TextView;
 
 import java.io.File;
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 import edu.gatech.cs2340.vanillaice.spacetraderapp.R;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Difficulty;
@@ -185,9 +187,13 @@ public class MainActivity extends AppCompatActivity implements Serializable {
                Editable name = nameEntry.getText();
                if ((total == 0) && (pCounter >= 0) && (fCounter >= 0) && (tCounter >= 0)
                        && (eCounter >= 0) && (!emptyStr.equals(name.toString()))) {
+                   Map<String, Integer> playerSkills = new HashMap<>();
+                   playerSkills.put("pilot", pCounter);
+                   playerSkills.put("fighter", fCounter);
+                   playerSkills.put("trader", tCounter);
+                   playerSkills.put("engineer", eCounter);
                    viewModel.createPlayer(name.toString(),
-                           (Difficulty) difficultySpinner.getSelectedItem(),
-                           pCounter, fCounter, tCounter, eCounter);
+                           (Difficulty) difficultySpinner.getSelectedItem(), playerSkills);
 
                    Intent i = new Intent(MainActivity.this, GameActivity.class);
                    //i.putExtra("player", player);

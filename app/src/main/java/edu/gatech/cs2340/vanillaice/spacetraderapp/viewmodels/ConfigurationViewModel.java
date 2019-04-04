@@ -9,7 +9,9 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Difficulty;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Planet;
@@ -38,17 +40,13 @@ public final class ConfigurationViewModel {
      * Creates the player based on input parameters
      * @param name player's name
      * @param difficulty selected game difficulty
-     * @param pilot player's selected pilot skillpoints
-     * @param fighter player's selected fighter skillpoints
-     * @param trader player's selected trader skillpoints
-     * @param engineer player's selected engineer skillpoints
+     * @param playerSkills The allocation of the player's skill points
      */
-    public void createPlayer(String name, Difficulty difficulty, int pilot, int fighter,
-                             int trader, int engineer) {
+    public void createPlayer(String name, Difficulty difficulty,
+                             Map<String, Integer> playerSkills) {
         universe = new Universe();
         List<Planet> listofplanets = universe.getPlanets();
-        player = new Player(name, difficulty, pilot, fighter, trader, engineer,
-                listofplanets.get(0));
+        player = new Player(name, difficulty, playerSkills, listofplanets.get(0));
     }
 
     /**
