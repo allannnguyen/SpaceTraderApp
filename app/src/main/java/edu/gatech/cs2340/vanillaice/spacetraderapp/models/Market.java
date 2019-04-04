@@ -86,11 +86,12 @@ public class Market implements Serializable {
         hash.put(Good.MEDICINE, new Resource[] {Resource.LOTSOFHERBS});
         hash.put(Good.NARCOTICS, new Resource[] {Resource.WEIRDMUSHROOMS});
 
-        if (hash.containsKey(good)) {
-            if (hash.get(good).length == 1 && resourceLevel == hash.get(good)[0]) {
+        Resource[] source = hash.get(good);
+        if (source != null) {
+            if ((source.length == 1) && (resourceLevel == source[0])) {
                 return (getBasePrice(good) + (getIpl(good) * (techLevel.ordinal()
                         - getMtlp(good)))) / 2;
-            } else if (hash.get(good).length == 2 && resourceLevel == hash.get(good)[1]) {
+            } else if ((source.length == 2) && (resourceLevel == source[1])) {
                 return ((getBasePrice(good) + (getIpl(good) * (techLevel.ordinal()
                         - getMtlp(good)))) * 3) / 2;
             }
