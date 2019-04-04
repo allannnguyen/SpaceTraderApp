@@ -89,23 +89,23 @@ public class Universe implements Serializable {
         planets.add(new Planet("Laewei", x9, y9, Technology.PREAGRICULTURAL, Resource.LIFELESS));
         planets.add(new Planet("Huthone", x10, y10, Technology.AGRICULTURAL, Resource.LOTSOFHERBS));
         planets.add(new Planet("Besars", x11, y11, Technology.MEDIEVAL, Resource.DESERT));
-        planets.add(new Planet("Gninda 9D3", x12, y12, Technology.RENAISSANCE,
+        planets.add(new Planet("Gninda 9D3", (4*4) + 3, 5*3, Technology.RENAISSANCE,
                 Resource.NOSPECIALRESOURCES));
-        planets.add(new Planet("Cusurn", x13, y13, Technology.EARLYINDUSTRIAL,
+        planets.add(new Planet("Cusurn", 3 * 10, 5 * 5, Technology.EARLYINDUSTRIAL,
                 Resource.MINERALPOOR));
-        planets.add(new Planet("Choivis", x14, y14, Technology.INDUSTRIAL, Resource.POORSOIL));
-        planets.add(new Planet("Gara DPX", x15, y15, Technology.POSTINDUSTRIAL,
+        planets.add(new Planet("Choivis", 10, (5 * 5) + 1, Technology.INDUSTRIAL, Resource.POORSOIL));
+        planets.add(new Planet("Gara DPX", 2 * 10, 6 * 3, Technology.POSTINDUSTRIAL,
                 Resource.NOSPECIALRESOURCES));
-        planets.add(new Planet("Broanus", x16, y16, Technology.HITECH, Resource.MINERALRICH));
-        planets.add(new Planet("Gunkilia", x17, y17, Technology.HITECH, Resource.WARLIKE));
-        planets.add(new Planet("Bralatune", x18, y18, Technology.POSTINDUSTRIAL,
+        planets.add(new Planet("Broanus", 3 * 5, 9, Technology.HITECH, Resource.MINERALRICH));
+        planets.add(new Planet("Gunkilia", (10*3) -1, (10*3) -1, Technology.HITECH, Resource.WARLIKE));
+        planets.add(new Planet("Bralatune", (5*5) + 1, 7 * 2, Technology.POSTINDUSTRIAL,
                 Resource.ARTISTIC));
-        planets.add(new Planet("Ebbichi", x19, y19, Technology.INDUSTRIAL, Resource.LOTSOFWATER));
-        planets.add(new Planet("Xamecarro", x20, y20, Technology.MEDIEVAL,
+        planets.add(new Planet("Ebbichi", 6 * 4, 6, Technology.INDUSTRIAL, Resource.LOTSOFWATER));
+        planets.add(new Planet("Xamecarro", 9, (10*3) -1, Technology.MEDIEVAL,
                 Resource.WEIRDMUSHROOMS));
-        planets.add(new Planet("Lichetune", x21, y21, Technology.HITECH,
+        planets.add(new Planet("Lichetune", 6 * 3, 10 + 1, Technology.HITECH,
                 Resource.NOSPECIALRESOURCES));
-        planets.add(new Planet("Brichi 8X5", x22, y22, Technology.POSTINDUSTRIAL,
+        planets.add(new Planet("Brichi 8X5", 5, 10 + 3, Technology.POSTINDUSTRIAL,
                 Resource.RICHSOIL));
         tenplanets = new ArrayList<>();
         Random planetRandom = new Random();
