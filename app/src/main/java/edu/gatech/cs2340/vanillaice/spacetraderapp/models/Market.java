@@ -49,11 +49,7 @@ public class Market implements Serializable {
      */
     public boolean getGoodsSell(Good good) {
         Object value = goodsSell.get(good);
-        if (value != null) {
-            return (boolean) value;
-        } else {
-            return false;
-        }
+        return (value != null) && ((boolean) value);
     }
 
     /**
