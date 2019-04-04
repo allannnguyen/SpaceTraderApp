@@ -139,70 +139,70 @@ public class BuyActivity extends AppCompatActivity {
         price9.setText(getGoodPrice(Good.NARCOTICS));
         price10.setText(getGoodPrice(Good.ROBOTS));
 
-        if (!isBuyable(Good.WATER)) {
+        if (isBuyable(Good.WATER)) {
             price1.setVisibility(View.INVISIBLE);
             quantWater.setVisibility(View.INVISIBLE);
             upButton1.setVisibility(View.INVISIBLE);
             downButton1.setVisibility(View.INVISIBLE);
         }
 
-        if (!isBuyable(Good.FURS)) {
+        if (isBuyable(Good.FURS)) {
             price2.setVisibility(View.INVISIBLE);
             quantFur.setVisibility(View.INVISIBLE);
             upButton2.setVisibility(View.INVISIBLE);
             downButton2.setVisibility(View.INVISIBLE);
         }
 
-        if (!isBuyable(Good.FOOD)) {
+        if (isBuyable(Good.FOOD)) {
             price3.setVisibility(View.INVISIBLE);
             quantFood.setVisibility(View.INVISIBLE);
             upButton3.setVisibility(View.INVISIBLE);
             downButton3.setVisibility(View.INVISIBLE);
         }
 
-        if (!isBuyable(Good.ORE)) {
+        if (isBuyable(Good.ORE)) {
             price4.setVisibility(View.INVISIBLE);
             quantOre.setVisibility(View.INVISIBLE);
             upButton4.setVisibility(View.INVISIBLE);
             downButton4.setVisibility(View.INVISIBLE);
         }
 
-        if (!isBuyable(Good.GAMES)) {
+        if (isBuyable(Good.GAMES)) {
             price5.setVisibility(View.INVISIBLE);
             quantGame.setVisibility(View.INVISIBLE);
             upButton5.setVisibility(View.INVISIBLE);
             downButton5.setVisibility(View.INVISIBLE);
         }
 
-        if (!isBuyable(Good.FIREARMS)) {
+        if (isBuyable(Good.FIREARMS)) {
             price6.setVisibility(View.INVISIBLE);
             quantFirearm.setVisibility(View.INVISIBLE);
             upButton6.setVisibility(View.INVISIBLE);
             downButton6.setVisibility(View.INVISIBLE);
         }
 
-        if (!isBuyable(Good.MEDICINE)) {
+        if (isBuyable(Good.MEDICINE)) {
             price7.setVisibility(View.INVISIBLE);
             quantMedicine.setVisibility(View.INVISIBLE);
             upButton7.setVisibility(View.INVISIBLE);
             downButton7.setVisibility(View.INVISIBLE);
         }
 
-        if (!isBuyable(Good.MACHINES)) {
+        if (isBuyable(Good.MACHINES)) {
             price8.setVisibility(View.INVISIBLE);
             quantMachine.setVisibility(View.INVISIBLE);
             upButton8.setVisibility(View.INVISIBLE);
             downButton8.setVisibility(View.INVISIBLE);
         }
 
-        if (!isBuyable(Good.NARCOTICS)) {
+        if (isBuyable(Good.NARCOTICS)) {
             price9.setVisibility(View.INVISIBLE);
             quantNarcotic.setVisibility(View.INVISIBLE);
             upButton9.setVisibility(View.INVISIBLE);
             downButton9.setVisibility(View.INVISIBLE);
         }
 
-        if (!isBuyable(Good.ROBOTS)) {
+        if (isBuyable(Good.ROBOTS)) {
             price10.setVisibility(View.INVISIBLE);
             quantRobot.setVisibility(View.INVISIBLE);
             upButton10.setVisibility(View.INVISIBLE);
@@ -488,6 +488,6 @@ public class BuyActivity extends AppCompatActivity {
      * @return boolean if good is buyable
      */
     private boolean isBuyable(Good good) {
-        return viewModel.isBuyable(good);
+        return !viewModel.isBuyable(good);
     }
 }

@@ -49,11 +49,7 @@ public class Market implements Serializable {
      */
     public boolean getGoodsSell(Good good) {
         Object value = goodsSell.get(good);
-        if (value != null) {
-            return (boolean) value;
-        } else {
-            return false;
-        }
+        return (value != null) && ((boolean) value);
     }
 
     /**
@@ -76,6 +72,30 @@ public class Market implements Serializable {
      * @return The price of the good
      */
     public int getPrice(Good good) {
+        Map<Good, Resource[]> hash = new HashMap<>();
+        hash.put(Good.WATER, new Resource[] {Resource.LOTSOFWATER, Resource.DESERT});
+        hash.put(Good.FURS, new Resource[] {Resource.RICHFAUNA, Resource.LIFELESS});
+        hash.put(Good.FOOD, new Resource[] {Resource.RICHSOIL, Resource.POORSOIL});
+        hash.put(Good.ORE, new Resource[] {Resource.MINERALRICH, Resource.MINERALPOOR});
+        hash.put(Good.GAMES, new Resource[] {Resource.ARTISTIC});
+        hash.put(Good.FIREARMS, new Resource[] {Resource.WARLIKE});
+        hash.put(Good.MEDICINE, new Resource[] {Resource.LOTSOFHERBS});
+        hash.put(Good.NARCOTICS, new Resource[] {Resource.WEIRDMUSHROOMS});
+
+        Resource[] source = hash.get(good);
+        if (source != null) {
+            if ((source.length == 1) && (resourceLevel == source[0])) {
+                return (getBasePrice(good) + (getIpl(good) * (techLevel.ordinal()
+                        - getMtlp(good)))) / 2;
+            } else if ((source.length == 2) && (resourceLevel == source[1])) {
+                return ((getBasePrice(good) + (getIpl(good) * (techLevel.ordinal()
+                        - getMtlp(good)))) * 3) / 2;
+            }
+        }
+
+        return getBasePrice(good) + (getIpl(good) * (techLevel.ordinal() - getMtlp(good)));
+
+        /*
         if (good == Good.WATER) {
             if (resourceLevel == Resource.LOTSOFWATER) {
                 return (getBasePrice(good) + (getIpl(good) * (techLevel.ordinal()
@@ -130,7 +150,7 @@ public class Market implements Serializable {
             }
         }
 
-        return getBasePrice(good) + (getIpl(good) * (techLevel.ordinal() - getMtlp(good)));
+        return getBasePrice(good) + (getIpl(good) * (techLevel.ordinal() - getMtlp(good)));*/
     }
 
     /**
