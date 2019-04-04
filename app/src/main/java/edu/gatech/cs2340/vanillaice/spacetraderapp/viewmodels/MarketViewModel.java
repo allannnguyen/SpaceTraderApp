@@ -6,6 +6,7 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Market;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Player;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Ship;
 import java.io.Serializable;
+import java.util.HashMap;
 
 /**
  * Handles the creation of each planet's market and trade actions.
@@ -25,45 +26,22 @@ public class MarketViewModel implements Serializable {
         this.market = player.getMarket();
     }
 
+
     /**
      * Purchases items if player has enough credits
-     * @param waterBuy quantity of water bought
-     * @param furBuy quantity of fur bought
-     * @param foodBuy quantity of food bought
-     * @param oreBuy quantity of ore bought
-     * @param gameBuy quantity of game bought
-     * @param firearmBuy quantity of firearm bought
-     * @param medicineBuy quantity of medicine bought
-     * @param machineBuy quantity of machine bought
-     * @param narcoticBuy quantity of narcotic bought
-     * @param robotBuy quantity of robot bought
+     * @param goodsinCart amount of each good to be bought
      */
-    public void buy(int waterBuy, int furBuy, int foodBuy, int oreBuy, int gameBuy,
-                    int firearmBuy, int medicineBuy, int machineBuy, int narcoticBuy
-            , int robotBuy) {
+    public void buy(HashMap<Good, Integer> goodsinCart) {
+
         int total = 0;
-        total += getGoodPrice(Good.WATER) * waterBuy;
-        total += getGoodPrice(Good.FURS) * furBuy;
-        total += getGoodPrice(Good.FOOD) * foodBuy;
-        total += getGoodPrice(Good.ORE) * oreBuy;
-        total += getGoodPrice(Good.GAMES) * gameBuy;
-        total += getGoodPrice(Good.FIREARMS) * firearmBuy;
-        total += getGoodPrice(Good.MEDICINE) * medicineBuy;
-        total += getGoodPrice(Good.MACHINES) * machineBuy;
-        total += getGoodPrice(Good.NARCOTICS) * narcoticBuy;
-        total += getGoodPrice(Good.ROBOTS) * robotBuy;
+        for (Good good: Good.values()) {
+            total += getGoodPrice(good) * goodsinCart.get(good);
+        }
 
         if (total <= player.getCredits()) {
-            setGood(Good.WATER, getGoodQuantity(Good.WATER) + waterBuy);
-            setGood(Good.FURS, getGoodQuantity(Good.FURS) + furBuy);
-            setGood(Good.FOOD, getGoodQuantity(Good.FOOD) + foodBuy);
-            setGood(Good.ORE, getGoodQuantity(Good.ORE) + oreBuy);
-            setGood(Good.GAMES, getGoodQuantity(Good.GAMES) + gameBuy);
-            setGood(Good.FIREARMS, getGoodQuantity(Good.FIREARMS) + firearmBuy);
-            setGood(Good.MEDICINE, getGoodQuantity(Good.MEDICINE) + medicineBuy);
-            setGood(Good.MACHINES, getGoodQuantity(Good.MACHINES) + machineBuy);
-            setGood(Good.NARCOTICS, getGoodQuantity(Good.NARCOTICS) + narcoticBuy);
-            setGood(Good.ROBOTS, getGoodQuantity(Good.ROBOTS) + robotBuy);
+            for (Good good: Good.values()) {
+                setGood(good, getGoodQuantity(good) + goodsinCart.get(good));
+            }
             setCredits(getCredits() - total);
         }
     }
@@ -113,42 +91,14 @@ public class MarketViewModel implements Serializable {
 
     /**
      * Sells items of players
-     * @param waterSold the quantity of water sold
-     * @param furSold the quantity of fur sold
-     * @param foodSold the quantity of food sold
-     * @param oreSold the quantity of ore sold
-     * @param gameSold the quantity of game sold
-     * @param firearmSold the quantity of firearm sold
-     * @param medicineSold the quantity of medicine sold
-     * @param machineSold the quantity of machine sold
-     * @param narcoticSold the quantity of narcotic sold
-     * @param robotSold the quantity of robot sold
+     * @param goodstoSell hashmap of all the goods and how many to sell
      */
-    public void sell(int waterSold, int furSold, int foodSold, int oreSold, int gameSold,
-                     int firearmSold, int medicineSold, int machineSold, int narcoticSold
-            , int robotSold) {
+    public void sell(HashMap<Good, Integer> goodstoSell) {
         int total = 0;
-        total += getGoodPrice(Good.WATER) * waterSold;
-        total += getGoodPrice(Good.FURS) * furSold;
-        total += getGoodPrice(Good.FOOD) * foodSold;
-        total += getGoodPrice(Good.ORE) * oreSold;
-        total += getGoodPrice(Good.GAMES) * gameSold;
-        total += getGoodPrice(Good.FIREARMS) * firearmSold;
-        total += getGoodPrice(Good.MEDICINE) * medicineSold;
-        total += getGoodPrice(Good.MACHINES) * machineSold;
-        total += getGoodPrice(Good.NARCOTICS) * narcoticSold;
-        total += getGoodPrice(Good.ROBOTS) * robotSold;
-
-        setGood(Good.WATER, getGoodQuantity(Good.WATER) - waterSold);
-        setGood(Good.FURS, getGoodQuantity(Good.FURS) - furSold);
-        setGood(Good.FOOD, getGoodQuantity(Good.FOOD) - foodSold);
-        setGood(Good.ORE, getGoodQuantity(Good.ORE) - oreSold);
-        setGood(Good.GAMES, getGoodQuantity(Good.GAMES) - gameSold);
-        setGood(Good.FIREARMS, getGoodQuantity(Good.FIREARMS) - firearmSold);
-        setGood(Good.MEDICINE, getGoodQuantity(Good.MEDICINE) - medicineSold);
-        setGood(Good.MACHINES, getGoodQuantity(Good.MACHINES) - machineSold);
-        setGood(Good.NARCOTICS, getGoodQuantity(Good.NARCOTICS) - narcoticSold);
-        setGood(Good.ROBOTS, getGoodQuantity(Good.ROBOTS) - robotSold);
+        for (Good good: Good.values()) {
+            total += getGoodPrice(good) * goodstoSell.get(good);
+            setGood(good, getGoodQuantity(good) - goodstoSell.get(good));
+        }
 
         setCredits(getCredits() + total);
     }
