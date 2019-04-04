@@ -2,6 +2,7 @@ package edu.gatech.cs2340.vanillaice.spacetraderapp.models;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -120,6 +121,6 @@ public class Universe implements Serializable {
      * @return a list of planets contained within the universe
      */
     public List<Planet> getPlanets() {
-        return tenplanets;
+        return Collections.unmodifiableList(tenplanets);
     }
 }
