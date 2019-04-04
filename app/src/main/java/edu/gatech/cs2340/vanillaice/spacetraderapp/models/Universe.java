@@ -17,20 +17,6 @@ public class Universe implements Serializable {
      * Selects the planets for this game randomly from all options
      */
     public Universe() {
-        int x1 = 1;
-        int x2 = (3*9) + 3;
-        int x3 = (3*4) + 1;
-        int x4 = 5*5;
-
-        int x5 = (4*4) + 1;
-        int x6 = 4*4;
-        int x7 = (4*4) + 1;
-
-        int x8 = 5*5;
-        int x9 = 9;
-        int x10 = 5*3;
-        int x11 =(5*2) +1;
-
         int x12 = (4*4) + 3;
         int x13 = 3 * 10;
         int x14 = 10;
@@ -42,54 +28,34 @@ public class Universe implements Serializable {
         int x20 = 9;
         int x21 = 6*3;
         int x22 = 5;
-
-        int y1 = 1;
-        int y2 = 10*3;
-        int y3 =10*3;
-        int y4 = 10*3;
-
-        int y5 =10*2;
-        int y6 =10;
-        int y7 =10 + 1;
-        int y8 = (10*2) + 2;
-
-        int y9 =10*3;
-        int y10 =4;
-        int y11 =1;
         int y12 = 5*3;
-
         int y13 =5*5;
         int y14 =(5*5) + 1;
         int y15 = 6*3;
-
         int y16 = 9;
         int y17 = (10*3) -1;
         int y18 = 7*2;
-
         int y19 = 6;
         int y20 = (10*3) -1;
         int y21 =10 + 1;
-
         int y22 = 10 + 3;
 
-
-
         List<Planet> planets = new ArrayList<>();
-        planets.add(new Planet("Charles The Red", x1, y1, Technology.PREAGRICULTURAL,
+        planets.add(new Planet("Charles The Red", 1, 1, Technology.PREAGRICULTURAL,
                 Resource.WARLIKE));
-        planets.add(new Planet("Wrangler", x2, y2, Technology.AGRICULTURAL, Resource.RICHSOIL));
-        planets.add(new Planet("Yojimbo", x3, y3, Technology.MEDIEVAL, Resource.RICHFAUNA));
-        planets.add(new Planet("Cobaltea", x4, y4, Technology.RENAISSANCE, Resource.ARTISTIC));
-        planets.add(new Planet("Super-Fun-Time-Land", x5, y5, Technology.EARLYINDUSTRIAL,
+        planets.add(new Planet("Wrangler", (3*9) + 3, 10*3, Technology.AGRICULTURAL, Resource.RICHSOIL));
+        planets.add(new Planet("Yojimbo", (3*4) + 1, 10*3, Technology.MEDIEVAL, Resource.RICHFAUNA));
+        planets.add(new Planet("Cobaltea", 5*5, 10*3, Technology.RENAISSANCE, Resource.ARTISTIC));
+        planets.add(new Planet("Super-Fun-Time-Land", (4*4) + 1, 10*2, Technology.EARLYINDUSTRIAL,
                 Resource.WEIRDMUSHROOMS));
-        planets.add(new Planet("Streron R2Y", x6, y6, Technology.INDUSTRIAL, Resource.MINERALRICH));
-        planets.add(new Planet("Cendicarro", x7, y7, Technology.POSTINDUSTRIAL,
+        planets.add(new Planet("Streron R2Y", 4*4, 10, Technology.INDUSTRIAL, Resource.MINERALRICH));
+        planets.add(new Planet("Cendicarro", (4*4) + 1, 10 + 1, Technology.POSTINDUSTRIAL,
                 Resource.MINERALPOOR));
-        planets.add(new Planet("Nunvolla", x8, y8, Technology.HITECH, Resource.LOTSOFWATER));
-        planets.add(new Planet("Laewei", x9, y9, Technology.PREAGRICULTURAL, Resource.LIFELESS));
-        planets.add(new Planet("Huthone", x10, y10, Technology.AGRICULTURAL, Resource.LOTSOFHERBS));
-        planets.add(new Planet("Besars", x11, y11, Technology.MEDIEVAL, Resource.DESERT));
-        planets.add(new Planet("Gninda 9D3", (4*4) + 3, 5*3, Technology.RENAISSANCE,
+        planets.add(new Planet("Nunvolla", 5*5, (10 *2) + 2, Technology.HITECH, Resource.LOTSOFWATER));
+        planets.add(new Planet("Laewei", 9, 10*3, Technology.PREAGRICULTURAL, Resource.LIFELESS));
+        planets.add(new Planet("Huthone", 5*3, 4, Technology.AGRICULTURAL, Resource.LOTSOFHERBS));
+        planets.add(new Planet("Besars", (5*2) +1, 1, Technology.MEDIEVAL, Resource.DESERT));
+        planets.add(new Planet("Gninda 9D3", x12, y12, Technology.RENAISSANCE,
                 Resource.NOSPECIALRESOURCES));
         planets.add(new Planet("Cusurn", 3 * 10, 5 * 5, Technology.EARLYINDUSTRIAL,
                 Resource.MINERALPOOR));
