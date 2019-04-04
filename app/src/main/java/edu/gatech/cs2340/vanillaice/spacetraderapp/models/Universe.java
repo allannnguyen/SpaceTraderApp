@@ -119,7 +119,7 @@ public class Universe implements Serializable {
      * Gets the list of planets in the universe
      * @return a list of planets contained within the universe
      */
-    private List<Planet> getPlanets() {
+    public List<Planet> getPlanets() {
         return tenplanets;
     }
 }
