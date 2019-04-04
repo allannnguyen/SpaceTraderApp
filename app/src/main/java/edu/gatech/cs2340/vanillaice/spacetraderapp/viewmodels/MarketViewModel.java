@@ -135,7 +135,7 @@ public class MarketViewModel implements Serializable {
      * @param credit amount of credits
      */
     private void setCredits(int credit) {
-       player.setCredits(credit);
+        player.setCredits(credit);
     }
 
     /**
