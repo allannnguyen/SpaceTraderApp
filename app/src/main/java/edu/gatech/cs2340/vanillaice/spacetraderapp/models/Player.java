@@ -2,7 +2,7 @@ package edu.gatech.cs2340.vanillaice.spacetraderapp.models;
 
 import android.support.annotation.NonNull;
 import java.io.Serializable;
-import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Represents a player for the game.
@@ -11,10 +11,10 @@ import java.util.HashMap;
  */
 public class Player implements Serializable{
     private final  String name;
-    private final int pilot;
-    private final int fighter;
-    private final int trader;
-    private final int engineer;
+    private int pilot;
+    private int fighter;
+    private int trader;
+    private int engineer;
     private int credits;
     private final Difficulty difficulty;
     private final Ship ship;
@@ -27,13 +27,30 @@ public class Player implements Serializable{
      * @param currPlanet the player's current location
      * @param skills hashmap containing the pilot, fighter, trader, and engineer skill points
      */
-    public Player(String name, Difficulty difficulty, Planet currPlanet, HashMap<String, Integer> skills) {
+    public Player(String name, Difficulty difficulty, Planet currPlanet,
+                  Map<String, Integer> skills) {
         this.name = name;
         this.difficulty = difficulty;
-        this.pilot = skills.get("pilot");
-        this.fighter = skills.get("fighter");
-        this.trader = skills.get("trader");
-        this.engineer = skills.get("engineer");
+        Integer pilotValue = skills.get("pilot");
+        Integer fighterValue = skills.get("fighter");
+        Integer traderValue = skills.get("trader");
+        Integer engineerValue = skills.get("engineer");
+        this.pilot = 0;
+        this.engineer = 0;
+        this.fighter = 0;
+        this.trader = 0;
+        if (pilotValue != null) {
+            this.pilot = pilotValue;
+        }
+        if (fighterValue != null) {
+            this.fighter = fighterValue;
+        }
+        if (traderValue != null) {
+            this.trader = traderValue;
+        }
+        if (engineerValue != null) {
+            this.engineer = engineerValue;
+        }
         this.credits = 1000;
         this.ship = new Ship();
         this.currPlanet = currPlanet;
