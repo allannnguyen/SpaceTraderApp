@@ -160,70 +160,70 @@ public class SellActivity extends AppCompatActivity {
         price9.setText(Integer.toString(getGoodPrice(Good.NARCOTICS)));
         price10.setText(Integer.toString(getGoodPrice(Good.ROBOTS)));
 
-        if (!isSellable(Good.WATER)) {
+        if (isSellable(Good.WATER)) {
             price1.setVisibility(View.INVISIBLE);
             quant1.setVisibility(View.INVISIBLE);
             upButton1.setVisibility(View.INVISIBLE);
             downButton1.setVisibility(View.INVISIBLE);
         }
 
-        if (!isSellable(Good.FURS)) {
+        if (isSellable(Good.FURS)) {
             price2.setVisibility(View.INVISIBLE);
             quant2.setVisibility(View.INVISIBLE);
             upButton2.setVisibility(View.INVISIBLE);
             downButton2.setVisibility(View.INVISIBLE);
         }
 
-        if (!isSellable(Good.FOOD)) {
+        if (isSellable(Good.FOOD)) {
             price3.setVisibility(View.INVISIBLE);
             quant3.setVisibility(View.INVISIBLE);
             upButton3.setVisibility(View.INVISIBLE);
             downButton3.setVisibility(View.INVISIBLE);
         }
 
-        if (!isSellable(Good.ORE)) {
+        if (isSellable(Good.ORE)) {
             price4.setVisibility(View.INVISIBLE);
             quant4.setVisibility(View.INVISIBLE);
             upButton4.setVisibility(View.INVISIBLE);
             downButton4.setVisibility(View.INVISIBLE);
         }
 
-        if (!isSellable(Good.GAMES)) {
+        if (isSellable(Good.GAMES)) {
             price5.setVisibility(View.INVISIBLE);
             quant5.setVisibility(View.INVISIBLE);
             upButton5.setVisibility(View.INVISIBLE);
             downButton5.setVisibility(View.INVISIBLE);
         }
 
-        if (!isSellable(Good.FIREARMS)) {
+        if (isSellable(Good.FIREARMS)) {
             price6.setVisibility(View.INVISIBLE);
             quant6.setVisibility(View.INVISIBLE);
             upButton6.setVisibility(View.INVISIBLE);
             downButton6.setVisibility(View.INVISIBLE);
         }
 
-        if (!isSellable(Good.MEDICINE)) {
+        if (isSellable(Good.MEDICINE)) {
             price7.setVisibility(View.INVISIBLE);
             quant7.setVisibility(View.INVISIBLE);
             upButton7.setVisibility(View.INVISIBLE);
             downButton7.setVisibility(View.INVISIBLE);
         }
 
-        if (!isSellable(Good.MACHINES)) {
+        if (isSellable(Good.MACHINES)) {
             price8.setVisibility(View.INVISIBLE);
             quant8.setVisibility(View.INVISIBLE);
             upButton8.setVisibility(View.INVISIBLE);
             downButton8.setVisibility(View.INVISIBLE);
         }
 
-        if (!isSellable(Good.NARCOTICS)) {
+        if (isSellable(Good.NARCOTICS)) {
             price9.setVisibility(View.INVISIBLE);
             quant9.setVisibility(View.INVISIBLE);
             upButton9.setVisibility(View.INVISIBLE);
             downButton9.setVisibility(View.INVISIBLE);
         }
 
-        if (!isSellable(Good.ROBOTS)) {
+        if (isSellable(Good.ROBOTS)) {
             price10.setVisibility(View.INVISIBLE);
             quant10.setVisibility(View.INVISIBLE);
             upButton10.setVisibility(View.INVISIBLE);
@@ -467,7 +467,7 @@ public class SellActivity extends AppCompatActivity {
      * @param good type of good
      * @return quantity of good
      */
-    public int getGoodQuantity(Good good) {
+    private int getGoodQuantity(Good good) {
         return viewModel.getGoodQuantity(good);
     }
 
@@ -476,7 +476,7 @@ public class SellActivity extends AppCompatActivity {
      * @param good type of good
      * @return price of good
      */
-    public int getGoodPrice(Good good) {
+    private int getGoodPrice(Good good) {
         return viewModel.getGoodPrice(good);
     }
 
@@ -485,7 +485,7 @@ public class SellActivity extends AppCompatActivity {
      * @param good type of good
      * @return boolean if good is sellable
      */
-    public boolean isSellable(Good good) {
-        return viewModel.isSellable(good);
+    private boolean isSellable(Good good) {
+        return !viewModel.isSellable(good);
     }
 }
