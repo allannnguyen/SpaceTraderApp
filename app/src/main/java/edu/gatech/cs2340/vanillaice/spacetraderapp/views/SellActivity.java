@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.HashMap;
+
 import edu.gatech.cs2340.vanillaice.spacetraderapp.R;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.models.Good;
 import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.ConfigurationViewModel;
@@ -16,16 +18,16 @@ import edu.gatech.cs2340.vanillaice.spacetraderapp.viewmodels.MarketViewModel;
  * Represents the sell screen.
  */
 public class SellActivity extends AppCompatActivity {
-    private int oneCounter;
-    private int twoCounter;
-    private int threeCounter;
-    private int fourCounter;
-    private int fiveCounter;
-    private int sixCounter;
-    private int sevenCounter;
-    private int eightCounter;
-    private int nineCounter;
-    private int tenCounter;
+    private int waterCounter;
+    private int furCounter;
+    private int foodCounter;
+    private int oreCounter;
+    private int gameCounter;
+    private int firearmCounter;
+    private int medicineCounter;
+    private int machineCounter;
+    private int narcoticCounter;
+    private int robotCounter;
     private TextView quant1;
     private TextView quant2;
     private TextView quant3;
@@ -48,6 +50,7 @@ public class SellActivity extends AppCompatActivity {
     private int amountTen;
     private final ConfigurationViewModel cvm = ConfigurationViewModel.getInstance();
     private final MarketViewModel viewModel = new MarketViewModel(cvm.getPlayer());
+    private HashMap<Good, Integer> goodstoSell;
 
 
     /**
@@ -58,6 +61,8 @@ public class SellActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sell);
+
+        goodstoSell = new HashMap<>();
 
         TextView cargo1 = findViewById(R.id.cargo1);
         TextView cargo2 = findViewById(R.id.cargo2);
@@ -228,9 +233,10 @@ public class SellActivity extends AppCompatActivity {
         upButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (oneCounter < amountOne) {
-                    oneCounter++;
-                    quant1.setText(Integer.toString(oneCounter));
+                if (waterCounter < amountOne) {
+                    waterCounter++;
+                    quant1.setText(Integer.toString(waterCounter));
+                    goodstoSell.put(Good.WATER, waterCounter);
                 }
             }
         });
@@ -238,9 +244,10 @@ public class SellActivity extends AppCompatActivity {
         downButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (oneCounter > 0) {
-                    oneCounter--;
-                    quant1.setText(Integer.toString(oneCounter));
+                if (waterCounter > 0) {
+                    waterCounter--;
+                    quant1.setText(Integer.toString(waterCounter));
+                    goodstoSell.put(Good.WATER, waterCounter);
                 }
             }
         });
@@ -248,9 +255,10 @@ public class SellActivity extends AppCompatActivity {
         upButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (twoCounter < amountTwo) {
-                    twoCounter++;
-                    quant2.setText(Integer.toString(twoCounter));
+                if (furCounter < amountTwo) {
+                    furCounter++;
+                    quant2.setText(Integer.toString(furCounter));
+                    goodstoSell.put(Good.FURS, furCounter);
                 }
             }
         });
@@ -258,9 +266,10 @@ public class SellActivity extends AppCompatActivity {
         downButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (twoCounter > 0) {
-                    twoCounter--;
-                    quant2.setText(Integer.toString(twoCounter));
+                if (furCounter > 0) {
+                    furCounter--;
+                    quant2.setText(Integer.toString(furCounter));
+                    goodstoSell.put(Good.FURS, furCounter);
                 }
             }
         });
@@ -268,9 +277,10 @@ public class SellActivity extends AppCompatActivity {
         upButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (threeCounter < amountThree) {
-                    threeCounter++;
-                    quant3.setText(Integer.toString(threeCounter));
+                if (foodCounter < amountThree) {
+                    foodCounter++;
+                    quant3.setText(Integer.toString(foodCounter));
+                    goodstoSell.put(Good.FOOD, foodCounter);
                 }
             }
         });
@@ -278,9 +288,10 @@ public class SellActivity extends AppCompatActivity {
         downButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (threeCounter > 0) {
-                    threeCounter--;
-                    quant3.setText(Integer.toString(threeCounter));
+                if (foodCounter > 0) {
+                    foodCounter--;
+                    quant3.setText(Integer.toString(foodCounter));
+                    goodstoSell.put(Good.FOOD, foodCounter);
                 }
             }
         });
@@ -288,9 +299,10 @@ public class SellActivity extends AppCompatActivity {
         upButton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (fourCounter < amountFour) {
-                    fourCounter++;
-                    quant4.setText(Integer.toString(fourCounter));
+                if (oreCounter < amountFour) {
+                    oreCounter++;
+                    quant4.setText(Integer.toString(oreCounter));
+                    goodstoSell.put(Good.ORE, oreCounter);
                 }
             }
         });
@@ -298,9 +310,10 @@ public class SellActivity extends AppCompatActivity {
         downButton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (fourCounter > 0) {
-                    fourCounter--;
-                    quant4.setText(Integer.toString(fourCounter));
+                if (oreCounter > 0) {
+                    oreCounter--;
+                    quant4.setText(Integer.toString(oreCounter));
+                    goodstoSell.put(Good.ORE, oreCounter);
                 }
             }
         });
@@ -308,9 +321,10 @@ public class SellActivity extends AppCompatActivity {
         upButton5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (fiveCounter < amountFive) {
-                    fiveCounter++;
-                    quant5.setText(Integer.toString(fiveCounter));
+                if (gameCounter < amountFive) {
+                    gameCounter++;
+                    quant5.setText(Integer.toString(gameCounter));
+                    goodstoSell.put(Good.GAMES, gameCounter);
                 }
             }
         });
@@ -318,9 +332,10 @@ public class SellActivity extends AppCompatActivity {
         downButton5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (fiveCounter > 0) {
-                    fiveCounter--;
-                    quant5.setText(Integer.toString(fiveCounter));
+                if (gameCounter > 0) {
+                    gameCounter--;
+                    quant5.setText(Integer.toString(gameCounter));
+                    goodstoSell.put(Good.FURS, furCounter);
                 }
             }
         });
@@ -328,9 +343,10 @@ public class SellActivity extends AppCompatActivity {
         upButton6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (sixCounter < amountSix) {
-                    sixCounter++;
-                    quant6.setText(Integer.toString(sixCounter));
+                if (firearmCounter < amountSix) {
+                    firearmCounter++;
+                    quant6.setText(Integer.toString(firearmCounter));
+                    goodstoSell.put(Good.FIREARMS, firearmCounter);
                 }
             }
         });
@@ -338,9 +354,10 @@ public class SellActivity extends AppCompatActivity {
         downButton6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (sixCounter > 0) {
-                    sixCounter--;
-                    quant6.setText(Integer.toString(sixCounter));
+                if (firearmCounter > 0) {
+                    firearmCounter--;
+                    quant6.setText(Integer.toString(firearmCounter));
+                    goodstoSell.put(Good.FIREARMS, firearmCounter);
                 }
             }
         });
@@ -348,9 +365,10 @@ public class SellActivity extends AppCompatActivity {
         upButton7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (sevenCounter < amountSeven) {
-                    sevenCounter++;
-                    quant7.setText(Integer.toString(sevenCounter));
+                if (medicineCounter < amountSeven) {
+                    medicineCounter++;
+                    quant7.setText(Integer.toString(medicineCounter));
+                    goodstoSell.put(Good.MEDICINE, medicineCounter);
                 }
             }
         });
@@ -358,9 +376,10 @@ public class SellActivity extends AppCompatActivity {
         downButton7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (sevenCounter > 0) {
-                    sevenCounter--;
-                    quant7.setText(Integer.toString(sevenCounter));
+                if (medicineCounter > 0) {
+                    medicineCounter--;
+                    quant7.setText(Integer.toString(medicineCounter));
+                    goodstoSell.put(Good.MEDICINE, medicineCounter);
                 }
             }
         });
@@ -368,9 +387,10 @@ public class SellActivity extends AppCompatActivity {
         upButton8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (eightCounter < amountEight) {
-                    eightCounter++;
-                    quant8.setText(Integer.toString(eightCounter));
+                if (machineCounter < amountEight) {
+                    machineCounter++;
+                    quant8.setText(Integer.toString(machineCounter));
+                    goodstoSell.put(Good.MACHINES, machineCounter);
                 }
             }
         });
@@ -378,9 +398,10 @@ public class SellActivity extends AppCompatActivity {
         downButton8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (eightCounter > 0) {
-                    eightCounter--;
-                    quant8.setText(Integer.toString(eightCounter));
+                if (machineCounter > 0) {
+                    machineCounter--;
+                    quant8.setText(Integer.toString(machineCounter));
+                    goodstoSell.put(Good.MACHINES, machineCounter);
                 }
             }
         });
@@ -388,9 +409,10 @@ public class SellActivity extends AppCompatActivity {
         upButton9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (nineCounter < amountNine) {
-                    nineCounter++;
-                    quant9.setText(Integer.toString(nineCounter));
+                if (narcoticCounter < amountNine) {
+                    narcoticCounter++;
+                    quant9.setText(Integer.toString(narcoticCounter));
+                    goodstoSell.put(Good.NARCOTICS, narcoticCounter);
                 }
             }
         });
@@ -398,9 +420,10 @@ public class SellActivity extends AppCompatActivity {
         downButton9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (nineCounter > 0) {
-                    nineCounter--;
-                    quant9.setText(Integer.toString(nineCounter));
+                if (narcoticCounter > 0) {
+                    narcoticCounter--;
+                    quant9.setText(Integer.toString(narcoticCounter));
+                    goodstoSell.put(Good.NARCOTICS, narcoticCounter);
                 }
             }
         });
@@ -408,9 +431,10 @@ public class SellActivity extends AppCompatActivity {
         upButton10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (tenCounter < amountTen) {
-                    tenCounter++;
-                    quant10.setText(Integer.toString(tenCounter));
+                if (robotCounter < amountTen) {
+                    robotCounter++;
+                    quant10.setText(Integer.toString(robotCounter));
+                    goodstoSell.put(Good.ROBOTS, robotCounter);
                 }
             }
         });
@@ -418,9 +442,10 @@ public class SellActivity extends AppCompatActivity {
         downButton10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (tenCounter > 0) {
-                    tenCounter--;
-                    quant10.setText(Integer.toString(tenCounter));
+                if (robotCounter > 0) {
+                    robotCounter--;
+                    quant10.setText(Integer.toString(robotCounter));
+                    goodstoSell.put(Good.ROBOTS, robotCounter);
                 }
             }
         });
@@ -428,8 +453,7 @@ public class SellActivity extends AppCompatActivity {
         sellButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                viewModel.sell(oneCounter, twoCounter, threeCounter, fourCounter, fiveCounter,
-                        sixCounter, sevenCounter, eightCounter, nineCounter, tenCounter);
+                viewModel.sell(goodstoSell);
                 //pass viewmodel to sellactivity
                 Intent i = new Intent(SellActivity.this, MarketActivity.class);
                 //i.putExtra("viewmodel", viewModel);
