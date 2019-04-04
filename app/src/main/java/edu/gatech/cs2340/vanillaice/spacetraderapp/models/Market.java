@@ -76,6 +76,29 @@ public class Market implements Serializable {
      * @return The price of the good
      */
     public int getPrice(Good good) {
+        Map<Good, Resource[]> hash = new HashMap<>();
+        hash.put(Good.WATER, new Resource[] {Resource.LOTSOFWATER, Resource.DESERT});
+        hash.put(Good.FURS, new Resource[] {Resource.RICHFAUNA, Resource.LIFELESS});
+        hash.put(Good.FOOD, new Resource[] {Resource.RICHSOIL, Resource.POORSOIL});
+        hash.put(Good.ORE, new Resource[] {Resource.MINERALRICH, Resource.MINERALPOOR});
+        hash.put(Good.GAMES, new Resource[] {Resource.ARTISTIC});
+        hash.put(Good.FIREARMS, new Resource[] {Resource.WARLIKE});
+        hash.put(Good.MEDICINE, new Resource[] {Resource.LOTSOFHERBS});
+        hash.put(Good.NARCOTICS, new Resource[] {Resource.WEIRDMUSHROOMS});
+
+        if (hash.containsKey(good)) {
+            if (hash.get(good).length == 1 && resourceLevel == hash.get(good)[0]) {
+                return (getBasePrice(good) + (getIpl(good) * (techLevel.ordinal()
+                        - getMtlp(good)))) / 2;
+            } else if (hash.get(good).length == 2 && resourceLevel == hash.get(good)[1]) {
+                return ((getBasePrice(good) + (getIpl(good) * (techLevel.ordinal()
+                        - getMtlp(good)))) * 3) / 2;
+            }
+        }
+
+        return getBasePrice(good) + (getIpl(good) * (techLevel.ordinal() - getMtlp(good)));
+
+        /*
         if (good == Good.WATER) {
             if (resourceLevel == Resource.LOTSOFWATER) {
                 return (getBasePrice(good) + (getIpl(good) * (techLevel.ordinal()
@@ -130,7 +153,7 @@ public class Market implements Serializable {
             }
         }
 
-        return getBasePrice(good) + (getIpl(good) * (techLevel.ordinal() - getMtlp(good)));
+        return getBasePrice(good) + (getIpl(good) * (techLevel.ordinal() - getMtlp(good)));*/
     }
 
     /**
