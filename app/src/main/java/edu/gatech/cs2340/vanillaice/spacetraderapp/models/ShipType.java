@@ -4,6 +4,7 @@ package edu.gatech.cs2340.vanillaice.spacetraderapp.models;
  * Represents the base stats of each type of ship
  */
 public enum ShipType {
+    FLEA(3, 20),
     GNAT(15, 14),
     TERMITE(60, 13);
 

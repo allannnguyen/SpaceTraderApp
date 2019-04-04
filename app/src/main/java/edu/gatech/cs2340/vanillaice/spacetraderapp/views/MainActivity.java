@@ -228,9 +228,10 @@ public class MainActivity extends AppCompatActivity implements Serializable {
             //create a file object in the local files section
             file = new File(this.getFilesDir(), ConfigurationViewModel.DEFAULT_BINARY_FILE_NAME);
             Log.d("MY APP", "Loading Binary Data");
-            loadBinary(file);
-            Intent i = new Intent(MainActivity.this, GameActivity.class);
-            startActivity(i);
+            if (loadBinary(file)) {
+                Intent i = new Intent(MainActivity.this, GameActivity.class);
+                startActivity(i);
+            }
             return true;
         }
     }
