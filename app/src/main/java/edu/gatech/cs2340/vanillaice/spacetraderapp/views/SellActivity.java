@@ -46,8 +46,8 @@ public class SellActivity extends AppCompatActivity {
     private int amountEight;
     private int amountNine;
     private int amountTen;
-    private final MarketViewModel viewModel = new MarketViewModel(ConfigurationViewModel
-            .getInstance().getPlayer());
+    private final ConfigurationViewModel cvm = ConfigurationViewModel.getInstance();
+    private final MarketViewModel viewModel = new MarketViewModel(cvm.getPlayer());
 
 
     /**

@@ -86,6 +86,14 @@ public class Player implements Serializable{
     }
 
     /**
+     * Gets the name of the player's current planet.
+     * @return A string of the current planet's name.
+     */
+    public String getPlanetName() {
+        return currPlanet.getName();
+    }
+
+    /**
      * Sets the current location of the player.
      *
      * @param planet The planet where the player is located.

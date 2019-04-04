@@ -38,8 +38,8 @@ public class BuyActivity extends AppCompatActivity {
     private TextView quant9;
     private TextView quant10;
     private int total;
-    private final MarketViewModel viewModel = new MarketViewModel(ConfigurationViewModel
-            .getInstance().getPlayer());
+    private final ConfigurationViewModel cvm = ConfigurationViewModel.getInstance();
+    private final MarketViewModel viewModel = new MarketViewModel(cvm.getPlayer());
 
     /**
      * Creates the buy screen.
