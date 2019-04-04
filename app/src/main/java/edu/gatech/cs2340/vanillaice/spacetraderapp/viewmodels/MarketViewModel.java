@@ -40,7 +40,9 @@ public class MarketViewModel implements Serializable {
 
         if (total <= player.getCredits()) {
             for (Good good: Good.values()) {
-                setGood(good, getGoodQuantity(good) + goodsinCart.get(good));
+                if (goodsinCart.get(good) != null) {
+                    setGood(good, getGoodQuantity(good) + goodsinCart.get(good));
+                }
             }
             setCredits(getCredits() - total);
         }
@@ -96,8 +98,13 @@ public class MarketViewModel implements Serializable {
     public void sell(HashMap<Good, Integer> goodstoSell) {
         int total = 0;
         for (Good good: Good.values()) {
-            total += getGoodPrice(good) * goodstoSell.get(good);
-            setGood(good, getGoodQuantity(good) - goodstoSell.get(good));
+            if (goodstoSell.get(good) != null) {
+                total += getGoodPrice(good) * goodstoSell.get(good);
+            }
+            if (goodstoSell.get(good) != null) {
+                setGood(good, getGoodQuantity(good) - goodstoSell.get(good));
+            }
+
         }
 
         setCredits(getCredits() + total);
