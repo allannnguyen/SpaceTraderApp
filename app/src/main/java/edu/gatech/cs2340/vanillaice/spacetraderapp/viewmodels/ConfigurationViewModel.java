@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -46,7 +45,7 @@ public final class ConfigurationViewModel {
                              Map<String, Integer> playerSkills) {
         universe = new Universe();
         List<Planet> listofplanets = universe.getPlanets();
-        player = new Player(name, difficulty, playerSkills, listofplanets.get(0));
+        player = new Player(name, difficulty, listofplanets.get(0), playerSkills);
     }
 
     /**
