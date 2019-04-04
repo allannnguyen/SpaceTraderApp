@@ -93,7 +93,7 @@ public class TravelViewModel {
      * Sets the planet of the player
      * @param planet the planet the player travels to
      */
-    private void setPlanet(Planet planet) {
+    public void setPlanet(Planet planet) {
         player.setPlanet(planet);
     }
 
@@ -101,7 +101,7 @@ public class TravelViewModel {
      * Adds credits for the player
      * @param credits number of credits to be adde
      */
-    private void addCredits(int credits) {
+    public void addCredits(int credits) {
         player.setCredits(player.getCredits() + credits);
     }
 }
