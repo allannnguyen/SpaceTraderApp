@@ -99,7 +99,7 @@ public class TravelViewModel {
 
     /**
      * Adds credits for the player
-     * @param credits number of credits to be adde
+     * @param credits number of credits to be added
      */
     private void addCredits(int credits) {
         player.setCredits(player.getCredits() + credits);

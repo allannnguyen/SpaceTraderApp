@@ -467,7 +467,7 @@ public class SellActivity extends AppCompatActivity {
      * @param good type of good
      * @return quantity of good
      */
-    public int getGoodQuantity(Good good) {
+    private int getGoodQuantity(Good good) {
         return viewModel.getGoodQuantity(good);
     }
 
@@ -476,7 +476,7 @@ public class SellActivity extends AppCompatActivity {
      * @param good type of good
      * @return price of good
      */
-    public int getGoodPrice(Good good) {
+    private int getGoodPrice(Good good) {
         return viewModel.getGoodPrice(good);
     }
 
@@ -485,7 +485,7 @@ public class SellActivity extends AppCompatActivity {
      * @param good type of good
      * @return boolean if good is sellable
      */
-    public boolean isSellable(Good good) {
+    private boolean isSellable(Good good) {
         return viewModel.isSellable(good);
     }
 }
