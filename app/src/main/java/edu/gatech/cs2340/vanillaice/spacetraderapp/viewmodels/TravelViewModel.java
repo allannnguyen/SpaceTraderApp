@@ -82,7 +82,7 @@ public class TravelViewModel {
         }
 
         if (chance <= chance1) {
-            addCredits(100);
+            addCredits(rand.nextInt(100));
             return "You found extra money in your toilet!";
         }
 
@@ -93,7 +93,7 @@ public class TravelViewModel {
      * Sets the planet of the player
      * @param planet the planet the player travels to
      */
-    public void setPlanet(Planet planet) {
+    private void setPlanet(Planet planet) {
         player.setPlanet(planet);
     }
 
@@ -101,7 +101,7 @@ public class TravelViewModel {
      * Adds credits for the player
      * @param credits number of credits to be adde
      */
-    public void addCredits(int credits) {
+    private void addCredits(int credits) {
         player.setCredits(player.getCredits() + credits);
     }
 }
