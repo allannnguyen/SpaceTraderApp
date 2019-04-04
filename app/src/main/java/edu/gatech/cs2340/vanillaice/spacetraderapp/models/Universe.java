@@ -9,7 +9,7 @@ import java.util.Random;
  * Represents the Universe the game takes place in
  * A universe has a list of randomly selected planets from all precreated options
  */
-public final class Universe implements Serializable {
+public class Universe implements Serializable {
     private final List<Planet> tenplanets;
 
     /**
