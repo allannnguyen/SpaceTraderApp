@@ -2,6 +2,7 @@ package edu.gatech.cs2340.vanillaice.spacetraderapp.models;
 
 import android.support.annotation.NonNull;
 import java.io.Serializable;
+import java.util.HashMap;
 
 /**
  * Represents a player for the game.
@@ -23,20 +24,16 @@ public class Player implements Serializable{
      * Constructs the player based on various parameters.
      * @param name the player's name
      * @param difficulty the selected difficulty for the game
-     * @param pilot number of skill points allocated to the pilot skill
-     * @param fighter number of skill points allocated to the fighter skill
-     * @param trader number of skill points allocated to the trader skill
-     * @param engineer number of skill points allocated to the engineer skill
      * @param currPlanet the player's current location
+     * @param skills hashmap containing the pilot, fighter, trader, and engineer skill points
      */
-    public Player(String name, Difficulty difficulty, int pilot, int fighter, int trader,
-                  int engineer, Planet currPlanet) {
+    public Player(String name, Difficulty difficulty, Planet currPlanet, HashMap<String, Integer> skills) {
         this.name = name;
         this.difficulty = difficulty;
-        this.pilot = pilot;
-        this.fighter = fighter;
-        this.trader = trader;
-        this.engineer = engineer;
+        this.pilot = skills.get("pilot");
+        this.fighter = skills.get("fighter");
+        this.trader = skills.get("trader");
+        this.engineer = skills.get("engineer");
         this.credits = 1000;
         this.ship = new Ship();
         this.currPlanet = currPlanet;
