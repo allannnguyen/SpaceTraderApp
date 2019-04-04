@@ -17,62 +17,13 @@ public class Universe implements Serializable {
      * Selects the planets for this game randomly from all options
      */
     public Universe() {
-        int x1 = 1;
-        int x2 = (3*9) + 3;
-        int x3 = (3*4) + 1;
-        int x4 = 5*5;
-
-        int x5 = (4*4) + 1;
-        int x6 = 4*4;
-        int x7 = (4*4) + 1;
-
-        int x8 = 5*5;
-        int x9 = 9;
-        int x10 = 5*3;
-        int x11 =(5*2) +1;
-
-        int x12 = (4*4) + 3;
-        int x13 = 3 * 10;
-        int x14 = 10;
-        int x15 = 2* 10;
-        int x16 = 3*5;
-        int x17 = (10*2) + 2;
-        int x18 = (5*5) + 1;
-        int x19 = 6*4;
-        int x20 = 9;
-        int x21 = 6*3;
-        int x22 = 5;
-
-        int y1 = 1;
-        int y2 = 10*3;
-        int y3 =10*3;
-        int y4 = 10*3;
-
-        int y5 =10*2;
-        int y6 =10;
-        int y7 =10 + 1;
-        int y8 = (10*2) + 2;
-
-        int y9 =10*3;
-        int y10 =4;
-        int y11 =1;
-        int y12 = 5*3;
-
-        int y13 =5*5;
-        int y14 =(5*5) + 1;
-        int y15 = 6*3;
-
-        int y16 = 9;
-        int y17 = (10*3) -1;
-        int y18 = 7*2;
-
-        int y19 = 6;
-        int y20 = (10*3) -1;
-        int y21 =10 + 1;
-
-        int y22 = 10 + 3;
-
-
+        int x1 = 1, x2 = (3*9) + 3, x3 = (3*4) + 1, x4 = 5*5, x5 = (4*4) + 1, x6 = 4*4,
+                x7 = (4*4) + 1, x8 = 5*5, x9 = 9, x10 = 5*3, x11 =(5*2) +1, x12 = (4*4) + 3,
+                x13 = 3 * 10, x14 = 10, x15 = 2* 10, x16 = 3*5, x17 = (10*2) + 2, x18 = (5*5) + 1,
+                x19 = 6*4, x20 = 9, x21 = 6*3, x22 = 5, y1 = 1, y2 = 10*3, y3 =10*3, y4 = 10*3,
+                y5 =10*2, y6 =10, y7 =10 + 1, y8 = (10*2) + 2, y9 =10*3, y10 =4, y11 =1, y12 = 5*3,
+                y13 =5*5, y14 =(5*5) + 1, y15 = 6*3, y16 = 9, y17 = (10*3) -1, y18 = 7*2, y19 = 6,
+                y20 = (10*3) -1, y21 =10 + 1, y22 = 10 + 3;
 
         List<Planet> planets = new ArrayList<>();
         planets.add(new Planet("Charles The Red", x1, y1, Technology.PREAGRICULTURAL,
