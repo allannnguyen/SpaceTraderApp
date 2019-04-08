@@ -20,6 +20,9 @@ public class Market implements Serializable {
      * @param resourceLevel The resource level of the market's planet.
      */
     public Market(Technology techLevel, Resource resourceLevel) {
+        if (techLevel == null || resourceLevel == null) {
+            throw new IllegalArgumentException("Cannot have null parameters");
+        }
         this.techLevel = techLevel;
         this.resourceLevel = resourceLevel;
         this.goodsBuy = new HashMap<>();
@@ -151,6 +154,10 @@ public class Market implements Serializable {
         }
 
         return getBasePrice(good) + (getIpl(good) * (techLevel.ordinal() - getMtlp(good)));*/
+    }
+
+    public Technology getTechLevel() {
+        return techLevel;
     }
 
     /**
