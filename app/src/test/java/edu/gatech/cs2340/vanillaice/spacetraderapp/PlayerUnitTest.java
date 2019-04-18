@@ -50,4 +50,10 @@ public class PlayerUnitTest {
 
     }
 
+    @Test
+    public void testPlayerPlanetName() {
+        assertEquals(player1.getPlanetName(), "One");
+        assertEquals(player2.getPlanetName(), "Two");
+    }
+
 }
