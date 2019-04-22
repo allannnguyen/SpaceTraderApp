@@ -36,7 +36,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 * **Allan Nguyen** - *Backend* - [View Github](https://github.com/allannnguyen)
 * **Ben Chuang** - *Backend* - [View Github](https://github.com/BSChuang)
-* **Charles Kim** - *Product Management* - [View Github](https://github.com/ckim311)
+* **Charles Kim** - *Product Management/Team Lead* - [View Github](https://github.com/ckim311)
 * **Chandler Watkins** - *Backend* - [View Github](https://github.com/Cobalts1)
 * **Shakeeb Shams** - *Frontend* - [View Github](https://github.com/shakeebshams)
 
@@ -44,3 +44,6 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## License
 
 This project is licensed under the MIT License
+
+## Python command line port
+The Python command line program is available [here](https://github.com/shakeebshams/SpaceTraders)
