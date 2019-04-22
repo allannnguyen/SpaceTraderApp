@@ -30,15 +30,15 @@ Shakeeb's JUnit tests cover the implentation of the Player class.
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, view th available brances
+We use [SemVer](http://semver.org/) for versioning. For the versions available, view th available branches
 
 ## Developers
 
-* **Allan Nguyen** - *Initial work* - [View Page](https://github.com/allannnguyen)
-* **Ben Chuang** - *Initial work* - [View Page](https://github.com/BSChuang)
-* **Charles Kim** - *Initial work* - [View Page](https://github.com/ckim311)
-* **Chandler Watkins** - *Initial work* - [View Page](https://github.com/Cobalts1)
-* **Shakeeb Shams** - *Initial work* - [View Page](https://github.com/shakeebshams)
+* **Allan Nguyen** - *Backend* - [View Github](https://github.com/allannnguyen)
+* **Ben Chuang** - *Backend* - [View Github](https://github.com/BSChuang)
+* **Charles Kim** - *Product Management* - [View Github](https://github.com/ckim311)
+* **Chandler Watkins** - *Backend* - [View Github](https://github.com/Cobalts1)
+* **Shakeeb Shams** - *Frontend* - [View Github](https://github.com/shakeebshams)
 
 
 ## License
